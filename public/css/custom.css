@@ -1,0 +1,32 @@
+.menubar {
+    background-color: #1989f0;
+    height: 60px;
+}
+.menubar__menu ul {
+  list-style: none;
+  float: right;
+}
+.menubar__menu ul li {
+  display: inline-block;
+
+  margin-right: 5px;
+}
+.menubar__menu ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.menubar__logo h2 {
+    line-height: 56px;
+    color: #fff;
+}
+.menubar__srcbox {
+    margin-top: 13px;
+    text-align: center;
+}
+.menubar__srcbox-inputfield {
+  padding:2px;
+}
+.menubar__menu {
+    line-height: 60px;
+}
