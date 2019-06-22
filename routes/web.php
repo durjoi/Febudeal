@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () {
+//     return view('layouts.master');
+// });
+
+Route::get('/', 'PagesController@index');
+Route::get('/about', 'PagesController@about');
