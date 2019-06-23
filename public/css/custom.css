@@ -1,3 +1,6 @@
+body {
+    background-color: #e9ebef !important;
+}
 /*============Navbar Css===========*/
 
 .menubar {
@@ -10,10 +13,11 @@
   float: right;
 }
 .menubar__menu ul li {
-  display: inline-block;
-
-  margin-right: 5px;
+    display: inline-block;
+    margin-right: 27px;
 }
+
+
 .menubar__menu ul li a {
   text-decoration: none;
   color: #fff;
@@ -27,8 +31,20 @@
     margin-top: 13px;
     text-align: center;
 }
-.menubar__srcbox-inputfield {
-  padding:2px;
+.srcbox__input {
+    width: 577px;
+    height: 35px;
+    border: 1px solid #fff;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.srcbox__btn {
+    height: 35px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    margin-left: -5px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 .menubar__menu {
     line-height: 60px;
@@ -36,7 +52,7 @@
 
 /*================Hero Banner Css==================*/
 .hero-bnr {
-  height: 350px;
+  height: 320px;
 }
 .bnr-slider {
   margin-top: 5px;
@@ -51,20 +67,98 @@
 .btn-left {
   position: absolute;
   top: 125px;
-  left: 0px;
+  left: 26px;
   z-index: 1000;
 }
 .btn-right {
   position: absolute;
   top: 125px;
-  right: 0px;
+  right: 26px;
   z-index: 1000;
 }
 .slider-btn {
-  height:100px;
-  width: 50px;
-  background-color: #fff;
-  border: 1px solid #fff;
-  border-radius: 5px;
-  font-size: 20px;
+    height: 77px;
+    width: 35px;
+    background-color: #ffffffd6;
+    border: transparent;
+    border-radius: 5px;
+    font-size: 34px;
+}
+
+/*================Products Css==================*/
+.prdcts {
+  margin-top: 20px;
+}
+.prdcts__title {
+  font-size: 24px;
+  font-weight:bold;
+
+}
+.prdcts__allbtn {
+    background-color: #1989f0;
+    color: #fff;
+    border: none;
+    height: 31px;
+    width: 89px;
+}
+
+.prdcts__slider {
+    background-color: #fff;
+    padding-top: 12px;
+    height: 330px;
+    margin-top: 5px;
+}
+.prdcts__item {
+    height: 300px;
+    width: 206px;
+    margin: 5px;
+    display: inline-block;
+}
+
+.img__container {
+  height:200px;
+  width: 215px;
+}
+.prdcts__item img {
+    height: 195px;
+    width: 210px;
+}
+.prdcts__item img:hover {
+  height: 200px;
+  width: 215px;
+
+}
+.prdcts__item h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+.item__price {
+    font-size: 18px;
+    color: #1989f0;
+}
+
+.item__saler {
+    font-size: 16px;
+    margin-top: -15px;
+    color: #757575;
+}
+
+.prdctbtn-left {
+  position: absolute;
+  top: 100px;
+  left: 0px;
+}
+.prdctbtn-right {
+  position: absolute;
+  top: 100px;
+  right: 0px;
+}
+
+.prdctslider-btn {
+    height: 55px;
+    width: 28px;
+    border: none;
+    background: #fff;
+    font-size: 22px;
 }
