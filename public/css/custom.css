@@ -1,6 +1,7 @@
 .menubar {
     background-color: #1989f0;
     height: 60px;
+    padding: 0 10px;
 }
 .menubar__menu ul {
   list-style: none;
