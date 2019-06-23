@@ -1,5 +1,5 @@
 <div class="menubar">
-  <div class="container-fluied">
+  <div class="container-fluid">
     <div class="row">
       <div class="col-md-3">
         <div class="menubar__logo">
