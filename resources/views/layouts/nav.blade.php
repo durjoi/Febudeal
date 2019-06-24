@@ -15,8 +15,8 @@
       <div class="col-md-4">
         <div class="menubar__menu">
           <ul>
-            <li><a href="#"><i class="fas fa-user"></i> Sign Up</a></li>
-            <li><a href="#"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+            <li><a href="{{ route('register') }}"><i class="fas fa-user"></i> Sign Up</a></li>
+            <li><a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
             <li><a href="#"><i class="fas fa-shopping-cart"></i> Cart</a></li>
           </ul>
         </div>
