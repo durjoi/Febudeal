@@ -129,18 +129,21 @@ body {
 
 }
 .prdcts__item h4 {
-    font-size: 20px;
+    font-size: 17px;
     font-weight: bold;
     margin-top: 8px;
+    color: #545454;
 }
+
 .item__price {
-    font-size: 18px;
+    font-size: 16px;
     color: #1989f0;
+    margin-top: -6px;
 }
 
 .item__saler {
-    font-size: 16px;
-    margin-top: -15px;
+    font-size: 13px;
+    margin-top: -20px;
     color: #757575;
 }
 
@@ -161,4 +164,80 @@ body {
     border: none;
     background: #fff;
     font-size: 22px;
+}
+
+/*================Banner three Css==================*/
+
+.bnnrthree__item {
+  height: 300px;
+  overflow: hidden;
+}
+
+/*================Banner Four Css==================*/
+.bnnrfour {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/*================Footer Css==================*/
+.footertop {
+  height: 250px;
+  margin-top: 20px;
+  padding-top: 40px;
+  background-color: #172337;
+}
+.footertop__item {
+  padding-left:40px;
+}
+.footertop h4 {
+  font-size: 12px;
+  text-transform:uppercase;
+  font-weight: bold;
+  color: #76787a;
+}
+.footertop ul {
+  list-style: none;
+  padding: 0px;
+}
+.footertop ul li {
+  margin-top: 0px;
+}
+.footertop ul li a {
+  font-size: 13px;
+  color: #fff;
+  text-transform:capitalize;
+}
+.footertop p {
+  color: #fff;
+  font-size: 13px;
+}
+.footertop__item__info {
+    padding-left: 0px;
+    margin-left: -24px;
+    padding-right: 37px;
+}
+
+.footer {
+    height: 80px;
+    background-color: #172337;
+    border-top: 1px solid #6f6f6f;
+    line-height: 80px;
+}
+.footer ul {
+  list-style: none;
+}
+.footer ul li {
+    display: inline-block;
+    float: left;
+    margin-left: 20px;
+    margin-right: 190px;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 17px;
+  text-transform: capitalize;
+}
+.footer p {
+  color: #fff;
 }
