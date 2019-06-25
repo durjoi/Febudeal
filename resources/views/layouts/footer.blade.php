@@ -90,7 +90,7 @@
     <div class="row">
       <div class="col-md-8">
         <ul>
-          <li> <a href="#">sell on febudeal</a> </li>
+          <li> <a href="{{ route('saler.register') }}">sell on febudeal</a> </li>
           <li> <a href="#">advertise</a> </li>
           <li> <a href="#">Help center</a> </li>
         </ul>
