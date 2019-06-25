@@ -2,7 +2,7 @@ $(document).ready(function(){
   $('.bnr-slider').slick({
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 2000,
     arrows: false,
   });
   $('.btn-left').click(function(){

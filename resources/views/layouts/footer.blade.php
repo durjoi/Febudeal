@@ -56,7 +56,7 @@
       <div class="col-2">
         <div class="footertop__item__info">
           <h4>mail us</h4>
-          <p>Flipkart Internet Private Limited,
+          <p>Febudeal Internet Private Limited,
               Buildings Alyssa, Begonia &
               Clove Embassy Tech Village,
               Outer Ring Road, Devarabeesanahalli Village,
@@ -70,7 +70,7 @@
       <div class="col-2">
         <div class="footertop__item__info">
           <h4>Registered Office Address:</h4>
-          <p>Flipkart Internet Private Limited,
+          <p>Febudeal Internet Private Limited,
               Buildings Alyssa, Begonia &
               Clove Embassy Tech Village,
               Outer Ring Road, Devarabeesanahalli Village,
@@ -96,7 +96,7 @@
         </ul>
       </div>
       <div class="col-md-4 text-center">
-          <p>&copy; 2007-2019 Flipkart.com.</p>
+          <p>&copy; 2007-2019 Febudeal.com.</p>
       </div>
     </div>
   </div>

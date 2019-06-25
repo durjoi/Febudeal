@@ -32,7 +32,7 @@ body {
     text-align: center;
 }
 .srcbox__input {
-    width: 577px;
+    width: 486px;
     height: 35px;
     border: 1px solid #fff;
     border-top-left-radius: 3px;
@@ -110,22 +110,22 @@ body {
 }
 .prdcts__item {
     height: 300px;
-    width: 206px;
+    width: 170px;
     margin: 5px;
     display: inline-block;
 }
 
 .img__container {
   height:200px;
-  width: 215px;
+  width: 179px;
 }
 .prdcts__item img {
     height: 195px;
-    width: 210px;
+    width: 179px;
 }
 .prdcts__item img:hover {
   height: 200px;
-  width: 215px;
+  width: 179px;
 
 }
 .prdcts__item h4 {
@@ -213,7 +213,7 @@ body {
 .footertop__item__info {
     padding-left: 0px;
     margin-left: -24px;
-    padding-right: 37px;
+    padding-right: 25px;
 }
 
 .footer {
@@ -229,7 +229,7 @@ body {
     display: inline-block;
     float: left;
     margin-left: 20px;
-    margin-right: 190px;
+    margin-right: 152px;
 }
 
 .footer ul li a {
