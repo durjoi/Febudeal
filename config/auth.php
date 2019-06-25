@@ -46,6 +46,15 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'saler' => [
+            'driver' => 'session',
+            'provider' => 'salers',
+        ],
+        'saler-api' => [
+            'driver' => 'token',
+            'provider' => 'salers',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -69,6 +78,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'salers' => [
+            'driver' => 'eloquent',
+            'model' => App\Saler::class,
         ],
 
         // 'users' => [
@@ -97,6 +110,11 @@ return [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
+        ],
+        'salers' => [
+            'provider' => 'salers',
+            'table' => 'password_resets',
+            'expire' => 15,
         ],
     ],
 

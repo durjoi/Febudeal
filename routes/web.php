@@ -21,3 +21,9 @@ Route::get('/about', 'PagesController@about');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('saler')->group(function() {
+  Route::get('/login', 'Auth\SalerLoginController@showLoginForm')->name('saler.login');
+  Route::post('/login', 'Auth\SalerLoginController@Login')->name('saler.login.submit');
+  Route::get('/', 'SalerController@index')->name('saler.dashboard');
+});
