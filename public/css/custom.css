@@ -3,6 +3,11 @@ body {
 }
 /*============Navbar Css===========*/
 
+.menubar__logo h2 a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .menubar {
     background-color: #1989f0;
     height: 60px;

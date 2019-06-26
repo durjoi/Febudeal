@@ -15,7 +15,7 @@
 //     return view('layouts.master');
 // });
 
-Route::get('/', 'PagesController@index');
+Route::get('/', 'PagesController@index')->name('index');
 Route::get('/about', 'PagesController@about');
 
 Auth::routes();
