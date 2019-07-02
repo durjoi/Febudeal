@@ -246,3 +246,89 @@ body {
 .footer p {
   color: #fff;
 }
+
+
+/*==========================================================================
+        Saler Dashboard Design
+===========================================================================*/
+
+/*================ Saler Dashboard Header CSS ============*/
+.slrdashboard {
+    height: 60px;
+    border-bottom: 1px solid #ccc;
+    line-height: 60px;
+}
+.slrdashboard h2 {
+  line-height: 60px;
+  font-size: 20px;
+}
+.slrdashboard ul {
+  list-style: none;
+}
+.slrdashboard ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+.slrdashboard ul li a {
+    text-decoration: none;
+    font-size: 21px;
+    color: #1989f0;
+}
+
+/*================ Saler Dashboard left sidebar CSS ============*/
+.lftsidebar {
+  height:100%;
+  width: 200px;
+  position: absolute;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  background: #1989f0;
+}
+.lftsidebar__top {
+    height: 156px;
+    background: #0073dc;
+}
+.lftsidebar__top h2 {
+    padding-top: 10px;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: bold;
+
+}
+h3.sidebar__slrname {
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+}
+p.sidebar__slremail {
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    margin-top: -5px
+}
+.userimg {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 100000;
+    top: 122px;
+    left: 64px;
+}
+
+.leftsidebar__body {
+  margin-top: 65px;
+}
+.leftsidebar__body ul {
+  list-style: none;
+}
+.leftsidebar__body ul li{
+  margin: 26px 5px;
+}
+.leftsidebar__body ul li a{
+  text-decoration: none;
+  color: #fff;
+}
