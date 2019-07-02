@@ -253,23 +253,28 @@ body {
 ===========================================================================*/
 
 /*================ Saler Dashboard Header CSS ============*/
-.slrdashboard {
-    height: 60px;
+.slrdashboard__nav {
+    height: 47px;
     border-bottom: 1px solid #ccc;
-    line-height: 60px;
+    line-height: 47px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
 }
-.slrdashboard h2 {
+.slrdashboard__nav h2 {
   line-height: 60px;
   font-size: 20px;
 }
-.slrdashboard ul {
+.slrdashboard__nav ul {
   list-style: none;
 }
-.slrdashboard ul li {
+.slrdashboard__nav ul li {
     display: inline-block;
     margin-left: 20px;
 }
-.slrdashboard ul li a {
+.slrdashboard__nav ul li a {
     text-decoration: none;
     font-size: 21px;
     color: #1989f0;
@@ -278,12 +283,19 @@ body {
 /*================ Saler Dashboard left sidebar CSS ============*/
 .lftsidebar {
   height:100%;
-  width: 200px;
-  position: absolute;
+  width: 240px;
+  position: fixed;
   z-index: 1000;
-  left: 0;
+  left: -200px;
   top: 0;
   background: #1989f0;
+  transition: 0.3s;
+  padding-right: 20px;
+  padding-left:20px;
+}
+.lftsidebar:hover {
+  left: 0px;
+  transition: 0.3s;
 }
 .lftsidebar__top {
     height: 156px;
@@ -316,7 +328,7 @@ p.sidebar__slremail {
     position: absolute;
     z-index: 100000;
     top: 122px;
-    left: 64px;
+    left: 85px;
 }
 
 .leftsidebar__body {
@@ -331,4 +343,57 @@ p.sidebar__slremail {
 .leftsidebar__body ul li a{
   text-decoration: none;
   color: #fff;
+}
+
+/*================ Saler Dashboard Products CSS ============*/
+.slrproducts__top {
+    padding-top: 10px;
+    height: 46px;
+    background-color: #fff;
+    /* line-height: 0px; */
+    padding-bottom: 10px;
+}
+.slrproducts__heading {
+  font-size:20px;
+}
+.slrproducts__menu {}
+.slrproducts__menu ul {
+  list-style: none;
+}
+.slrproducts__menu ul li {
+  display: inline-block;
+  margin-left:20px;
+  /* border-bottom: 2px solid #1989f0; */
+}
+.slrproducts__menu ul li a {
+  text-decoration: none;
+  color: #1989f0;
+}
+.slr__sectionheading {
+    padding-top: 50px;
+    background-color: #fff;
+    padding-bottom: 39px;
+}
+.slr__sectionheading h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.underline {
+    height: 3px;
+    width: 124px;
+    background: #0372dc;
+    position: absolute;
+    top: 34px;
+    left: 510px;
+}
+.box {
+    height: 15px;
+    width: 15px;
+    background: #1989f0;
+    -ms-transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 28px;
+    left: 563px;
 }
