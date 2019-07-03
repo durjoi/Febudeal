@@ -6,12 +6,14 @@
     <title>Saler Dashboard</title>
     @include('pertials.styles')
   </head>
-  <body style="background-color: #fff !important">
-
-    <header class="slrdashboard__nav">
+  <body >
+    <header class="slrheader">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-12 text-right">
+          <div class="col-md-6">
+            <h2>Febudeal</h2>
+          </div>
+          <div class="col-md-6 text-right">
             <ul>
               <li> <a href="#"><i class="far fa-bell"></i></a> </li>
               <li> <a href="#"><i class="far fa-comment-dots"></i></a> </li>
@@ -22,170 +24,192 @@
       </div>
     </header>
 
-    <div class="lftsidebar">
-      <div class="lftsidebar__top">
-        <h2>Febudeal</h2>
-        <h3 class="sidebar__slrname">Mehedi Hassan Durjoi</h3>
-        <p class="sidebar__slremail">m.h.durjoi@gmail.com</p>
-        <img class="userimg" src="{{ asset('images/img_avatar.png') }}" alt="">
-
-      </div>
-      <div class="leftsidebar__body">
-        <ul>
-          <li> <a href="#">Dashboard</a> </li>
-          <li> <a href="#">Products</a> </li>
-          <li> <a href="#">Active Orders</a> </li>
-          <li> <a href="#">Profile Update</a></li>
-          <li> <a href="#">Post Ads</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="slrproducts__top">
-      <div class="container">
+    <div class="slrbody">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-md-6">
-            <p class="slrproducts__heading">Products</p>
-          </div>
-          <div class="col-md-6 text-right">
-            <div class="slrproducts__menu">
+          <div class="col-md-2">
+            <aside class="slrsidebar">
+              <h3>My Account</h3>
               <ul>
-                <li> <a href="#">Live</a> </li>
+                <li> <a href="#"><i class="far fa-list-alt"></i> Products</a> </li>
+                <li> <a href="#"><i class="fas fa-list-ul"></i> Active Orders</a> </li>
+                <li> <a href="#"><i class="far fa-user"></i> My Profile</a></li>
+                <li> <a href="#"><i class="fas fa-file-upload"></i> Post Ads</a></li>
+              </ul>
+            </aside>
+          </div>
+          <div class="col-md-10">
+            <div class="productsheader">
+              <h3>Products</h3>
+              <ul>
                 <li> <a href="#">Pending</a> </li>
-                <li> <a href="#">Upload New</a> </li>
+                <li> <a href="#">Live</a> </li>
+                <li> <a href="#">Hold</a> </li>
+
               </ul>
             </div>
+
+
+
+            <div class="productsitem">
+              <div class="item-top">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4>Product ID: <span>14566855</span></h4>
+                    <p class="orderdate">Order Placed on Tue, 15 May 2018</p>
+                  </div>
+                  <div class="col-md-6 text-right">
+                    <button type="button" name="button">Product Details</button>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="{{ asset('images/prdct1.jpg') }}" alt="">
+                  <h4 class="productname">Samsund J7 Max</h4>
+                  <p class="productprice"><span>Product Price:</span> 20,000 BDT</p>
+                  <p class="productqty">Quantity: 2 Pices</p>
+                  <p class="productqty">Catagory: Smart Phone</p>
+                </div>
+                <div class="col-md-6">
+                  <ul>
+                    <li> <a href="#" class="edit"><i class="far fa-edit"></i> Edit</a> </li>
+                    <li> <a href="#" class="delete"><i class="fas fa-trash-alt"></i> Delete</a> </li>
+                    <li> <a href="#" class="archieve"><i class="fas fa-archive"></i> Archieve</a> </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="productsitem">
+              <div class="item-top">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4>Product ID: <span>14566855</span></h4>
+                    <p class="orderdate">Order Placed on Tue, 15 May 2018</p>
+                  </div>
+                  <div class="col-md-6 text-right">
+                    <button type="button" name="button">Product Details</button>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="{{ asset('images/prdct1.jpg') }}" alt="">
+                  <h4 class="productname">Samsund J7 Max</h4>
+                  <p class="productprice"><span>Product Price:</span> 20,000 BDT</p>
+                  <p class="productqty">Quantity: 2 Pices</p>
+                  <p class="productqty">Catagory: Smart Phone</p>
+                </div>
+                <div class="col-md-6">
+                  <ul>
+                    <li> <a href="#" class="edit"><i class="far fa-edit"></i> Edit</a> </li>
+                    <li> <a href="#" class="delete"><i class="fas fa-trash-alt"></i> Delete</a> </li>
+                    <li> <a href="#" class="archieve"><i class="fas fa-archive"></i> Archieve</a> </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="productsitem">
+              <div class="item-top">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4>Product ID: <span>14566855</span></h4>
+                    <p class="orderdate">Order Placed on Tue, 15 May 2018</p>
+                  </div>
+                  <div class="col-md-6 text-right">
+                    <button type="button" name="button">Product Details</button>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="{{ asset('images/prdct1.jpg') }}" alt="">
+                  <h4 class="productname">Samsund J7 Max</h4>
+                  <p class="productprice"><span>Product Price:</span> 20,000 BDT</p>
+                  <p class="productqty">Quantity: 2 Pices</p>
+                  <p class="productqty">Catagory: Smart Phone</p>
+                </div>
+                <div class="col-md-6">
+                  <ul>
+                    <li> <a href="#" class="edit"><i class="far fa-edit"></i> Edit</a> </li>
+                    <li> <a href="#" class="delete"><i class="fas fa-trash-alt"></i> Delete</a> </li>
+                    <li> <a href="#" class="archieve"><i class="fas fa-archive"></i> Archieve</a> </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="productsitem">
+              <div class="item-top">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4>Product ID: <span>14566855</span></h4>
+                    <p class="orderdate">Order Placed on Tue, 15 May 2018</p>
+                  </div>
+                  <div class="col-md-6 text-right">
+                    <button type="button" name="button">Product Details</button>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="{{ asset('images/prdct1.jpg') }}" alt="">
+                  <h4 class="productname">Samsund J7 Max</h4>
+                  <p class="productprice"><span>Product Price:</span> 20,000 BDT</p>
+                  <p class="productqty">Quantity: 2 Pices</p>
+                  <p class="productqty">Catagory: Smart Phone</p>
+                </div>
+                <div class="col-md-6">
+                  <ul>
+                    <li> <a href="#" class="edit"><i class="far fa-edit"></i> Edit</a> </li>
+                    <li> <a href="#" class="delete"><i class="fas fa-trash-alt"></i> Delete</a> </li>
+                    <li> <a href="#" class="archieve"><i class="fas fa-archive"></i> Archieve</a> </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="productsitem">
+              <div class="item-top">
+                <div class="row">
+                  <div class="col-md-6">
+                    <h4>Product ID: <span>14566855</span></h4>
+                    <p class="orderdate">Order Placed on Tue, 15 May 2018</p>
+                  </div>
+                  <div class="col-md-6 text-right">
+                    <button type="button" name="button">Product Details</button>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="{{ asset('images/prdct1.jpg') }}" alt="">
+                  <h4 class="productname">Samsund J7 Max</h4>
+                  <p class="productprice"><span>Product Price:</span> 20,000 BDT</p>
+                  <p class="productqty">Quantity: 2 Pices</p>
+                  <p class="productqty">Catagory: Smart Phone</p>
+                </div>
+                <div class="col-md-6">
+                  <ul>
+                    <li> <a href="#" class="edit"><i class="far fa-edit"></i> Edit</a> </li>
+                    <li> <a href="#" class="delete"><i class="fas fa-trash-alt"></i> Delete</a> </li>
+                    <li> <a href="#" class="archieve"><i class="fas fa-archive"></i> Archieve</a> </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+
           </div>
         </div>
-
       </div>
+
+
+
+
     </div>
-
-
-    <div class="slr__sectionheading">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h3>Your Live Products</h3>
-            <div class="underline"></div>
-            <div class="box"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="slrliveproducts">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">Id</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Upload Date</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry the Bird</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="slr__sectionheading">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 text-center">
-            <h3>Your Pending Products</h3>
-            <div class="underline"></div>
-            <div class="box"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="slrliveproducts">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">Id</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Upload Date</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Quantity</th>
-                  <th scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry the Bird</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-
   @include('pertials.scripts')
   </body>
 </html>

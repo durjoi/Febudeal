@@ -253,7 +253,7 @@ body {
 ===========================================================================*/
 
 /*================ Saler Dashboard Header CSS ============*/
-.slrdashboard__nav {
+/* .slrdashboard__nav {
     height: 47px;
     border-bottom: 1px solid #ccc;
     line-height: 47px;
@@ -278,10 +278,10 @@ body {
     text-decoration: none;
     font-size: 21px;
     color: #1989f0;
-}
+} */
 
 /*================ Saler Dashboard left sidebar CSS ============*/
-.lftsidebar {
+/* .lftsidebar {
   height:100%;
   width: 240px;
   position: fixed;
@@ -343,14 +343,14 @@ p.sidebar__slremail {
 .leftsidebar__body ul li a{
   text-decoration: none;
   color: #fff;
-}
+} */
 
 /*================ Saler Dashboard Products CSS ============*/
-.slrproducts__top {
+/* .slrproducts__top {
     padding-top: 10px;
     height: 46px;
     background-color: #fff;
-    /* line-height: 0px; */
+
     padding-bottom: 10px;
 }
 .slrproducts__heading {
@@ -363,14 +363,13 @@ p.sidebar__slremail {
 .slrproducts__menu ul li {
   display: inline-block;
   margin-left:20px;
-  /* border-bottom: 2px solid #1989f0; */
 }
 .slrproducts__menu ul li a {
   text-decoration: none;
   color: #1989f0;
 }
 .slr__sectionheading {
-    padding-top: 50px;
+    padding-top: 30px;
     background-color: #fff;
     padding-bottom: 39px;
 }
@@ -396,4 +395,184 @@ p.sidebar__slremail {
     position: absolute;
     top: 28px;
     left: 563px;
+} */
+
+
+.slrheader {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 85px;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-bottom: 1px solid #e2e2e2;
+    line-height: 85px;
+}
+.slrheader h2 {
+    font-size: 30px;
+    color: #1989f0;
+    line-height: 85px;
+    font-weight: bold;
+}
+.slrheader ul {
+  list-style: none;
+  margin-right: 20px;
+}
+.slrheader ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.slrheader ul li a {
+    text-decoration: none;
+    color: #636363;
+    font-size: 22px;
+}
+.slrbody {
+  height: 100%;
+  margin-top: 90px;
+}
+.slrsidebar {
+    height: 100%;
+    width: 250px;
+    left: 0;
+    position: fixed;
+    padding-left: 20px;
+    padding-top: 43px;
+    background: #fff;
+    margin-top: 9px;
+}
+.slrsidebar h3 {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.slrsidebar ul {
+    list-style: none;
+    padding-left:0px;
+}
+.slrsidebar ul li {
+    margin-top: 29px;
+}
+.slrsidebar ul li a {
+    text-decoration: none;
+    color: #6f6f6f;
+    transition: 0.3s;
+}
+.slrsidebar ul li a:hover {
+  color: #1989f0;
+  transition: 0.3s;
+}
+.productsheader {
+    width: 100%;
+    height: 104px;
+    background: #fff;
+    margin-top: 9px;
+    margin-bottom: 19px;
+    padding: 13px;
+}
+.productsheader h3 {
+    font-size: 21px;
+    margin-bottom: 17px;
+}
+.productsheader ul {
+  list-style: none;
+  padding-left: 0px;
+}
+.productsheader ul li {
+    display: inline-block;
+    margin-right: 35px;
+
+}
+.productsheader ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #616161;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #929292;
+    padding-left:5px;
+    padding-right:5px;
+    transition: 0.3s;
+}
+.productsheader ul li a:hover {
+  color: #1989f0;
+  border-bottom: 3px solid #1989f0;
+  transition: 0.3s;
+}
+
+
+.item-top {
+    border-bottom: 2px solid #c7c7c7;
+    padding-bottom: 5px;
+    margin-bottom: 17px;
+}
+.item-top h4 {
+  font-size: 16px;
+}
+.item-top h4 span {
+  color: #1989f0;
+}
+.orderdate {
+    font-size: 13px;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+.item-top button {
+    background: transparent;
+    border: 2px solid #1989f0;
+    height: 40px;
+    width: 130px;
+    border-radius: 8px;
+    color: #1989f0;
+    padding: 5px;
+}
+.productsitem {
+    width: 100%;
+    height: 239px;
+    padding: 11px;
+    background: #fff;
+    margin-bottom: 5px;
+}
+.productsitem img {
+    display: inline-block;
+    float: left;
+    height: 130px;
+    width: 130px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.productname {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.productprice {
+    font-size: 16px;
+}
+.productprice span{
+  color: #6c757d;
+}
+.productqty {
+    color: #6c757d;
+    font-size: 15px;
+}
+.productsitem ul{
+  list-style: none;
+  padding-left: 0;
+  float: right;
+  margin-top:10px;
+}
+.productsitem ul li{
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.productsitem ul li a{
+  text-decoration: none;
+  font-size: 18px;
+  color: #6c757d;
+  transition: 0.3s;
+}
+.productsitem ul li a:hover {
+  color: #1989f0;
+  transition: 0.3s;
 }
