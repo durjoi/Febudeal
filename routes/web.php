@@ -28,4 +28,6 @@ Route::prefix('saler')->group(function() {
   Route::get('/register', 'Auth\SalerRegisterController@showRegisterForm')->name('saler.register');
   Route::post('/register', 'Auth\SalerRegisterController@Store')->name('saler.register.submit');
   Route::get('/', 'SalerController@index')->name('saler.dashboard');
+  Route::get('/pending', 'SalerController@pending')->name('saler.pending');
+  Route::get('/products/upload', 'ProductsUploadController@showUploadForm')->name('products.upload');
 });

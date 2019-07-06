@@ -23,6 +23,10 @@ class SalerController extends Controller
      */
     public function index()
     {
-        return view('saler');
+        return view('salerLiveProducts');
+    }
+    public function pending()
+    {
+        return view('salerPendingProducts');
     }
 }

@@ -434,7 +434,7 @@ p.sidebar__slremail {
 }
 .slrsidebar {
     height: 100%;
-    width: 250px;
+    width: 233px;
     left: 0;
     position: fixed;
     padding-left: 20px;
@@ -499,7 +499,10 @@ p.sidebar__slremail {
   border-bottom: 3px solid #1989f0;
   transition: 0.3s;
 }
-
+.productsheader .active {
+  color: #1989f0;
+  border-bottom: 3px solid #1989f0;
+}
 
 .item-top {
     border-bottom: 2px solid #c7c7c7;
