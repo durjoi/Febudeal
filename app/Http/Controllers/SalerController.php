@@ -21,12 +21,12 @@ class SalerController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function Index()
     {
-        return view('salerLiveProducts');
+        return view('saler.salerLiveProducts');
     }
-    public function pending()
+    public function Pending()
     {
-        return view('salerPendingProducts');
+        return view('saler.salerPendingProducts');
     }
 }
