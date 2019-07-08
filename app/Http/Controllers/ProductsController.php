@@ -40,4 +40,9 @@ class ProductsController extends Controller
 
       return redirect()->route('saler.dashboard');
     }
+
+    public function index()
+    {
+      
+    }
 }

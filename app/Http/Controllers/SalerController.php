@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
 
 class SalerController extends Controller
 {
@@ -23,10 +24,12 @@ class SalerController extends Controller
      */
     public function Index()
     {
-        return view('saler.salerLiveProducts');
+        $products = Product::all();
+        return view('saler.salerLiveProducts')->with('products', $products);
     }
     public function Pending()
     {
-        return view('saler.salerPendingProducts');
+        $products = Product::all();
+        return view('saler.salerPendingProducts')->with('products', $products);
     }
 }
