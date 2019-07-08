@@ -20,15 +20,23 @@ class ProductsController extends Controller
         'quantity' => 'required|integer',
         'price' => 'required|integer',
       ]);
-      $product = new Product;
-      $product->products_name = $request->products_name;
-      $product->info = $request->info;
-      $product->quantity = $request->quantity;
-      $product->price = $request->price;
-      $product->catagory = $request->catagory;
-      $product->products_image = $request->image;
-      $product->action = "pending";
-      $product->save();
+
+      if($request -> hasFile('image')) {
+        $imagename=$request->image->getClientOriginalName();
+        $request->image->storeAs('public/products', $imagename);
+
+        $product = new Product;
+        $product->products_name = $request->products_name;
+        $product->info = $request->info;
+        $product->quantity = $request->quantity;
+        $product->price = $request->price;
+        $product->catagory = $request->catagory;
+        $product->products_image = $imagename;
+        $product->action = "pending";
+        $product->save();
+
+      }
+
 
       return redirect()->route('saler.dashboard');
     }

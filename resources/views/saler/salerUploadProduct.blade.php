@@ -23,19 +23,19 @@
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
 
-      <label for="price">Quantity: </label>
+      <label for="price">Price: </label>
       <input type="text" name="price" id="price" required>
       @error('price')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
 
       <label for="price">Img: </label>
-      <input type="text" name="image" id="image" required>
+      <input type="file" name="image" id="image" required>
       @error('image')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror
 
-      <label for="catagory">Img: </label>
+      <label for="catagory">Catagory: </label>
       <input type="text" name="catagory" id="catagory" required>
       @error('catagory')
         <div class="alert alert-danger">{{ $message }}</div>
