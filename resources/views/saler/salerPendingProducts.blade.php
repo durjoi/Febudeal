@@ -16,7 +16,6 @@
 
     @if (count($products)>1)
       @foreach ($products as $product)
-        @if ($product->action == 'pending')
           <div class="productsitem">
             <div class="item-top">
               <div class="row">
@@ -25,7 +24,9 @@
                   <p class="orderdate">{{ $product->updated_at }}</p>
                 </div>
                 <div class="col-md-6 text-right">
-                  <button type="button" name="button">Product Details</button>
+                  <a href="/saler/product/{{ $product->id }}">
+                    <button type="button" name="button">Product Details</button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -46,7 +47,6 @@
               </div>
             </div>
           </div>
-        @endif
       @endforeach
     @else
       <p>No Products Found</p>

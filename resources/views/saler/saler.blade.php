@@ -15,6 +15,7 @@
           </div>
           <div class="col-md-6 text-right">
             <ul>
+              <li> <a href="{{ route('product.upload') }}"><i class="fas fa-plus"></i></a> </li>
               <li> <a href="#"><i class="far fa-bell"></i></a> </li>
               <li> <a href="#"><i class="far fa-comment-dots"></i></a> </li>
               <li> <a href="#"><i class="fas fa-sign-out-alt"></i></a> </li>
