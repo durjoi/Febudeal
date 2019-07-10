@@ -36,7 +36,7 @@
       @enderror
 
       <label for="catagory">Catagory: </label>
-      <input type="text" name="catagory" id="catagory" required>
+      <input type="text" name="catagory" id="catagory" value="{{ $catagory }}" required>
       @error('catagory')
         <div class="alert alert-danger">{{ $message }}</div>
       @enderror

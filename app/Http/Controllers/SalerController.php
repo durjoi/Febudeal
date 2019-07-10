@@ -49,4 +49,9 @@ class SalerController extends Controller
       $product = Product::find($id);
       return view('saler.salerProduct')->with('product', $product);
     }
+
+    public function showCatagory()
+    {
+      return view('saler.salerProductCatagory');
+    }
 }

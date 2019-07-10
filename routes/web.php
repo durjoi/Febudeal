@@ -29,7 +29,8 @@ Route::prefix('saler')->group(function() {
   Route::post('/register', 'Auth\SalerRegisterController@Store')->name('saler.register.submit');
   Route::get('/', 'SalerController@Index')->name('saler.dashboard');
   Route::get('/pending', 'SalerController@Pending')->name('saler.pending');
-  Route::get('/upload/product', 'ProductsController@ShowUploadForm')->name('product.upload');
+  Route::get('/upload/product/{catagory}', 'ProductsController@ShowUploadForm')->name('product.upload');
   Route::post('/upload/product', 'ProductsController@Store')->name('product.upload.submit');
   Route::get('/product/{id}', 'SalerController@show')->name('product.show');
+  Route::get('/catagory', 'SalerController@showCatagory')->name('product.catagory');
 });

@@ -8,9 +8,9 @@ use App\Product;
 
 class ProductsController extends Controller
 {
-    public function showUploadForm()
+    public function showUploadForm($catagory)
     {
-      return view('saler.salerUploadProduct');
+      return view('saler.salerUploadProduct')->with('catagory', $catagory);
     }
 
     public function Store(request $request) {
@@ -43,6 +43,6 @@ class ProductsController extends Controller
 
     public function index()
     {
-      
+
     }
 }
