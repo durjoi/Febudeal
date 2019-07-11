@@ -11,7 +11,8 @@
   </head>
   <body>
     @include('layouts.nav')
-    
+    @include('layouts.catagoryNav')
+
     @yield('content')
 
 

@@ -12,137 +12,18 @@
       <div class="col-md-12">
         <div class="prdcts__slider" id="slider1">
 
-          <div class="prdcts__item text-center">
-            <div class="img__container">
-              <img src={{ asset('images/prdct1.jpg') }} alt="#">
+          @foreach ($products as $product)
+            <div class="prdcts__item text-center">
+              <div class="img__container">
+                <img src={{ url('storage/products/'.$product->products_image) }} alt="#">
+              </div>
+              <h4>{{ $product->products_name }}</h4>
+              <p class="item__price">{{ $product->price }} BDT</p>
             </div>
-            <h4>Products Header</h4>
-            <p class="item__price">25,000 BDT</p>
-            <p class="item__saler">Mehedi Hassan Durjoi</p>
-          </div>
-
-          <div class="prdcts__item text-center">
-            <div class="img__container">
-              <img src={{ asset('images/prdct1.jpg') }} alt="#">
-            </div>
-            <h4>Products Header</h4>
-            <p class="item__price">25,000 BDT</p>
-            <p class="item__saler">Mehedi Hassan Durjoi</p>
-          </div>
+          @endforeach
 
 
-          <div class="prdcts__item text-center">
-            <div class="img__container">
-              <img src={{ asset('images/prdct1.jpg') }} alt="#">
-            </div>
-            <h4>Products Header</h4>
-            <p class="item__price">25,000 BDT</p>
-            <p class="item__saler">Mehedi Hassan Durjoi</p>
-          </div>
 
-
-          <div class="prdcts__item text-center">
-            <div class="img__container">
-              <img src={{ asset('images/prdct1.jpg') }} alt="#">
-            </div>
-            <h4>Products Header</h4>
-            <p class="item__price">25,000 BDT</p>
-            <p class="item__saler">Mehedi Hassan Durjoi</p>
-          </div>
-
-
-          <div class="prdcts__item text-center">
-            <div class="img__container">
-              <img src={{ asset('images/prdct1.jpg') }} alt="#">
-            </div>
-            <h4>Products Header</h4>
-            <p class="item__price">25,000 BDT</p>
-            <p class="item__saler">Mehedi Hassan Durjoi</p>
-          </div>
-
-
-          <div class="prdcts__item text-center">
-            <div class="img__container">
-              <img src={{ asset('images/prdct1.jpg') }} alt="#">
-            </div>
-            <h4>Products Header</h4>
-            <p class="item__price">25,000 BDT</p>
-            <p class="item__saler">Mehedi Hassan Durjoi</p>
-          </div>
-
-
-          <div class="prdcts__item text-center">
-            <div class="img__container">
-              <img src={{ asset('images/prdct1.jpg') }} alt="#">
-            </div>
-            <h4>Products Header</h4>
-            <p class="item__price">25,000 BDT</p>
-            <p class="item__saler">Mehedi Hassan Durjoi</p>
-          </div>
-
-
-          <div class="prdcts__item text-center">
-            <div class="img__container">
-              <img src={{ asset('images/prdct1.jpg') }} alt="#">
-            </div>
-            <h4>Products Header</h4>
-            <p class="item__price">25,000 BDT</p>
-            <p class="item__saler">Mehedi Hassan Durjoi</p>
-          </div>
-
-          <div class="prdcts__item text-center">
-            <div class="img__container">
-              <img src={{ asset('images/prdct1.jpg') }} alt="#">
-            </div>
-            <h4>Products Header</h4>
-            <p class="item__price">25,000 BDT</p>
-            <p class="item__saler">Mehedi Hassan Durjoi</p>
-          </div>
-
-          <div class="prdcts__item text-center">
-            <div class="img__container">
-              <img src={{ asset('images/prdct1.jpg') }} alt="#">
-            </div>
-            <h4>Products Header</h4>
-            <p class="item__price">25,000 BDT</p>
-            <p class="item__saler">Mehedi Hassan Durjoi</p>
-          </div>
-
-          <div class="prdcts__item text-center">
-            <div class="img__container">
-              <img src={{ asset('images/prdct1.jpg') }} alt="#">
-            </div>
-            <h4>Products Header</h4>
-            <p class="item__price">25,000 BDT</p>
-            <p class="item__saler">Mehedi Hassan Durjoi</p>
-          </div>
-
-          <div class="prdcts__item text-center">
-            <div class="img__container">
-              <img src={{ asset('images/prdct1.jpg') }} alt="#">
-            </div>
-            <h4>Products Header</h4>
-            <p class="item__price">25,000 BDT</p>
-            <p class="item__saler">Mehedi Hassan Durjoi</p>
-          </div>
-
-          <div class="prdcts__item text-center">
-            <div class="img__container">
-              <img src={{ asset('images/prdct1.jpg') }} alt="#">
-            </div>
-            <h4>Products Header</h4>
-            <p class="item__price">25,000 BDT</p>
-            <p class="item__saler">Mehedi Hassan Durjoi</p>
-          </div>
-
-          <div class="prdcts__item text-center">
-            <div class="img__container">
-              <img src={{ asset('images/prdct1.jpg') }} alt="#">
-            </div>
-            <h4>Products Header</h4>
-            <p class="item__price">25,000 BDT</p>
-            <p class="item__saler">Mehedi Hassan Durjoi</p>
-          </div>
         </div>
         <button class="prdctbtn-left prdctslider-btn slider1-btn-left"><i class="fas fa-chevron-left"></i></button>
         <button class="prdctbtn-right prdctslider-btn slider1-btn-right"><i class="fas fa-chevron-right"></i></button>
