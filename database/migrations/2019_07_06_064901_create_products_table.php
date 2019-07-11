@@ -14,7 +14,10 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('saler_id');
             $table->string('products_name');
             $table->string('info');
             $table->string('quantity');
@@ -23,6 +26,10 @@ class CreateProductsTable extends Migration
             $table->string('catagory');
             $table->string('action');
             $table->timestamps();
+
+            $table->foreign('saler_id')->references('id')->on('salers');
+
+
         });
     }
 

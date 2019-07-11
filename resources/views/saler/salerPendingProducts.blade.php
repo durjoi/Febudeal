@@ -14,7 +14,7 @@
 
 
 
-    @if (count($products)>1)
+    {{-- @if (count($products)>1) --}}
       @foreach ($products as $product)
           <div class="productsitem">
             <div class="item-top">
@@ -48,10 +48,10 @@
             </div>
           </div>
       @endforeach
-    @else
-      <p>No Products Found</p>
+    {{-- @else --}}
+      {{-- <p>No Products Found</p>
 
-    @endif
+    @endif --}}
 
 
   </div>

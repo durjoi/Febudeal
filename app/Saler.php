@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\product;
 
 class Saler extends Authenticatable
 {
@@ -38,4 +39,8 @@ class Saler extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function products() {
+      return $this->hasMany('App\Product');
+    }
 }

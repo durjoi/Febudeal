@@ -15,10 +15,31 @@
           </div>
           <div class="col-md-6 text-right">
             <ul>
+              {{-- <li class="nav-item dropdown">
+                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                      {{ Auth::user()->name }} <span class="caret"></span>
+                  </a>
+
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ route('logout') }}"
+                         onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
+                          {{ __('Logout') }}
+                      </a>
+
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          @csrf
+                      </form>
+                  </div>
+              </li> --}}
               <li> <a href="{{ route('product.catagory') }}"><i class="fas fa-plus"></i></a> </li>
               <li> <a href="#"><i class="far fa-bell"></i></a> </li>
               <li> <a href="#"><i class="far fa-comment-dots"></i></a> </li>
-              <li> <a href="#"><i class="fas fa-sign-out-alt"></i></a> </li>
+              <li> <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i></a> </li>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
             </ul>
           </div>
         </div>
