@@ -44,4 +44,7 @@ Route::prefix('admin')->group(function() {
   Route::get('/catagory', 'AdminController@showCatagory')->name('admin.catagory');
   Route::get('/catagory/add', 'AdminController@addCatagory')->name('admin.catagory.add');
   Route::post('/catagory/add', 'AdminController@store')->name('admin.catagory.add');
+  Route::post('/catagory/delete/{id}', 'AdminController@delete')->name('admin.catagory.delete');
+  Route::get('/catagory/edit/{id}', 'AdminController@edit')->name('admin.catagory.edit');
+  Route::post('/catagory/edit/{id}', 'AdminController@upadate')->name('admin.catagory.update');
 });

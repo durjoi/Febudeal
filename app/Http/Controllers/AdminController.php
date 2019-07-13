@@ -31,16 +31,30 @@ class AdminController extends Controller
       $catagory->catagory = $request->catagory;
       $catagory->subcatagory = $request->subcatagory;
       $catagory->save();
-      // $request->validate([
-      //       'name' => 'required|string',
-      //       'email' => 'required|string',
-      //       'password' => 'required|string',
-      //     ]);
-      // $saler = new Saler;
-      // $saler->name = $request->name;
-      // $saler->email = $request->email;
-      // $saler->password = Hash::make($request->password);
-      // $saler->save();
+
+      return redirect()->route('admin.catagory');
+    }
+
+    public function delete($id) {
+        $catagory = Catagory::find($id);
+        $catagory->delete();
+        return redirect()->route('admin.catagory');
+    }
+
+    public function edit($id) {
+      $catagory = Catagory::find($id);
+      return view('admin.adminCatagoryEdit')->with('catagory', $catagory);
+    }
+
+    public function upadate(Request $request, $id) {
+      $request->validate([
+          'catagory'=>'required|string',
+          'subcatagory'=>'required|string',
+        ]);
+      $catagory = Catagory::find($id);
+      $catagory->catagory = $request->catagory;
+      $catagory->subcatagory = $request->subcatagory;
+      $catagory->save();
 
       return redirect()->route('admin.catagory');
     }
