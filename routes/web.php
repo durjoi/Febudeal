@@ -36,3 +36,7 @@ Route::prefix('saler')->group(function() {
 });
 
 Route::get('/{catagory}', 'PagesController@catagory')->name('catagory.page');
+
+Route::get('admin/dashboard', 'AdminController@showDashboard')->name('admin.dashboard');
+Route::get('admin/login', 'Auth\AdminLoginController@showLoginForm')->name('Admin.login');
+Route::post('admin/login', 'Auth\AdminLoginController@Login')->name('Admin.login.submit');

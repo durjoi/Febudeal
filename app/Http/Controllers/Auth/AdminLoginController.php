@@ -6,15 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
 
-class SalerLoginController extends Controller
+class AdminLoginController extends Controller
 {
     public function __construct()
     {
-      $this->middleware('guest:saler');
+      $this->middleware('guest:admin');
     }
-    public function showLoginForm()
-    {
-      return view('auth.saler-login');
+    public function showLoginForm() {
+      return view('auth.admin-login');
     }
     public function Login(Request $request)
     {
@@ -25,10 +24,10 @@ class SalerLoginController extends Controller
       ]);
 
       // attemt to log the user in
-      if(Auth::guard('saler')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember))
+      if(Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember))
       {
         // if successful, then redirect to their intended location
-        return redirect()->intended(route('saler.dashboard'));
+        return redirect()->intended(route('admin.dashboard'));
       }
       // if unsuccessful, then redirect back to the login with the form data
       return redirect()->back()->withInput($request->only('email', 'remember'));
