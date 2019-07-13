@@ -60,7 +60,7 @@
           </li>
           <li> <a href="#">Mobiles</a>
             <ul>
-              <li><a href="/saler/upload/product/{{ 'Mobile Phones' }}">Mobile Phones</a> </li>
+              <li><a href="/saler/upload/product/{{ 'Mobiles' }}">Mobile Phones</a> </li>
               <li><a href="/saler/upload/product/{{ 'Accessories' }}">Accessories</a> </li>
               <li><a href="/saler/upload/product/{{ 'Tablets' }}">Tablets</a> </li>
             </ul>

@@ -9,7 +9,7 @@ use App\Saler;
 
 class PagesController extends Controller
 {
-    public function index()
+    public function home()
     {
       // $products = DB::table('products')
       //   ->where('action', 'live')
@@ -26,4 +26,15 @@ class PagesController extends Controller
     {
       return view('pages.about');
     }
+
+    public function catagory($catagory)
+    {
+       $products = DB::table('products')
+        ->where('action', 'live')
+        ->where('catagory', $catagory)
+        //->join('salers', 'products.saler_id', '=', 'salers.id')
+        ->get();
+        return view('pages.CatagoryProductsPage')->with('products', $products);
+    }
+
 }

@@ -15,7 +15,7 @@
 //     return view('layouts.master');
 // });
 
-Route::get('/', 'PagesController@index')->name('index');
+Route::get('/', 'PagesController@home')->name('index');
 Route::get('/about', 'PagesController@about');
 
 Auth::routes();
@@ -34,3 +34,5 @@ Route::prefix('saler')->group(function() {
   Route::get('/product/{id}', 'SalerController@show')->name('product.show');
   Route::get('/catagory', 'SalerController@showCatagory')->name('product.catagory');
 });
+
+Route::get('/{catagory}', 'PagesController@catagory')->name('catagory.page');
