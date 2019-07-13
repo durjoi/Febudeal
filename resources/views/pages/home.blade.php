@@ -75,7 +75,30 @@
         <div class="col-md-12">
           <div class="prdcts__slider">
 
-            <div class="prdcts__item text-center">
+            {{-- <div class="prdcts__item text-center">
+              <div class="img__container">
+                <img src={{ asset('images/prdct1.jpg') }} alt="#">
+              </div>
+              <h4>Products Header</h4>
+              <p class="item__price">25,000 BDT</p>
+              <p class="item__saler">Mehedi Hassan Durjoi</p>
+            </div> --}}
+
+            @foreach ($products as $product)
+              @php $index = 0; @endphp
+              @if ($product->catagory=='Mobiles' AND $index <= 8)
+                <div class="prdcts__item text-center">
+                  <div class="img__container">
+                    <img src={{ url('storage/products/'.$product->products_image) }} alt="#">
+                  </div>
+                  <h4>{{ $product->products_name }}</h4>
+                  <p class="item__price">{{ $product->price }} BDT</p>
+                </div>
+                @php $index++; @endphp
+              @endif
+            @endforeach
+
+            {{-- <div class="prdcts__item text-center">
               <div class="img__container">
                 <img src={{ asset('images/prdct1.jpg') }} alt="#">
               </div>
@@ -127,16 +150,7 @@
               <h4>Products Header</h4>
               <p class="item__price">25,000 BDT</p>
               <p class="item__saler">Mehedi Hassan Durjoi</p>
-            </div>
-
-            <div class="prdcts__item text-center">
-              <div class="img__container">
-                <img src={{ asset('images/prdct1.jpg') }} alt="#">
-              </div>
-              <h4>Products Header</h4>
-              <p class="item__price">25,000 BDT</p>
-              <p class="item__saler">Mehedi Hassan Durjoi</p>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>
