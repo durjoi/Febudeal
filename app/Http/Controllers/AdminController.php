@@ -29,6 +29,27 @@ class AdminController extends Controller
     public function addCatagory() {
       return view('admin.adminAddCatagory');
     }
+    public function addSubcatagory($id) {
+      return view('admin.adminAddSubcatagory')->with('id', $id);
+    }
+
+    public function storeSubcatagory(Request $request, $id) {
+      // $request->validate([
+      //     'subcatagories'=>'required|string',
+      //     'catagories_id'=>'required|string',
+      //   ]);
+      $subcatagory = new Subcatagory;
+      $subcatagory->subcatagories = $request->subcatagory;
+      $subcatagory->catagories_id = $id;
+
+      $subcatagory->save();
+
+      // $catagory = Catagory::find($id);
+      // $catagory->subcatagories()->create(['catagories'=> $request->subcatagories]);
+
+      return redirect()->route('admin.catagory');
+    }
+
     public function storeCatagory(Request $request) {
 
       $request->validate([
@@ -41,28 +62,30 @@ class AdminController extends Controller
       return redirect()->route('admin.catagory');
     }
 
-    public function delete($id) {
+    public function deleteCatagory($id) {
         $catagory = Catagory::find($id);
         $catagory->delete();
         return redirect()->route('admin.catagory');
     }
 
-    public function edit($id) {
+    public function editCatagory($id) {
       $catagory = Catagory::find($id);
       return view('admin.adminCatagoryEdit')->with('catagory', $catagory);
     }
 
-    public function upadate(Request $request, $id) {
+    public function upadateCatagory(Request $request, $id) {
       $request->validate([
           'catagory'=>'required|string',
-          'subcatagory'=>'required|string',
         ]);
       $catagory = Catagory::find($id);
       $catagory->catagory = $request->catagory;
-      $catagory->subcatagory = $request->subcatagory;
-      $catagory->sub_subcatagory = $request->sub_subcatagory;
       $catagory->save();
 
       return redirect()->route('admin.catagory');
+    }
+
+    public function showCatagoryForSubcatagory() {
+      $catagories = Catagory::all();
+      return view('admin.adminAddSubcatagoryCatagory')->with('catagories', $catagories);
     }
 }
