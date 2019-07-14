@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Catagory;
+use App\Subcatagory;
+use App\Sub2catagory;
 
 class AdminController extends Controller
 {
@@ -16,20 +18,24 @@ class AdminController extends Controller
     }
     public function showCatagory() {
       $catagories = Catagory::all();
-      return view('admin.adminCatagory')->with('catagories', $catagories);
+      $subcatagories = Subcatagory::all();
+      $sub2catagories = Sub2catagory::all();
+
+      return view('admin.adminCatagory')
+        ->with('catagories', $catagories)
+        ->with('subcatagories', $subcatagories)
+        ->with('sub2catagories', $sub2catagories);
     }
     public function addCatagory() {
       return view('admin.adminAddCatagory');
     }
-    public function store(Request $request) {
+    public function storeCatagory(Request $request) {
 
       $request->validate([
           'catagory'=>'required|string',
-          'subcatagory'=>'required|string',
         ]);
       $catagory = new Catagory;
       $catagory->catagory = $request->catagory;
-      $catagory->subcatagory = $request->subcatagory;
       $catagory->save();
 
       return redirect()->route('admin.catagory');
@@ -54,6 +60,7 @@ class AdminController extends Controller
       $catagory = Catagory::find($id);
       $catagory->catagory = $request->catagory;
       $catagory->subcatagory = $request->subcatagory;
+      $catagory->sub_subcatagory = $request->sub_subcatagory;
       $catagory->save();
 
       return redirect()->route('admin.catagory');

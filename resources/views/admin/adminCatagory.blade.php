@@ -1,24 +1,35 @@
 @extends('admin.admin')
 
 @section('content')
-  <a href="{{ route('admin.catagory.add') }}">Add New Catagory</a>
-  <table>
-    <tr>
-      <th>Catagory Name</th>
-      <th>Subcatagory</th>
-      <th>Action</th>
-    </tr>
-    @foreach ($catagories as $catagory)
-      <tr>
-        <td>{{ $catagory->catagory }}</td>
-        <td>{{ $catagory->subcatagory }}</td>
-        <td>
-          <form class="inline-form" action="{{ route('admin.catagory.delete', $catagory->id) }}" method="post">
-          {{ csrf_field() }}
-          <input type="submit" value="Delete" class="">
-        </form>
-        <a href="/admin/catagory/edit/{{ $catagory->id }}"><button type="button" name="button"> edit</button></a> </td>
-      </tr>
-    @endforeach
-  </table>
+  <a href="{{ route('admin.catagory.add') }}">Add Catagory</a>
+  <a href="#">Add Sub Catagory</a>
+  <a href="#">Add Sub Sub Catagory</a>
+  <ul>
+    @if (count($catagories)>0)
+      @foreach ($catagories as $catagory)
+        <li>{{ $catagory->catagory}}
+          <ul>
+              @if (count($subcatagories)>0)
+                @foreach ($subcatagories as $subcatagory)
+                  @if ($subcatagory->catagories_id == $catagory->id)
+                    <li>
+                        {{ $subcatagory->subcatagories }}
+                        <ul>
+                          @if(count($sub2catagories)>0)
+                            @foreach ($sub2catagories as $sub2catagory)
+                              @if ($sub2catagory->subcatagories_id == $subcatagory->id)
+                                <li>{{ $sub2catagory->subcatagories2 }}</li>
+                              @endif
+                            @endforeach
+                          @endif
+                        </ul>
+                      </li>
+                  @endif
+                @endforeach
+              @endif
+          </ul>
+        </li>
+      @endforeach
+    @endif
+  </ul>
 @endsection
