@@ -88,4 +88,27 @@ class AdminController extends Controller
       $catagories = Catagory::all();
       return view('admin.adminAddSubcatagoryCatagory')->with('catagories', $catagories);
     }
+
+
+    public function showSubcatagoryForSub2catagory() {
+      $subcatagories = Subcatagory::all();
+      return view('admin.adminAddSub2catagorySubcatagory')->with('subcatagories', $subcatagories);
+    }
+
+    public function addSub2catagory($id) {
+      return view('admin.adminAddSub2catagory')->with('id', $id);
+    }
+    public function storeSub2catagory(Request $request, $id) {
+      // $request->validate([
+      //     'subcatagories'=>'required|string',
+      //     'catagories_id'=>'required|string',
+      //   ]);
+      $sub2catagory = new Sub2catagory;
+      $sub2catagory->subcatagories2 = $request->sub2catagory;
+      $sub2catagory->subcatagories_id = $id;
+
+      $sub2catagory->save();
+
+      return redirect()->route('admin.catagory');
+    }
 }

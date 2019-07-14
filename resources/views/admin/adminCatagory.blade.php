@@ -3,7 +3,7 @@
 @section('content')
   <a href="{{ route('admin.catagory.add') }}">Add Catagory</a>
   <a href="{{ route('admin.subcatagory.add.catagory') }}">Add Sub Catagory</a>
-  <a href="#">Add Sub Sub Catagory</a>
+  <a href="{{ route('admin.sub2catagory.add.subcatagory') }}">Add Sub Sub Catagory</a>
   <ul>
     @if (count($catagories)>0)
       @foreach ($catagories as $catagory)

@@ -43,11 +43,20 @@ Route::prefix('admin')->group(function() {
   Route::post('/login', 'Auth\AdminLoginController@Login')->name('admin.login.submit');
   Route::get('/catagory', 'AdminController@showCatagory')->name('admin.catagory');
   Route::get('/catagory/add/catagory', 'AdminController@addCatagory')->name('admin.catagory.add');
-  Route::get('/catagory/add/subcatagory/catagory/add/{id}', 'AdminController@addSubcatagory')->name('admin.subcatagory.add');
-  Route::post('/catagory/add/subcatagory/catagory/add/{id}', 'AdminController@storeSubcatagory')->name('admin.subcatagory.add');
+  
   Route::post('/catagory/add/catagory', 'AdminController@storeCatagory')->name('admin.catagory.add');
   Route::post('/catagory/delete/{id}', 'AdminController@deleteCatagory')->name('admin.catagory.delete');
   Route::get('/catagory/edit/{id}', 'AdminController@editCatagory')->name('admin.catagory.edit');
   Route::post('/catagory/edit/{id}', 'AdminController@upadateCatagory')->name('admin.catagory.update');
+
+  //Sub Catagories All Routes
+  Route::get('/catagory/add/subcatagory/catagory/add/{id}', 'AdminController@addSubcatagory')->name('admin.subcatagory.add');
+  Route::post('/catagory/add/subcatagory/catagory/add/{id}', 'AdminController@storeSubcatagory')->name('admin.subcatagory.add');
   Route::get('/catagory/add/subcatagory/catagory', 'AdminController@showCatagoryForSubcatagory')->name('admin.subcatagory.add.catagory');
+  //Sub2Catagories All Routes
+  Route::get('/catagory/add/sub2catagory/subcatagory/add/{id}', 'AdminController@addSub2catagory')->name('admin.sub2catagory.add');
+  Route::post('/catagory/add/sub2catagory/subcatagory/add/{id}', 'AdminController@storeSub2catagory')->name('admin.sub2catagory.add');
+  Route::get('/catagory/add/sub2catagory/subcatagory', 'AdminController@showSubcatagoryForSub2catagory')->name('admin.sub2catagory.add.subcatagory');
+
+
 });
