@@ -579,3 +579,68 @@ p.sidebar__slremail {
   color: #1989f0;
   transition: 0.3s;
 }
+
+/*====================================Catagory Navbar CSS=============================*/
+.catagorynav {
+  background: #fff;
+  position: relative;
+  z-index: 10000000;
+
+}
+ul.catagorynav__mainlist {
+  list-style: none;
+  height: 100%;
+  margin: 0px;
+  line-height: 40px;
+  text-align: center;
+}
+li.catagorynav__mainlist__item {
+    display: inline-block;
+    margin-right: 135px;
+}
+li.catagorynav__mainlist__item a {
+    text-decoration: none;
+    color: #909090;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/*Catagory Dropdown*/
+.catagory__dropdown {
+    width: 90%;
+    /* height: 400px; */
+    position:absolute;
+    top: 39px;
+    left: 0px;
+    background: #fff;
+    z-index: 0;
+    color: #000;
+    display: none;
+    margin: 0 5%;
+    /* border: 1px solid #000; */
+    padding: 20px 0;
+}
+li.catagorynav__mainlist__item:hover .catagory__dropdown {
+    display: block;
+}
+ul.catagorynav__sublist {
+  list-style: none;
+  text-align: left;
+}
+li.sublist__item {
+    line-height: 29px;
+}
+li.sublist__item a {
+    font-size: 14px;
+    color: #353535;
+}
+ul.sublist__sublist {
+  list-style: none;
+  text-align: left;
+  padding: 0px;
+}
+
+li.sublist__sublist__item a {
+    font-size: 13px;
+    color: #6f6f6f;
+}

@@ -12,7 +12,7 @@
       </ul>
     </div>
 
-    @if (count($products)>1)
+    @if (count($products)>0)
       @foreach ($products as $product)
           <div class="productsitem">
             <div class="item-top">
