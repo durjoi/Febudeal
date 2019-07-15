@@ -19,7 +19,7 @@ class CreateSub2catagoriesTable extends Migration
           $table->unsignedBigInteger('subcatagories_id');
           $table->timestamps();
 
-          $table->foreign('subcatagories_id')->references('id')->on('subcatagories');
+          $table->foreign('subcatagories_id')->references('id')->on('subcatagories')->onDelete('cascade');
         });
     }
 

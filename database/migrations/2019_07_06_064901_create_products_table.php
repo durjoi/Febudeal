@@ -27,7 +27,7 @@ class CreateProductsTable extends Migration
             $table->string('action');
             $table->timestamps();
 
-            $table->foreign('saler_id')->references('id')->on('salers');
+            $table->foreign('saler_id')->references('id')->on('salers')->onDelete('cascade');
 
 
         });

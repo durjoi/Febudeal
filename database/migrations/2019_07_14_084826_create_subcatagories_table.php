@@ -19,7 +19,7 @@ class CreateSubcatagoriesTable extends Migration
             $table->unsignedBigInteger('catagories_id');
             $table->timestamps();
 
-            $table->foreign('catagories_id')->references('id')->on('catagories');
+            $table->foreign('catagories_id')->references('id')->on('catagories')->onDelete('cascade');
         });
     }
 
