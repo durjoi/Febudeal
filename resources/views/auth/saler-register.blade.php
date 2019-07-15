@@ -1,5 +1,3 @@
-@extends('layouts.master')
-@section('content')
 <div class="row mb-3">
   <div class="col-12 text-center">
     <h2>Saler Register</h2>
@@ -53,5 +51,3 @@
     </form>
   </div>
 </div>
-
-@endsection

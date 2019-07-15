@@ -20,13 +20,13 @@ class SalerRegisterController extends Controller
 
   public function store(Request $request)
   {
-    $request->validate([
-          'name' => 'required|string',
-          'email' => 'required|string',
-          'password' => 'required|string',
-        ]);
+        // $request->validate([
+        //   'username' => 'required|string',
+        //   'email' => 'required|string',
+        //   'password' => 'required|string',
+        // ]);
         $saler = new Saler;
-        $saler->name = $request->name;
+        $saler->username = $request->name;
         $saler->email = $request->email;
         $saler->password = Hash::make($request->password);
         $saler->save();
