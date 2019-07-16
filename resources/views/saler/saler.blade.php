@@ -32,7 +32,7 @@
                       </form>
                   </div>
               </li> --}}
-              <li><a href="#">{{ Auth::user()->name }}</a>
+              <li><a href="#">{{ Auth::user()->username }}</a>
               <li> <a href="{{ route('product.catagory') }}"><i class="fas fa-plus"></i></a> </li>
               <li> <a href="#"><i class="far fa-bell"></i></a> </li>
               <li> <a href="#"><i class="far fa-comment-dots"></i></a> </li>
