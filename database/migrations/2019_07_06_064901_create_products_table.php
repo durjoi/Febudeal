@@ -14,20 +14,26 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
 
             $table->bigIncrements('id');
             $table->unsignedBigInteger('saler_id');
-            $table->string('products_name');
-            $table->string('info');
-            $table->string('quantity');
+            $table->unsignedBigInteger('sub2catagories_id');
+            $table->string('title');
+            $table->longText('description');
+            $table->integer('quantity');
             $table->integer('price');
-            $table->string('products_image');
-            $table->string('catagory');
+            $table->string('image1');
+            $table->string('image2');
+            $table->string('image3');
+            $table->string('image4');
+            $table->integer('sizenumber')->nullable();
+            $table->string('sizesymbol')->nullable();
+            $table->string('color')->nullable();
             $table->string('action');
             $table->timestamps();
 
             $table->foreign('saler_id')->references('id')->on('salers')->onDelete('cascade');
+            $table->foreign('sub2catagories_id')->references('id')->on('sub2catagories')->onDelete('cascade');
 
 
         });

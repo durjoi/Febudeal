@@ -14,7 +14,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
-          <a href="{{ route('saler.dashboard') }}"><i class="fas fa-arrow-left"></i></a>
+          <a href="{{ route('product.subcatagory', $catagory[0]->id) }}"><i class="fas fa-arrow-left"></i></a>
           <h1>Febudeal</h1>
         </div>
       </div>
@@ -28,10 +28,11 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h2>Select Catagory <i class="fas fa-arrow-right"></i></h2>
+            <h2>Select Sub Catagory <i class="fas fa-arrow-right"></i></h2>
+            <p class="catagory_path">{{ $catagory[0]->catagory }} > {{ $subcatagory->subcatagories }}</p>
             <ul>
-              @foreach ($catagories as $catagory)
-                <li><a href="{{ route('product.subcatagory', $catagory->id) }}">{{ $catagory->catagory }}</a> </li>
+              @foreach ($sub2catagories as $sub2catagory)
+                <li><a href="{{ route('product.upload.form', $sub2catagory->id) }}">{{ $sub2catagory->subcatagories2 }}</a> </li>
               @endforeach
             </ul>
           </div>

@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Product;
 use DB;
 use App\Saler;
+use App\Catagory;
+use App\Subcatagory;
+use App\Sub2catagory;
 
 class SalerController extends Controller
 {
@@ -74,6 +77,33 @@ class SalerController extends Controller
 
     public function showCatagory()
     {
-      return view('saler.salerProductCatagory');
+      $catagories = Catagory::all();
+      return view('saler.salerProductCatagory')->with('catagories', $catagories);
     }
+    public function showSubcatagory($id) {
+      $catagory = Catagory::find($id);
+      $subcatagories = DB::table('subcatagories')
+        ->where('catagories_id', $id)
+        ->get();
+        return view('saler.salerProductSubcatagory')
+          ->with('subcatagories', $subcatagories)
+          ->with('catagory', $catagory);
+    }
+    public function showSub2catagory($id) {
+        $subcatagory = Subcatagory::find($id);
+
+        $catagory = DB::table('catagories')
+          ->where('id', $subcatagory->catagories_id)
+          ->get();
+
+        $sub2catagories = DB::table('sub2catagories')
+          ->where('subcatagories_id', $id)
+          ->get();
+
+        return view('saler.salerProductSub2catagory')
+          ->with('catagory', $catagory)
+          ->with('sub2catagories', $sub2catagories)
+          ->with('subcatagory', $subcatagory);
+    }
+    
 }

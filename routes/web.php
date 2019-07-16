@@ -26,12 +26,21 @@ Route::prefix('saler')->group(function() {
   Route::post('/login', 'Auth\SalerLoginController@Login')->name('saler.login.submit');
   Route::get('/register', 'Auth\SalerRegisterController@showRegisterForm')->name('saler.register');
   Route::post('/register', 'Auth\SalerRegisterController@Store')->name('saler.register.submit');
+
+
   Route::get('/', 'SalerController@Index')->name('saler.dashboard');
   Route::get('/pending', 'SalerController@Pending')->name('saler.pending');
-  Route::get('/upload/product/{catagory}', 'ProductsController@ShowUploadForm')->name('product.upload');
-  Route::post('/upload/product', 'ProductsController@Store')->name('product.upload.submit');
+
+
+  // Route::get('/upload/product/{catagory}', 'ProductsController@ShowUploadForm')->name('product.upload');
+  // Route::post('/upload/product', 'ProductsController@Store')->name('product.upload.submit');
   Route::get('/product/{id}', 'SalerController@show')->name('product.show');
+
   Route::get('/catagory', 'SalerController@showCatagory')->name('product.catagory');
+  Route::get('/catagory/add/subcatagory/{id}', 'SalerController@showSubcatagory')->name('product.subcatagory');
+  Route::get('/catagory/subcatagory/add/sub2catagory/{id}', 'SalerController@showSub2catagory')->name('product.sub2catagory');
+  Route::get('/catagory/subcatagory/sub2catagory/product/{id}', 'ProductsController@showProductUploadForm')->name('product.upload.form');
+  Route::post('/catagory/subcatagory/sub2catagory/product/{id}', 'ProductsController@StoreProduct')->name('product.upload.product');
 });
 
 Route::get('/{catagory}', 'PagesController@catagory')->name('catagory.page');

@@ -596,7 +596,7 @@ ul.catagorynav__mainlist {
 }
 li.catagorynav__mainlist__item {
     display: inline-block;
-    margin-right: 135px;
+    margin-right: 89px;
 }
 li.catagorynav__mainlist__item a {
     text-decoration: none;
@@ -643,4 +643,112 @@ ul.sublist__sublist {
 li.sublist__sublist__item a {
     font-size: 13px;
     color: #6f6f6f;
+}
+
+/*=======Product Upload Catagory CSS==========*/
+.product__up__wrapper {
+    width: 600px;
+    height: 600px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    padding: 10px;
+}
+.product__up__wrapper h2 {
+  font-size: 20px;
+  font-weight: bold;
+
+}
+.product__up__wrapper i {
+    font-size: 15px;
+}
+.product__up__wrapper ul {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0px;
+}
+.product__up__wrapper ul li {
+    padding: 10px;
+    border: 1px solid #d0d0d0;
+}
+.product__up__wrapper ul li a {
+    color: #4e4e4e;
+    font-size: 16px;
+    text-decoration: none;
+}
+.product__up__nav {
+  height:50px;
+
+  background: #fff;
+  margin-bottom:20px;
+  padding-left: 10px;
+}
+.product__up__nav h1 {
+  line-height: 50px;
+  font-size: 24px;
+  color: #1989f0;
+  display: inline-block;
+}
+.product__up__nav i {
+    margin-right: 12px;
+    font-size: 23px;
+    color: #656565;
+}
+.wrapper__header {
+    height: 60px;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #c3c3c3;
+    margin-bottom: 20px;
+}
+.wrapper__header h2 {
+  font-weight: bold;
+  font-size: 24px;
+}
+.catagory__wrapper p {
+    font-size: 17px;
+    color: #1989f0;
+}
+
+/*================ Product Upload Form ================*/
+.product__up__form {
+    height: 1004px;
+    width: 600px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 60px;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+.selected_catagory h2 {
+  font-size: 20px;
+}
+.selected_catagory p {
+  font-size: 17px;
+  color: #1989f0;
+}
+.selected_catagory {
+    border-bottom: 1px solid #e2e2e2;
+}
+.form__body {
+  padding-left: 15px;
+}
+.form__body textarea {
+  height:60px;
+}
+.form__body h2 {
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 20px;
 }
