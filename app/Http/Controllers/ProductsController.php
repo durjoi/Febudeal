@@ -76,7 +76,10 @@ class ProductsController extends Controller
 
     public function StoreProduct(request $request, $id) {
       $saler = \Auth::user();
-      // dd ($request->size);
+
+      $sub2catagory = Sub2catagory::find($id);
+      $subcatagory = Subcatagory::find($sub2catagory->subcatagories_id);
+      $catagory = Catagory::find($subcatagory->catagories_id);
 
       $image1 = $request->file('image1');
       $image1name=$image1->getClientOriginalName();
@@ -101,7 +104,9 @@ class ProductsController extends Controller
       $product->quantity = $request->quantity;
       $product->price = $request->price;
       $product->sub2catagories_id = $id;
-      $product->sizesymbol=implode(",",$request->size);
+      $product->subcatagories_id = $subcatagory->id;
+      $product->catagories_id = $catagory->id;
+      // $product->sizesymbol=implode(",",$request->size);
       $product->image1 = $image1name;
       $product->image2 = $image2name;
       $product->image3 = $image3name;

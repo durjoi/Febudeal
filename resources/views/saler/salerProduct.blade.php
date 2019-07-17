@@ -13,7 +13,7 @@
     </div>
 
       <div class="">
-        <h1>{{ $product -> products_name }}</h1>
+        <h1>{{ $product->title }}</h1>
       </div>
 
 

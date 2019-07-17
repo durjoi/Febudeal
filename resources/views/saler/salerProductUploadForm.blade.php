@@ -65,11 +65,11 @@
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
-        <input type="checkbox" name="size[]" value="S">S
+        {{-- <input type="checkbox" name="size[]" value="S">S
         <input type="checkbox" name="size[]" value="M">M
         <input type="checkbox" name="size[]" value="L">L
         <input type="checkbox" name="size[]" value="XL">XL
-        <input type="checkbox" name="size[]" value="XXL">XXL
+        <input type="checkbox" name="size[]" value="XXL">XXL --}}
 
 
 

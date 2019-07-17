@@ -555,7 +555,7 @@ p.sidebar__slremail {
 .productprice span{
   color: #6c757d;
 }
-.productqty {
+.productqty, .productcatagory {
     color: #6c757d;
     font-size: 15px;
 }

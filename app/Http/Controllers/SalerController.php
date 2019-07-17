@@ -58,7 +58,14 @@ class SalerController extends Controller
           ->where('saler_id', auth()->user()->id)
           ->where('action', 'pending')
           ->get();
-        return view('saler.salerPendingProducts')->with('products', $products);
+        $sub2catagories = Sub2catagory::all();
+        $subcatagories = Subcatagory::all();
+        $catagories = Catagory::all();
+        return view('saler.salerPendingProducts')
+          ->with('products', $products)
+          ->with('sub2catagories', $sub2catagories)
+          ->with('subcatagories', $subcatagories)
+          ->with('catagories', $catagories);
 
 
          // $saler_id = auth()->user()->id;
@@ -105,5 +112,5 @@ class SalerController extends Controller
           ->with('sub2catagories', $sub2catagories)
           ->with('subcatagory', $subcatagory);
     }
-    
+
 }
