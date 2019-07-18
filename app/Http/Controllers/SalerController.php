@@ -79,7 +79,15 @@ class SalerController extends Controller
     public function show($id)
     {
       $product = Product::find($id);
-      return view('saler.salerProduct')->with('product', $product);
+      $catagory = Catagory::find($product->catagories_id);
+      $subcatagory = Subcatagory::find($product->subcatagories_id);
+      $sub2catagory = Sub2catagory::find($product->sub2catagories_id);
+      return view('saler.salerProduct')
+        ->with('product', $product)
+        ->with('catagory', $catagory)
+        ->with('subcatagory', $subcatagory)
+        ->with('sub2catagory', $sub2catagory);
+
     }
 
     public function showCatagory()

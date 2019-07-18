@@ -20,7 +20,7 @@ $(document).ready(function(){
 
   $('#slider1').slick({
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 300,
     slidesToShow: 7,
     slidesToScroll: 1,
@@ -106,5 +106,57 @@ $(document).ready(function(){
   $('.slider2-btn-right').click(function(){
     $('#slider2').slick('slickNext');
   });
+
+  // $('.product__image__slider').slick({
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   arrows: false,
+  //   fade: true,
+  //   asNavFor: '.slider-nav'
+  // });
+  // $('.slider-nav').slick({
+  //   slidesToShow: 3,
+  //   slidesToScroll: 1,
+  //   asNavFor: '.product__image__slider',
+  //   dots: true,
+  //   centerMode: true,
+  //   focusOnSelect: true
+  // });
+
+  $('.slider-main').slick({
+  slidesToShow: 1,
+  arrows: false,
+  asNavFor: '.slider-nav',
+  vertical: false,
+  autoplay: false,
+  infinite: false,
+  verticalSwiping: false,
+  centerMode: true
+});
+
+$('.slider-nav').slick({
+  slidesToShow: 4,
+  asNavFor: '.slider-main',
+  vertical: true,
+  focusOnSelect: true,
+  autoplay: false,
+  centerMode: false
+});
+
+$(window).on('resize orientationchange', function() {
+  if ($(window).width() > 1200) {
+    $('.slider-nav').slick('unslick');
+    $('.slider-nav').slick({
+      slidesToShow: 4,
+      asNavFor: '.slider-main',
+      vertical: true,
+      focusOnSelect: true,
+      autoplay: false,
+      centerMode: false
+    });
+  }
+});
+
+
 
 });

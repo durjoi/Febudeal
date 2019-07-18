@@ -1,22 +1,52 @@
 @extends('saler.saler')
 
 @section('products')
-  <div class="col-md-10">
-    <div class="productsheader">
-      <h3>Products</h3>
-      <ul>
-        <li> <a href="{{ route('saler.dashboard') }}" class="active">Live</a> </li>
-        <li> <a href="{{ route('saler.pending') }}">Pending</a> </li>
-        <li> <a href="">Hold</a> </li>
-
-      </ul>
+  <div class="col-md-6 d-flex">
+    <div class="nav-container">
+      <div class="slider-nav">
+        <div>
+          <img src="{{ url('storage/products/'.$product->image1) }}" alt="">
+        </div>
+        <div>
+          <img src="{{ url('storage/products/'.$product->image2) }}" alt="">
+        </div>
+        <div>
+          <img src="{{ url('storage/products/'.$product->image3) }}" alt="">
+        </div>
+        <div>
+          <img src="{{ url('storage/products/'.$product->image4) }}" alt="">
+        </div>
+      </div>
     </div>
-
-      <div class="">
-        <h1>{{ $product->title }}</h1>
+      <div class="main-container">
+        <div class="slider-main">
+          <div>
+            <img src="{{ url('storage/products/'.$product->image1) }}" alt="">
+          </div>
+          <div>
+            <img src="{{ url('storage/products/'.$product->image2) }}" alt="">
+          </div>
+          <div>
+            <img src="{{ url('storage/products/'.$product->image3) }}" alt="">
+          </div>
+          <div>
+            <img src="{{ url('storage/products/'.$product->image4) }}" alt="">
+          </div>
+        </div>
       </div>
 
 
 
+
+  </div>
+  <div class="col-md-4">
+    <div class="product__information">
+      <p>{{ $catagory->catagory }}>{{ $subcatagory->subcatagories }}>{{ $sub2catagory->subcatagories2 }}</p>
+      <h2>{{ $product->title }}</h2>
+      <p>Price: {{ $product->price }} BDT</p>
+      <p>Quantity: {{ $product->quantity }}</p>
+      <h2>Description:</h2>
+      <p>{{ $product->description }}</p>
+    </div>
   </div>
 @endsection

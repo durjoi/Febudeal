@@ -752,3 +752,45 @@ li.sublist__sublist__item a {
     margin-top: 10px;
     margin-bottom: 20px;
 }
+
+.main-container {
+  width: 100%;
+  background: #fff;
+  height: 600px;
+  margin-top:10px;
+  overflow: hidden;
+}
+.nav-container {
+  height: 600px;
+  width: 100px;
+  margin-top: 10px;
+  margin-right:10px;
+  display: flex;
+}
+.slider-main {
+  height: 100%;
+  width: 100%;
+}
+.slider-main img {
+  height:600px;
+  width: 100%;
+}
+.slider-nav img {
+  height: 100px;
+  width:100px;
+  margin-bottom: 5px;
+  margin-top:5px;
+}
+.slick-list {
+  padding: 0px 0 !important;
+}
+
+
+.product__information {
+  background: #fff;
+  margin-top:10px;
+  padding: 15px;
+  /* margin-left: 20px; */
+  /* width: 400px; */
+  height:600px;
+}
