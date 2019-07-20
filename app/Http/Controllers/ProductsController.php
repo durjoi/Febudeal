@@ -89,6 +89,6 @@ class ProductsController extends Controller
       $product = Product::find($id);
       $product->delete();
 
-      return view('saler.dashboard');
+      return redirect()->route('saler.dashboard');
     }
 }
