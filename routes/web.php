@@ -32,8 +32,6 @@ Route::prefix('saler')->group(function() {
   Route::get('/pending', 'SalerController@Pending')->name('saler.pending');
 
 
-  // Route::get('/upload/product/{catagory}', 'ProductsController@ShowUploadForm')->name('product.upload');
-  // Route::post('/upload/product', 'ProductsController@Store')->name('product.upload.submit');
   Route::get('/product/{id}', 'SalerController@show')->name('product.show');
 
   Route::get('/catagory', 'SalerController@showCatagory')->name('product.catagory');
@@ -41,6 +39,7 @@ Route::prefix('saler')->group(function() {
   Route::get('/catagory/subcatagory/add/sub2catagory/{id}', 'SalerController@showSub2catagory')->name('product.sub2catagory');
   Route::get('/catagory/subcatagory/sub2catagory/product/{id}', 'ProductsController@showProductUploadForm')->name('product.upload.form');
   Route::post('/catagory/subcatagory/sub2catagory/product/{id}', 'ProductsController@StoreProduct')->name('product.upload.product');
+  Route::post('/catagory/product/delete/{id}', 'ProductsController@DeleteProduct')->name('product.delete');
 });
 
 Route::get('/{catagory}', 'PagesController@catagory')->name('catagory.page');

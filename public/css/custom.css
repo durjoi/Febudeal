@@ -409,6 +409,9 @@ p.sidebar__slremail {
     border-bottom: 1px solid #e2e2e2;
     line-height: 85px;
 }
+.slrheader a {
+  text-decoration: none;
+}
 .slrheader h2 {
     font-size: 30px;
     color: #1989f0;

@@ -60,7 +60,12 @@
               <div class="col-md-6">
                 <ul>
                   <li> <a href="#" class="edit"><i class="far fa-edit"></i> Edit</a> </li>
-                  <li> <a href="#" class="delete"><i class="fas fa-trash-alt"></i> Delete</a> </li>
+                  <li> <form class="" action="{{ route('product.delete', $product->id) }}" method="post">
+                    @csrf
+                    <i class="fas fa-trash-alt"></i><input type="submit" name="submit" value="Delete">
+                    </form>
+                  </li>
+
                   <li> <a href="#" class="archieve"><i class="fas fa-archive"></i> Archieve</a> </li>
                 </ul>
               </div>

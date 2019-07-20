@@ -47,6 +47,10 @@
       <p>Quantity: {{ $product->quantity }}</p>
       <h2>Description:</h2>
       <p>{{ $product->description }}</p>
+      <p><form class="" action="{{ route('product.delete', $product->id) }}" method="post">
+        @csrf
+        <i class="fas fa-trash-alt"></i><input type="submit" name="submit" value="Delete">
+        </form></p>
     </div>
   </div>
 @endsection

@@ -11,7 +11,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-6">
-            <h2>Febudeal</h2>
+            <a href="{{ route('saler.dashboard') }}"><h2>Febudeal</h2></a> 
           </div>
           <div class="col-md-6 text-right">
             <ul>
