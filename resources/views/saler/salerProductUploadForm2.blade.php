@@ -27,14 +27,13 @@
     <div class="selected_catagory">
       <h2>Selected Catagory</h2>
       <p class="catagory__path">
-        {{ $catagory[0]->catagory }} > {{ $subcatagory[0]->subcatagories }} >
-        {{ $sub2catagory->subcatagories2 }}
+        {{ $catagory->catagory }} >
       </p>
     </div>
     <div class="form__body">
       <h2>Add Some Details</h2>
       {{-- @if($subcatagory == 0) --}}
-        <form class="" action="{{ route('product.upload.product', $sub2catagory->id) }}" method="post" enctype="multipart/form-data">
+        <form class="" action="{{ route('product.upload.product2', $catagory->id) }}" method="post" enctype="multipart/form-data">
           @csrf
           <label for="title">Title</label><br>
           <input type="text" name="title" value="" id="title" required><br>

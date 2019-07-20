@@ -32,13 +32,15 @@ Route::prefix('saler')->group(function() {
   Route::get('/pending', 'SalerController@Pending')->name('saler.pending');
 
 
-  Route::get('/product/{id}', 'SalerController@show')->name('product.show');
+  Route::get('/product/{id}', 'SalerController@ProductShow')->name('product.show');
 
   Route::get('/catagory', 'SalerController@showCatagory')->name('product.catagory');
   Route::get('/catagory/add/subcatagory/{id}', 'SalerController@showSubcatagory')->name('product.subcatagory');
   Route::get('/catagory/subcatagory/add/sub2catagory/{id}', 'SalerController@showSub2catagory')->name('product.sub2catagory');
   Route::get('/catagory/subcatagory/sub2catagory/product/{id}', 'ProductsController@showProductUploadForm')->name('product.upload.form');
   Route::post('/catagory/subcatagory/sub2catagory/product/{id}', 'ProductsController@StoreProduct')->name('product.upload.product');
+  Route::post('/catagory/subcatagory/sub2catagory/product2/{id}', 'ProductsController@StoreProduct2')->name('product.upload.product2');
+  Route::post('/catagory/subcatagory/sub2catagory/product3/{id}', 'ProductsController@StoreProduct3')->name('product.upload.product3');
   Route::post('/catagory/product/delete/{id}', 'ProductsController@DeleteProduct')->name('product.delete');
 });
 

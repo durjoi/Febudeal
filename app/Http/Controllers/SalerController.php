@@ -45,14 +45,6 @@ class SalerController extends Controller
     }
     public function Pending()
     {
-        //$saler_id = auth()->user()->id;
-        //$products = Product::orderBy('created_at', 'desc')->get();
-        // $products = DB::select(
-        //   'SELECT * From products
-        //     WHERE saler_id = $saler_id AND action = "pending"
-        //     ORDER BY created_at = "desc" '
-        //   );
-        //$products = Product::find($saler_id)->where('action','pending');
 
         $products = DB::table('products')
           ->where('saler_id', auth()->user()->id)
@@ -76,7 +68,7 @@ class SalerController extends Controller
 
 
     }
-    public function show($id)
+    public function ProductShow($id)
     {
       $product = Product::find($id);
       $catagory = Catagory::find($product->catagories_id);
@@ -100,9 +92,18 @@ class SalerController extends Controller
       $subcatagories = DB::table('subcatagories')
         ->where('catagories_id', $id)
         ->get();
-        return view('saler.salerProductSubcatagory')
-          ->with('subcatagories', $subcatagories)
-          ->with('catagory', $catagory);
+        $subcatagory = $subcatagories;
+        if(count($subcatagories)>0) {
+          return view('saler.salerProductSubcatagory')
+            ->with('subcatagories', $subcatagories)
+            ->with('catagory', $catagory);
+        }
+        else {
+          return view('saler.salerProductUploadForm2')
+            ->with('catagory', $catagory);
+        }
+
+
     }
     public function showSub2catagory($id) {
         $subcatagory = Subcatagory::find($id);
@@ -115,10 +116,19 @@ class SalerController extends Controller
           ->where('subcatagories_id', $id)
           ->get();
 
-        return view('saler.salerProductSub2catagory')
-          ->with('catagory', $catagory)
-          ->with('sub2catagories', $sub2catagories)
-          ->with('subcatagory', $subcatagory);
+        if(count($sub2catagories)>0) {
+          return view('saler.salerProductSub2catagory')
+            ->with('catagory', $catagory)
+            ->with('sub2catagories', $sub2catagories)
+            ->with('subcatagory', $subcatagory);
+        }
+        else {
+          return view('saler.salerProductUploadForm3')
+            ->with('catagory', $catagory)
+            ->with('subcatagory', $subcatagory);
+        }
+
+
     }
 
 }

@@ -41,7 +41,18 @@
   </div>
   <div class="col-md-4">
     <div class="product__information">
-      <p>{{ $catagory->catagory }}>{{ $subcatagory->subcatagories }}>{{ $sub2catagory->subcatagories2 }}</p>
+      <p>
+      @if($catagory != null)
+          {{ $catagory->catagory }}
+          @if($subcatagory != null)
+            > {{ $subcatagory->subcatagories }}
+            @if($sub2catagory != null)
+              > {{ $sub2catagory->subcatagories2 }}
+            @endif
+          @endif
+      @endif
+      </p>
+      {{-- <p>{{ $catagory->catagory }}>{{ $subcatagory->subcatagories }}>{{ $sub2catagory->subcatagories2 }}</p> --}}
       <h2>{{ $product->title }}</h2>
       <p>Price: {{ $product->price }} BDT</p>
       <p>Quantity: {{ $product->quantity }}</p>

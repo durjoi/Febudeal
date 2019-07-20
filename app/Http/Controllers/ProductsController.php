@@ -27,7 +27,13 @@ class ProductsController extends Controller
 
 
     public function showProductUploadForm($id) {
+      // if($id == 0) {
+      //   return $id;
+      // }
+      // $catagory = Catagory::find($id);
+      // return $catagory;
       $sub2catagory = Sub2catagory::find($id);
+      // return $sub2catagory;
       $subcatagory = DB::table('subcatagories')
         ->where('id', $sub2catagory->subcatagories_id)
         ->get();
@@ -41,7 +47,7 @@ class ProductsController extends Controller
         ->with('sub2catagory', $sub2catagory);
     }
 
-    public function StoreProduct(request $request, $id) {
+    public function StoreProduct(request $request, $id ) {
       $saler = \Auth::user();
 
       $sub2catagory = Sub2catagory::find($id);
@@ -84,6 +90,87 @@ class ProductsController extends Controller
       return redirect()->route('saler.dashboard');
     }
 
+    public function StoreProduct2(request $request, $id ) {
+      $saler = \Auth::user();
+
+      $catagory = Catagory::find($id);
+
+      $image1 = $request->file('image1');
+      $image1name=$image1->getClientOriginalName();
+      $image1->storeAs('public/products', $image1name);
+
+      $image2 = $request->file('image2');
+      $image2name=$image2->getClientOriginalName();
+      $image2->storeAs('public/products', $image2name);
+
+      $image3 = $request->file('image3');
+      $image3name=$image3->getClientOriginalName();
+      $image3->storeAs('public/products', $image3name);
+
+      $image4 = $request->file('image4');
+      $image4name=$image4->getClientOriginalName();
+      $image4->storeAs('public/products', $image4name);
+
+      $product = new Product;
+      $product->saler_id = $saler->id;
+      $product->title = $request->title;
+      $product->description = $request->description;
+      $product->quantity = $request->quantity;
+      $product->price = $request->price;
+
+      $product->catagories_id = $catagory->id;
+      // $product->sizesymbol=implode(",",$request->size);
+      $product->image1 = $image1name;
+      $product->image2 = $image2name;
+      $product->image3 = $image3name;
+      $product->image4 = $image4name;
+      $product->action = "pending";
+      $product->save();
+
+      return redirect()->route('saler.dashboard');
+    }
+
+
+    public function StoreProduct3(request $request, $id ) {
+      $saler = \Auth::user();
+
+      $subcatagory = Subcatagory::find($id);
+      $catagory = Catagory::find($subcatagory->catagories_id);
+
+      $image1 = $request->file('image1');
+      $image1name=$image1->getClientOriginalName();
+      $image1->storeAs('public/products', $image1name);
+
+      $image2 = $request->file('image2');
+      $image2name=$image2->getClientOriginalName();
+      $image2->storeAs('public/products', $image2name);
+
+      $image3 = $request->file('image3');
+      $image3name=$image3->getClientOriginalName();
+      $image3->storeAs('public/products', $image3name);
+
+      $image4 = $request->file('image4');
+      $image4name=$image4->getClientOriginalName();
+      $image4->storeAs('public/products', $image4name);
+
+      $product = new Product;
+      $product->saler_id = $saler->id;
+      $product->title = $request->title;
+      $product->description = $request->description;
+      $product->quantity = $request->quantity;
+      $product->price = $request->price;
+      $product->subcatagories_id = $id;
+      $product->catagories_id = $catagory->id;
+      // $product->sizesymbol=implode(",",$request->size);
+      $product->image1 = $image1name;
+      $product->image2 = $image2name;
+      $product->image3 = $image3name;
+      $product->image4 = $image4name;
+      $product->action = "pending";
+      $product->save();
+
+      return redirect()->route('saler.dashboard');
+    }
 
     public function DeleteProduct($id) {
       $product = Product::find($id);

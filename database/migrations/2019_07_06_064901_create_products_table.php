@@ -17,8 +17,8 @@ class CreateProductsTable extends Migration
 
             $table->bigIncrements('id');
             $table->unsignedBigInteger('saler_id');
-            $table->unsignedBigInteger('sub2catagories_id');
-            $table->unsignedBigInteger('subcatagories_id');
+            $table->unsignedBigInteger('sub2catagories_id')->nullable();
+            $table->unsignedBigInteger('subcatagories_id')->nullable();
             $table->unsignedBigInteger('catagories_id');
             $table->string('title');
             $table->longText('description');
