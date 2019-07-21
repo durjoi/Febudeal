@@ -13,13 +13,17 @@
         <div class="prdcts__slider" id="slider1">
 
           @foreach ($products as $product)
-            <div class="prdcts__item text-center">
-              <div class="img__container">
-                <img src={{ url('storage/products/'.$product->products_image) }} alt="#">
-              </div>
-              <h4>{{ $product->products_name }}</h4>
-              <p class="item__price">{{ $product->price }} BDT</p>
-            </div>
+            @foreach ($dotds as $dotd)
+              @if ($dotd->products_id == $product->id)
+                <div class="prdcts__item text-center">
+                  <div class="img__container">
+                    <img src={{ url('storage/products/'.$product->image1) }} alt="#">
+                  </div>
+                  <h4>{{ $product->title }}</h4>
+                  <p class="item__price">{{ $product->price }} BDT</p>
+                </div>
+              @endif
+            @endforeach
           @endforeach
 
 

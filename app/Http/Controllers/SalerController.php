@@ -29,19 +29,18 @@ class SalerController extends Controller
      */
     public function Index()
     {
-        //$products = Product::orderBy('created_at', 'desc')->get();
-        // $products = DB::select(
-        //   'SELECT * From products
-        //     WHERE action = "live"
-        //     ORDER BY created_at = "desc" '
-        //   );
-        //
-        // return view('saler.salerLiveProducts')->with('products', $products);
-        $products = DB::table('products')
-          ->where('saler_id', auth()->user()->id)
-          ->where('action', 'live')
-          ->get();
-        return view('saler.salerLiveProducts')->with('products', $products);
+      $products = DB::table('products')
+        ->where('saler_id', auth()->user()->id)
+        ->where('action', 'live')
+        ->get();
+      $sub2catagories = Sub2catagory::all();
+      $subcatagories = Subcatagory::all();
+      $catagories = Catagory::all();
+      return view('saler.salerLiveProducts')
+        ->with('products', $products)
+        ->with('sub2catagories', $sub2catagories)
+        ->with('subcatagories', $subcatagories)
+        ->with('catagories', $catagories);
     }
     public function Pending()
     {

@@ -12,4 +12,7 @@ class Product extends Model
     public function sub2catagories() {
       return $this->belongsTo('App\Sub2catagory');
     }
+    public function dotds() {
+      return $this->hasOne('App\Dotd');
+    }
 }

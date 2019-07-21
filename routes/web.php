@@ -76,4 +76,13 @@ Route::prefix('admin')->group(function() {
   Route::get('/sub2catagory/edit/{id}', 'AdminController@editSub2catagory')->name('admin.sub2catagory.edit');
   Route::post('/sub2catagory/edit/{id}', 'AdminController@upadateSub2catagory')->name('admin.sub2catagory.update');
 
+
+  Route::get('/product', 'AdminController@ProductShow')->name('admin.product.show');
+  Route::post('/product/{id}', 'AdminController@ProductMakeLive')->name('admin.add.action');
+  Route::get('/dotd', 'AdminController@DotdShow')->name('admin.dotd');
+  Route::post('/dotd/add/{id}', 'AdminController@DotdAdd')->name('admin.dotd.add');
+  Route::post('/dotd/delete/{id}', 'AdminController@DotdDelete')->name('admin.dotd.delete');
+  Route::get('/dotd/catagory', 'AdminController@DotdShowCatagory')->name('admin.dotd.add.catagory');
+  Route::get('/dotd/catagory/{id}', 'AdminController@DotdShowProduct')->name('admin.dotd.catagory.product');
+
 });

@@ -797,3 +797,24 @@ li.sublist__sublist__item a {
   /* width: 400px; */
   height:600px;
 }
+
+/*==============================Admin Nav========================*/
+.admin__nav {
+  height:50px;
+  background: #fff;
+  margin-bottom: 10px;
+
+}
+.admin__nav h2 {
+  line-height:50px;
+  font-size:24px;
+  font-weight:bold;
+  color: #1989f0;
+}
+.admin__nav button {
+  background-color: transparent;
+  border: 2px solid #1989f0;
+  height:30px;
+  width: 80px;
+  margin-top:10px;
+}

@@ -9,12 +9,13 @@ use App\Saler;
 use App\Catagory;
 use App\Subcatagory;
 use App\Sub2catagory;
+use App\Dotd;
 
 class PagesController extends Controller
 {
     public function home()
     {
-
+      $dotds = Dotd::all();
       $catagories = DB::table('catagories')
         ->get();
       $subcatagories = DB::table('subcatagories')
@@ -29,7 +30,8 @@ class PagesController extends Controller
         ->with('products', $products)
         ->with('catagories', $catagories)
         ->with('subcatagories', $subcatagories)
-        ->with('sub2catagories', $sub2catagories);
+        ->with('sub2catagories', $sub2catagories)
+        ->with('dotds', $dotds);
     }
 
     public function about()

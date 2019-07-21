@@ -85,17 +85,17 @@
             </div> --}}
 
             @foreach ($products as $product)
-              @php $index = 0; @endphp
-              @if ($product->catagory=='Mobiles' AND $index <= 8)
+              {{-- @php $index = 0; @endphp --}}
+              {{-- @if ($product->catagory=='Mobiles' AND $index <= 8) --}}
                 <div class="prdcts__item text-center">
                   <div class="img__container">
-                    <img src={{ url('storage/products/'.$product->products_image) }} alt="#">
+                    <img src={{ url('storage/products/'.$product->image1) }} alt="#">
                   </div>
-                  <h4>{{ $product->products_name }}</h4>
+                  <h4>{{ $product->title }}</h4>
                   <p class="item__price">{{ $product->price }} BDT</p>
                 </div>
-                @php $index++; @endphp
-              @endif
+                {{-- @php $index++; @endphp --}}
+              {{-- @endif --}}
             @endforeach
 
             {{-- <div class="prdcts__item text-center">

@@ -1,8 +1,8 @@
-  <nav>
+  <nav class="admin__nav">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-4">
-          <h2>Febudeal Admin</h2>
+          <a href="{{ route('admin.dashboard') }}"><h2>Febudeal Admin</h2></a> 
         </div>
         <div class="col-md-8 text-right">
           <a href="{{ route('logout') }}" onclick="event.preventDefault();

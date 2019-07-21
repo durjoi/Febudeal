@@ -7,6 +7,9 @@ use App\Catagory;
 use App\Subcatagory;
 use App\Sub2catagory;
 use DB;
+use App\Product;
+use App\Saler;
+use App\Dotd;
 
 class AdminController extends Controller
 {
@@ -173,6 +176,65 @@ class AdminController extends Controller
       return redirect()->route('admin.catagory');
     }
 
+
+    public function ProductShow() {
+      $products = Product::all();
+      $salers = Saler::all();
+      return view('admin.adminShowProduct')
+        ->with('products', $products)
+        ->with('salers', $salers);
+    }
+
+    public function ProductMakeLive($id) {
+      $product = Product::find($id);
+      $product->action = 'live';
+      $product->save();
+
+      return back();
+    }
+
+    public function DotdShow() {
+      $dotds = Dotd::all();
+      $products = Product::all();
+      return view('admin.adminDotd')
+        ->with('products', $products)
+        ->with('dotds', $dotds);
+    }
+
+    public function DotdAdd($id) {
+      $dotd = new Dotd;
+      $dotd->products_id = $id;
+      $dotd->save();
+
+      return redirect()->back();
+    }
+
+    public function DotdDelete($id) {
+      $dotd = DB::table('dotds')
+        ->where('products_id', $id)
+        ->delete();
+
+      return redirect()->route('admin.dotd');
+    }
+
+    public function DotdShowCatagory() {
+      $catagories = Catagory::all();
+
+      return view('admin.adminDotdCatagory')
+       ->with('catagories', $catagories);
+    }
+
+    public function DotdShowProduct($id) {
+      $products = DB::table('products')
+        ->where('catagories_id', $id)
+        ->where('action', 'live')
+        ->get();
+      $dotds = Dotd::all();
+
+      return view('admin.adminDotdAdd')
+        ->with('products', $products)
+        ->with('dotds', $dotds);
+    }
 
 
 }
