@@ -92,6 +92,12 @@ Route::prefix('admin')->group(function() {
   Route::get('/yml/catagory', 'AdminController@YmlShowCatagory')->name('admin.yml.add.catagory');
   Route::get('/yml/catagory/{id}', 'AdminController@YmlShowProduct')->name('admin.yml.catagory.product');
 
+  Route::get('/to', 'AdminController@ToShow')->name('admin.to');
+  Route::post('/to/add/{id}', 'AdminController@ToAdd')->name('admin.to.add');
+  Route::post('/to/delete/{id}', 'AdminController@ToDelete')->name('admin.to.delete');
+  Route::get('/to/catagory', 'AdminController@ToShowCatagory')->name('admin.to.add.catagory');
+  Route::get('/to/catagory/{id}', 'AdminController@ToShowProduct')->name('admin.to.catagory.product');
+
   Route::get('/product/{id}', 'AdminController@IndividualProductShow')->name('admin.product');
 
 });

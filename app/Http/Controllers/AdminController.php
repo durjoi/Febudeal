@@ -11,6 +11,7 @@ use App\Product;
 use App\Saler;
 use App\Dotd;
 use App\Yml;
+use App\To;
 
 class AdminController extends Controller
 {
@@ -229,7 +230,7 @@ class AdminController extends Controller
         ->where('products_id', $id)
         ->delete();
 
-      return redirect()->route('admin.Dotd');
+      return redirect()->route('admin.dotd');
     }
 
     public function DotdShowCatagory() {
@@ -294,6 +295,50 @@ class AdminController extends Controller
       return view('admin.adminYmlAdd')
         ->with('products', $products)
         ->with('ymls', $ymls);
+    }
+
+    //Top Offers
+    public function ToShow() {
+      $tos = To::all();
+      $products = Product::all();
+      return view('admin.adminTo')
+        ->with('products', $products)
+        ->with('tos', $tos);
+    }
+
+    public function ToAdd($id) {
+      $to = new To;
+      $to->products_id = $id;
+      $to->save();
+
+      return redirect()->back();
+    }
+
+    public function ToDelete($id) {
+      $to = DB::table('tos')
+        ->where('products_id', $id)
+        ->delete();
+
+      return redirect()->route('admin.to');
+    }
+
+    public function ToShowCatagory() {
+      $catagories = Catagory::all();
+
+      return view('admin.adminToCatagory')
+       ->with('catagories', $catagories);
+    }
+
+    public function ToShowProduct($id) {
+      $products = DB::table('products')
+        ->where('catagories_id', $id)
+        ->where('action', 'live')
+        ->get();
+      $tos = To::all();
+
+      return view('admin.adminToAdd')
+        ->with('products', $products)
+        ->with('tos', $tos);
     }
 
 

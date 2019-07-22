@@ -65,7 +65,7 @@
     <div class="container-fluid">
       <div class="row">
           <div class="col-md-6">
-              <h2 class="prdcts__title">Deals of the Day</h2>
+              <h2 class="prdcts__title">Top Offers</h2>
           </div>
           <div class="col-md-6 text-right">
             <button type="button" class="prdcts__allbtn">View all</button>
@@ -83,19 +83,18 @@
               <p class="item__price">25,000 BDT</p>
               <p class="item__saler">Mehedi Hassan Durjoi</p>
             </div> --}}
-
             @foreach ($products as $product)
-              {{-- @php $index = 0; @endphp --}}
-              {{-- @if ($product->catagory=='Mobiles' AND $index <= 8) --}}
-                <div class="prdcts__item text-center">
-                  <div class="img__container">
-                    <img src={{ url('storage/products/'.$product->image1) }} alt="#">
+              @foreach ($tos as $to)
+                @if ($to->products_id == $product->id)
+                  <div class="prdcts__item text-center">
+                    <div class="img__container">
+                      <img src={{ url('storage/products/'.$product->image1) }} alt="#">
+                    </div>
+                    <h4>{{ $product->title }}</h4>
+                    <p class="item__price">{{ $product->price }} BDT</p>
                   </div>
-                  <h4>{{ $product->title }}</h4>
-                  <p class="item__price">{{ $product->price }} BDT</p>
-                </div>
-                {{-- @php $index++; @endphp --}}
-              {{-- @endif --}}
+                @endif
+              @endforeach
             @endforeach
 
             {{-- <div class="prdcts__item text-center">

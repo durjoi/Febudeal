@@ -15,4 +15,10 @@ class Product extends Model
     public function dotds() {
       return $this->hasOne('App\Dotd');
     }
+    public function ymls() {
+      return $this->hasOne('App\Yml');
+    }
+    public function tos() {
+      return $this->hasOne('App\To');
+    }
 }
