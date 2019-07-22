@@ -35,7 +35,8 @@ class CreateProductsTable extends Migration
             $table->timestamps();
 
             $table->foreign('saler_id')->references('id')->on('salers')->onDelete('cascade');
-            $table->foreign('sub2catagories_id')->references('id')->on('sub2catagories')->onDelete('cascade');
+            $table->foreign('catagories_id')->references('id')->on('catagories')->onDelete('cascade');
+
 
 
         });

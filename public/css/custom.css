@@ -818,3 +818,33 @@ li.sublist__sublist__item a {
   width: 80px;
   margin-top:10px;
 }
+
+.catagory__header a {
+  margin-right: 20px;
+}
+.admin__catagory {
+  margin-top: 20px;
+}
+.admin__subcatagory {
+  display: none;
+}
+.admin__catagory__active {
+  display: block!important;
+}
+.admin__sub2catagory {
+  display: none;
+}
+.catagorydelete__button {
+  background-color: transparent;
+  border:none;
+}
+.catagorydelete__button i {
+  color: #f00;
+}
+.admin__catagory ul {
+  list-style: none;
+}
+.admin__catagory ul li {
+  padding: 10px;
+  border: 1px solid #000;
+}

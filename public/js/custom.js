@@ -157,6 +157,17 @@ $(window).on('resize orientationchange', function() {
   }
 });
 
+//Admin Catagory Toggler
+  $(".catagory__toggler").click(function(){
+        $(this).find(".admin__subcatagory").addClass("admin__catagory__active");
+    });
+  $(".subcatagory__toggler").click(function(){
+        $(this).find(".admin__sub2catagory").toggleClass("admin__catagory__active");
+    });
+
+    $(".catagorydelete__button").click(function(){
+            $(this).find('#delete_catagory').submit(); // Submit the form
+        });
 
 
 });
