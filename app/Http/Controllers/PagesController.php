@@ -55,4 +55,25 @@ class PagesController extends Controller
         return view('pages.CatagoryProductsPage')->with('products', $products);
     }
 
+    public function ProductDetails($id) {
+      $catagories = DB::table('catagories')
+        ->get();
+      $subcatagories = DB::table('subcatagories')
+          ->get();
+      $sub2catagories = DB::table('sub2catagories')
+          ->get();
+      $product = Product::find($id);
+      $catagory = Catagory::find($product->catagories_id);
+      $subcatagory = Subcatagory::find($product->subcatagories_id);
+      $sub2catagory = Sub2catagory::find($product->sub2catagories_id);
+      return view('pages.ProductDetails')
+        ->with('product', $product)
+        ->with('catagory', $catagory)
+        ->with('catagories', $catagories)
+        ->with('subcatagories', $subcatagories)
+        ->with('sub2catagories', $sub2catagories)
+        ->with('subcatagory', $subcatagory)
+        ->with('sub2catagory', $sub2catagory);
+    }
+
 }

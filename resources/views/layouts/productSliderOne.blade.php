@@ -15,6 +15,7 @@
           @foreach ($products as $product)
             @foreach ($dotds as $dotd)
               @if ($dotd->products_id == $product->id)
+                <a href="{{ route('product.details', $product->id) }}">
                 <div class="prdcts__item text-center">
                   <div class="img__container">
                     <img src={{ url('storage/products/'.$product->image1) }} alt="#">
@@ -22,6 +23,7 @@
                   <h4>{{ $product->title }}</h4>
                   <p class="item__price">{{ $product->price }} BDT</p>
                 </div>
+                </a>
               @endif
             @endforeach
           @endforeach

@@ -86,70 +86,20 @@
             @foreach ($products as $product)
               @foreach ($tos as $to)
                 @if ($to->products_id == $product->id)
+                  <a href="{{ route('product.details', $product->id) }}">
                   <div class="prdcts__item text-center">
                     <div class="img__container">
                       <img src={{ url('storage/products/'.$product->image1) }} alt="#">
                     </div>
                     <h4>{{ $product->title }}</h4>
                     <p class="item__price">{{ $product->price }} BDT</p>
+                  </a>
                   </div>
                 @endif
               @endforeach
             @endforeach
 
-            {{-- <div class="prdcts__item text-center">
-              <div class="img__container">
-                <img src={{ asset('images/prdct1.jpg') }} alt="#">
-              </div>
-              <h4>Products Header</h4>
-              <p class="item__price">25,000 BDT</p>
-              <p class="item__saler">Mehedi Hassan Durjoi</p>
-            </div>
 
-            <div class="prdcts__item text-center">
-              <div class="img__container">
-                <img src={{ asset('images/prdct1.jpg') }} alt="#">
-              </div>
-              <h4>Products Header</h4>
-              <p class="item__price">25,000 BDT</p>
-              <p class="item__saler">Mehedi Hassan Durjoi</p>
-            </div>
-
-            <div class="prdcts__item text-center">
-              <div class="img__container">
-                <img src={{ asset('images/prdct1.jpg') }} alt="#">
-              </div>
-              <h4>Products Header</h4>
-              <p class="item__price">25,000 BDT</p>
-              <p class="item__saler">Mehedi Hassan Durjoi</p>
-            </div>
-
-            <div class="prdcts__item text-center">
-              <div class="img__container">
-                <img src={{ asset('images/prdct1.jpg') }} alt="#">
-              </div>
-              <h4>Products Header</h4>
-              <p class="item__price">25,000 BDT</p>
-              <p class="item__saler">Mehedi Hassan Durjoi</p>
-            </div>
-
-            <div class="prdcts__item text-center">
-              <div class="img__container">
-                <img src={{ asset('images/prdct1.jpg') }} alt="#">
-              </div>
-              <h4>Products Header</h4>
-              <p class="item__price">25,000 BDT</p>
-              <p class="item__saler">Mehedi Hassan Durjoi</p>
-            </div>
-
-            <div class="prdcts__item text-center">
-              <div class="img__container">
-                <img src={{ asset('images/prdct1.jpg') }} alt="#">
-              </div>
-              <h4>Products Header</h4>
-              <p class="item__price">25,000 BDT</p>
-              <p class="item__saler">Mehedi Hassan Durjoi</p>
-            </div> --}}
           </div>
         </div>
       </div>
@@ -455,7 +405,7 @@
     </div>
   </div>
   <!-- Two Banner End -->
-  @include('layouts.footer')
+
 
 
 @endsection

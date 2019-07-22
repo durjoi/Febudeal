@@ -17,6 +17,7 @@
 
 Route::get('/', 'PagesController@home')->name('index');
 Route::get('/about', 'PagesController@about');
+Route::get('/product/{id}', 'PagesController@ProductDetails')->name('product.details');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

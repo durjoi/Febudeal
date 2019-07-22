@@ -15,7 +15,7 @@
 
     @yield('content')
 
-
+    @include('layouts.footer')
   @include('pertials.scripts')
   </body>
 </html>
