@@ -21,6 +21,7 @@
               <li><a href="{{ route('admin.catagory') }}">Catagory</a> </li>
               <li><a href="{{ route('admin.product.show') }}">Product</a> </li>
               <li><a href="{{ route('admin.dotd') }}">DOTD</a> </li>
+              <li><a href="{{ route('admin.yml') }}">YML</a> </li>
             </ul>
           </div>
           @yield('content')

@@ -30,6 +30,7 @@
               @endif
 
             </form>
+            <a href="{{ route('admin.product', $product->id) }}">Show Details</a>
           </td>
         </tr>
       @endforeach

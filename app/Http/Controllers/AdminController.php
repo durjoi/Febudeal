@@ -10,6 +10,7 @@ use DB;
 use App\Product;
 use App\Saler;
 use App\Dotd;
+use App\Yml;
 
 class AdminController extends Controller
 {
@@ -180,7 +181,7 @@ class AdminController extends Controller
     public function ProductShow() {
       $products = Product::all();
       $salers = Saler::all();
-      return view('admin.adminShowProduct')
+      return view('admin.adminShowProducts')
         ->with('products', $products)
         ->with('salers', $salers);
     }
@@ -191,6 +192,20 @@ class AdminController extends Controller
       $product->save();
 
       return back();
+    }
+
+    public function IndividualProductShow($id)
+    {
+      $product = Product::find($id);
+      $catagory = Catagory::find($product->catagories_id);
+      $subcatagory = Subcatagory::find($product->subcatagories_id);
+      $sub2catagory = Sub2catagory::find($product->sub2catagories_id);
+      return view('admin.adminProduct')
+        ->with('product', $product)
+        ->with('catagory', $catagory)
+        ->with('subcatagory', $subcatagory)
+        ->with('sub2catagory', $sub2catagory);
+
     }
 
     public function DotdShow() {
@@ -214,7 +229,7 @@ class AdminController extends Controller
         ->where('products_id', $id)
         ->delete();
 
-      return redirect()->route('admin.dotd');
+      return redirect()->route('admin.Dotd');
     }
 
     public function DotdShowCatagory() {
@@ -235,6 +250,56 @@ class AdminController extends Controller
         ->with('products', $products)
         ->with('dotds', $dotds);
     }
+
+
+    //You May Like Section
+    public function YmlShow() {
+      $ymls = Yml::all();
+      $products = Product::all();
+      return view('admin.adminYml')
+        ->with('products', $products)
+        ->with('ymls', $ymls);
+    }
+
+    public function YmlAdd($id) {
+      $yml = new Yml;
+      $yml->products_id = $id;
+      $yml->save();
+
+      return redirect()->back();
+    }
+
+    public function YmlDelete($id) {
+      $yml = DB::table('ymls')
+        ->where('products_id', $id)
+        ->delete();
+
+      return redirect()->route('admin.yml');
+    }
+
+    public function YmlShowCatagory() {
+      $catagories = Catagory::all();
+
+      return view('admin.adminYmlCatagory')
+       ->with('catagories', $catagories);
+    }
+
+    public function YmlShowProduct($id) {
+      $products = DB::table('products')
+        ->where('catagories_id', $id)
+        ->where('action', 'live')
+        ->get();
+      $ymls = Yml::all();
+
+      return view('admin.adminYmlAdd')
+        ->with('products', $products)
+        ->with('ymls', $ymls);
+    }
+
+
+
+
+
 
 
 }

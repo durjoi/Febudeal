@@ -79,10 +79,19 @@ Route::prefix('admin')->group(function() {
 
   Route::get('/product', 'AdminController@ProductShow')->name('admin.product.show');
   Route::post('/product/{id}', 'AdminController@ProductMakeLive')->name('admin.add.action');
+
   Route::get('/dotd', 'AdminController@DotdShow')->name('admin.dotd');
   Route::post('/dotd/add/{id}', 'AdminController@DotdAdd')->name('admin.dotd.add');
   Route::post('/dotd/delete/{id}', 'AdminController@DotdDelete')->name('admin.dotd.delete');
   Route::get('/dotd/catagory', 'AdminController@DotdShowCatagory')->name('admin.dotd.add.catagory');
   Route::get('/dotd/catagory/{id}', 'AdminController@DotdShowProduct')->name('admin.dotd.catagory.product');
+
+  Route::get('/yml', 'AdminController@YmlShow')->name('admin.yml');
+  Route::post('/yml/add/{id}', 'AdminController@YmlAdd')->name('admin.yml.add');
+  Route::post('/yml/delete/{id}', 'AdminController@YmlDelete')->name('admin.yml.delete');
+  Route::get('/yml/catagory', 'AdminController@YmlShowCatagory')->name('admin.yml.add.catagory');
+  Route::get('/yml/catagory/{id}', 'AdminController@YmlShowProduct')->name('admin.yml.catagory.product');
+
+  Route::get('/product/{id}', 'AdminController@IndividualProductShow')->name('admin.product');
 
 });

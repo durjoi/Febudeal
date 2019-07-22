@@ -121,8 +121,9 @@ body {
 }
 
 .img__container {
-  height:200px;
-  width: 179px;
+    height: 200px;
+    width: 179px;
+    margin: auto;
 }
 .prdcts__item img {
     height: 195px;

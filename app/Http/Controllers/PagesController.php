@@ -10,12 +10,14 @@ use App\Catagory;
 use App\Subcatagory;
 use App\Sub2catagory;
 use App\Dotd;
+use App\Yml;
 
 class PagesController extends Controller
 {
     public function home()
     {
       $dotds = Dotd::all();
+      $ymls = Yml::all();
       $catagories = DB::table('catagories')
         ->get();
       $subcatagories = DB::table('subcatagories')
@@ -31,7 +33,8 @@ class PagesController extends Controller
         ->with('catagories', $catagories)
         ->with('subcatagories', $subcatagories)
         ->with('sub2catagories', $sub2catagories)
-        ->with('dotds', $dotds);
+        ->with('dotds', $dotds)
+        ->with('ymls', $ymls);
     }
 
     public function about()

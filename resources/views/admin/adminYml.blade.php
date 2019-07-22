@@ -12,8 +12,8 @@
 
       @foreach ($products as $product)
         <tr>
-          @foreach ($dotds as $dotd)
-            @if ($dotd->products_id == $product->id)
+          @foreach ($ymls as $yml)
+            @if ($yml->products_id == $product->id)
               <td>{{ $product->id }}</td>
               <td>{{ $product->title }}</td>
               <td>
@@ -22,9 +22,9 @@
                     <input type="submit" name="Dotd" value="Add Dotd">
 
                 </form> --}}
-                <form class="" action="{{ route('admin.dotd.delete', $product->id) }}" method="post">
+                <form class="" action="{{ route('admin.yml.delete', $product->id) }}" method="post">
                   @csrf
-                    <input type="submit" name="Dotd" value="Delete Dotd">
+                    <input type="submit" name="Yml" value="Delete Yml">
 
                 </form>
                 <a href="{{ route('admin.product', $product->id) }}">Show Details</a>
@@ -36,7 +36,7 @@
 
     </table>
     <div class="col-md-12 text-center">
-      <a href="{{ route('admin.dotd.add.catagory') }}">Add New DOTD</a>
+      <a href="{{ route('admin.yml.add.catagory') }}">Add New DOTD</a>
     </div>
 
 @endsection
