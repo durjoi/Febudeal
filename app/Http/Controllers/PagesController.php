@@ -14,6 +14,7 @@ use App\Yml;
 use App\To;
 use App\Fourthsec;
 use App\Fifthsec;
+use App\Sixthsec;
 
 
 class PagesController extends Controller
@@ -22,6 +23,7 @@ class PagesController extends Controller
     {
       $fourthsecs = Fourthsec::all();
       $fifthsecs = Fifthsec::all();
+      $sixthsecs = Sixthsec::all();
       $tos = To::all();
       $dotds = Dotd::all();
       $ymls = Yml::all();
@@ -44,6 +46,7 @@ class PagesController extends Controller
         ->with('ymls', $ymls)
         ->with('fourthsecs', $fourthsecs)
         ->with('fifthsecs', $fifthsecs)
+        ->with('sixthsecs', $sixthsecs)
         ->with('tos', $tos);
     }
 

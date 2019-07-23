@@ -176,13 +176,13 @@
       </div>
     </div>
   </div>
-  <!-- Catagory Panel One End -->
-  <!-- Catagory Panel One Start -->
+  <!-- Product Section Five End -->
+  <!-- Product Section Six Start -->
   <div class="prdcts">
     <div class="container-fluid">
       <div class="row">
           <div class="col-md-6">
-              <h2 class="prdcts__title">Deals of the Day</h2>
+              <h2 class="prdcts__title"> Home Furnishing Offers </h2>
           </div>
           <div class="col-md-6 text-right">
             <button type="button" class="prdcts__allbtn">View all</button>
@@ -192,74 +192,30 @@
         <div class="col-md-12">
           <div class="prdcts__slider">
 
-            <div class="prdcts__item text-center">
-              <div class="img__container">
-                <img src={{ asset('images/prdct1.jpg') }} alt="#">
-              </div>
-              <h4>Products Header</h4>
-              <p class="item__price">25,000 BDT</p>
-              <p class="item__saler">Mehedi Hassan Durjoi</p>
-            </div>
 
-            <div class="prdcts__item text-center">
-              <div class="img__container">
-                <img src={{ asset('images/prdct1.jpg') }} alt="#">
-              </div>
-              <h4>Products Header</h4>
-              <p class="item__price">25,000 BDT</p>
-              <p class="item__saler">Mehedi Hassan Durjoi</p>
-            </div>
+            @foreach ($products as $product)
+              @foreach ($sixthsecs as $sixthsec)
+                @if ($sixthsec->products_id == $product->id)
+                  <a href="{{ route('product.details', $product->id) }}">
+                  <div class="prdcts__item text-center">
+                    <div class="img__container">
+                      <img src={{ url('storage/products/'.$product->image1) }} alt="#">
+                    </div>
+                    <h4>{{ $product->title }}</h4>
+                    <p class="item__price">{{ $product->price }} BDT</p>
+                  </a>
+                  </div>
+                @endif
+              @endforeach
+            @endforeach
 
-            <div class="prdcts__item text-center">
-              <div class="img__container">
-                <img src={{ asset('images/prdct1.jpg') }} alt="#">
-              </div>
-              <h4>Products Header</h4>
-              <p class="item__price">25,000 BDT</p>
-              <p class="item__saler">Mehedi Hassan Durjoi</p>
-            </div>
 
-            <div class="prdcts__item text-center">
-              <div class="img__container">
-                <img src={{ asset('images/prdct1.jpg') }} alt="#">
-              </div>
-              <h4>Products Header</h4>
-              <p class="item__price">25,000 BDT</p>
-              <p class="item__saler">Mehedi Hassan Durjoi</p>
-            </div>
-
-            <div class="prdcts__item text-center">
-              <div class="img__container">
-                <img src={{ asset('images/prdct1.jpg') }} alt="#">
-              </div>
-              <h4>Products Header</h4>
-              <p class="item__price">25,000 BDT</p>
-              <p class="item__saler">Mehedi Hassan Durjoi</p>
-            </div>
-
-            <div class="prdcts__item text-center">
-              <div class="img__container">
-                <img src={{ asset('images/prdct1.jpg') }} alt="#">
-              </div>
-              <h4>Products Header</h4>
-              <p class="item__price">25,000 BDT</p>
-              <p class="item__saler">Mehedi Hassan Durjoi</p>
-            </div>
-
-            <div class="prdcts__item text-center">
-              <div class="img__container">
-                <img src={{ asset('images/prdct1.jpg') }} alt="#">
-              </div>
-              <h4>Products Header</h4>
-              <p class="item__price">25,000 BDT</p>
-              <p class="item__saler">Mehedi Hassan Durjoi</p>
-            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <!-- Catagory Panel One End -->
+  <!-- Product Section Six End -->
   <!-- Two Banner Start -->
   <div class="bnnrfour">
     <div class="container-fluid">

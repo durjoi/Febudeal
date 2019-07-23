@@ -106,6 +106,13 @@ Route::prefix('admin')->group(function() {
   Route::get('/fourthsec/catagory/{id}', 'AdminController@FourthsecShowProduct')->name('admin.fourthsec.catagory.product');
 
 
+  Route::get('/sixthsec', 'AdminController@SixthsecShow')->name('admin.sixthsec');
+  Route::post('/sixthsec/add/{id}', 'AdminController@SixthsecAdd')->name('admin.sixthsec.add');
+  Route::post('/sixthsec/delete/{id}', 'AdminController@SixthsecDelete')->name('admin.sixthsec.delete');
+  Route::get('/sixthsec/catagory', 'AdminController@SixthsecShowCatagory')->name('admin.sixthsec.add.catagory');
+  Route::get('/sixthsec/catagory/{id}', 'AdminController@SixthsecShowProduct')->name('admin.sixthsec.catagory.product');
+
+
   Route::get('/fifthsec', 'AdminController@FifthsecShow')->name('admin.fifthsec');
   Route::post('/fifthsec/add/{id}', 'AdminController@FifthsecAdd')->name('admin.fifthsec.add');
   Route::post('/fifthsec/delete/{id}', 'AdminController@FifthsecDelete')->name('admin.fifthsec.delete');
