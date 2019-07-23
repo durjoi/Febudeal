@@ -19,6 +19,9 @@ Route::get('/', 'PagesController@home')->name('index');
 Route::get('/about', 'PagesController@about');
 Route::get('/product/{id}', 'PagesController@ProductDetails')->name('product.details');
 Auth::routes();
+Route::get('/catagory/{id}', 'PagesController@CatagoryProducts')->name('catagory.products');
+Route::get('/subcatagory/{id}', 'PagesController@SubcatagoryProducts')->name('subcatagory.products');
+Route::get('/sub2catagory/{id}', 'PagesController@Sub2catagoryProducts')->name('sub2catagory.products');
 
 Route::get('/sectionone', 'PagesController@SectionOne')->name('product.firstsection');
 Route::get('/sectiontwo', 'PagesController@SectionTwo')->name('product.sectiontwo');

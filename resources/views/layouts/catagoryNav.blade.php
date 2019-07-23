@@ -7,7 +7,7 @@
           @if (count($catagories)>0)
             @foreach ($catagories as $catagory)
               <li class="catagorynav__mainlist__item">
-                <a href="#">{{ $catagory->catagory}}</a>
+                <a href="{{ route('catagory.products', $catagory->id) }}">{{ $catagory->catagory}}</a>
                 {{-- catagory Dropdown --}}
                 <div class="catagory__dropdown">
                   <ul class="catagorynav__sublist">
@@ -19,13 +19,13 @@
                             @if ($subcatagory->catagories_id == $catagory->id)
                               <div class="col-md-2">
                                 <li class="sublist__item">
-                                    <a href="#">{{ $subcatagory->subcatagories }}</a>
+                                    <a href="{{ route('subcatagory.products', $subcatagory->id) }}">{{ $subcatagory->subcatagories }}</a>
                                     <ul class="sublist__sublist">
                                       @if(count($sub2catagories)>0)
                                         @foreach ($sub2catagories as $sub2catagory)
                                           @if ($sub2catagory->subcatagories_id == $subcatagory->id)
                                             <li class="sublist__sublist__item">
-                                              <a href="#">{{ $sub2catagory->subcatagories2 }}</a>
+                                              <a href="{{ route('sub2catagory.products', $sub2catagory->id) }}">{{ $sub2catagory->subcatagories2 }}</a>
                                             </li>
                                           @endif
                                         @endforeach

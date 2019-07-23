@@ -187,4 +187,75 @@ class PagesController extends Controller
 
     }
 
+    public function CatagoryProducts($id) {
+      $catagories = DB::table('catagories')
+        ->get();
+      $subcatagories = DB::table('subcatagories')
+          ->get();
+      $sub2catagories = DB::table('sub2catagories')
+          ->get();
+      $catagory = Catagory::find($id);
+      $products = DB::table('products')
+        ->where('catagories_id', $catagory->id)
+        ->get();
+
+      return view('pages.CatagoryProducts')
+        ->with('products', $products)
+        ->with('catagories', $catagories)
+        ->with('subcatagories', $subcatagories)
+        ->with('sub2catagories', $sub2catagories)
+        ->with('catagory', $catagory);
+    }
+    public function SubcatagoryProducts($id) {
+      $catagories = DB::table('catagories')
+        ->get();
+      $subcatagories = DB::table('subcatagories')
+          ->get();
+      $sub2catagories = DB::table('sub2catagories')
+          ->get();
+      $subcatagory = Subcatagory::find($id);
+      $catagory = DB::table('catagories')
+        ->where('id', $subcatagory->catagories_id)
+        ->get();
+      $products = DB::table('products')
+        ->where('subcatagories_id', $subcatagory->id)
+        ->get();
+
+      return view('pages.CatagoryProducts')
+        ->with('products', $products)
+        ->with('catagory', $catagory)
+        ->with('catagories', $catagories)
+        ->with('subcatagories', $subcatagories)
+        ->with('sub2catagories', $sub2catagories)
+        ->with('subcatagory', $subcatagory);
+    }
+
+    public function Sub2catagoryProducts($id) {
+      $catagories = DB::table('catagories')
+        ->get();
+      $subcatagories = DB::table('subcatagories')
+          ->get();
+      $sub2catagories = DB::table('sub2catagories')
+          ->get();
+      $sub2catagory = Sub2catagory::find($id);
+      $subcatagory = DB::table('subcatagories')
+        ->where('id', $sub2catagory->subcatagories_id)
+        ->get();
+      $catagory = DB::table('catagories')
+          ->where('id', $subcatagory[0]->catagories_id)
+          ->get();
+      $products = DB::table('products')
+        ->where('sub2catagories_id', $sub2catagory->id)
+        ->get();
+
+      return view('pages.CatagoryProducts')
+        ->with('products', $products)
+        ->with('catagory', $catagory)
+        ->with('catagories', $catagories)
+        ->with('subcatagories', $subcatagories)
+        ->with('sub2catagories', $sub2catagories)
+        ->with('subcatagory', $subcatagory)
+        ->with('sub2catagory', $sub2catagory);
+    }
+
 }
