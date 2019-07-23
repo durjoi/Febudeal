@@ -20,6 +20,14 @@ Route::get('/about', 'PagesController@about');
 Route::get('/product/{id}', 'PagesController@ProductDetails')->name('product.details');
 Auth::routes();
 
+Route::get('/sectionone', 'PagesController@SectionOne')->name('product.firstsection');
+Route::get('/sectiontwo', 'PagesController@SectionTwo')->name('product.sectiontwo');
+Route::get('/sectionthree', 'PagesController@SectionThree')->name('product.sectionthree');
+Route::get('/sectionfour', 'PagesController@SectionFour')->name('product.sectionfour');
+Route::get('/sectionfive', 'PagesController@SectionFive')->name('product.sectionfive');
+Route::get('/sectionsix', 'PagesController@SectionSix')->name('product.sectionsix');
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('saler')->group(function() {
@@ -45,7 +53,7 @@ Route::prefix('saler')->group(function() {
   Route::post('/catagory/product/delete/{id}', 'ProductsController@DeleteProduct')->name('product.delete');
 });
 
-Route::get('/{catagory}', 'PagesController@catagory')->name('catagory.page');
+
 
 Route::prefix('admin')->group(function() {
   Route::get('/dashboard', 'AdminController@showDashboard')->name('admin.dashboard');

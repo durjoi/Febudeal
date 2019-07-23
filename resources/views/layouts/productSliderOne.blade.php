@@ -5,7 +5,7 @@
             <h2 class="prdcts__title">Deals of the Day</h2>
         </div>
         <div class="col-md-6 text-right">
-          <button type="button" class="prdcts__allbtn">View all</button>
+          <a href="{{ route('product.firstsection') }}"> <button type="button" class="prdcts__allbtn">View all</button></a>
         </div>
     </div>
     <div class="row">

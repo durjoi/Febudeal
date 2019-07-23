@@ -55,15 +55,7 @@ class PagesController extends Controller
       return view('pages.about');
     }
 
-    public function catagory($catagory)
-    {
-       $products = DB::table('products')
-        ->where('action', 'live')
-        ->where('catagory', $catagory)
-        //->join('salers', 'products.saler_id', '=', 'salers.id')
-        ->get();
-        return view('pages.CatagoryProductsPage')->with('products', $products);
-    }
+
 
     public function ProductDetails($id) {
       $catagories = DB::table('catagories')
@@ -84,6 +76,115 @@ class PagesController extends Controller
         ->with('sub2catagories', $sub2catagories)
         ->with('subcatagory', $subcatagory)
         ->with('sub2catagory', $sub2catagory);
+    }
+
+    public function SectionOne() {
+      $catagories = DB::table('catagories')
+        ->get();
+      $subcatagories = DB::table('subcatagories')
+          ->get();
+      $sub2catagories = DB::table('sub2catagories')
+          ->get();
+      $products = Product::all();
+      $offers = Dotd::all();
+
+      return view('pages.OfferProducts')
+      ->with('catagories', $catagories)
+      ->with('subcatagories', $subcatagories)
+      ->with('sub2catagories', $sub2catagories)
+      ->with('products', $products)
+      ->with('offers', $offers);
+
+    }
+    public function SectionTwo() {
+      $catagories = DB::table('catagories')
+        ->get();
+      $subcatagories = DB::table('subcatagories')
+          ->get();
+      $sub2catagories = DB::table('sub2catagories')
+          ->get();
+      $products = Product::all();
+      $offers = Yml::all();
+
+      return view('pages.OfferProducts')
+      ->with('catagories', $catagories)
+      ->with('subcatagories', $subcatagories)
+      ->with('sub2catagories', $sub2catagories)
+      ->with('products', $products)
+      ->with('offers', $offers);
+
+    }
+    public function SectionThree() {
+      $catagories = DB::table('catagories')
+        ->get();
+      $subcatagories = DB::table('subcatagories')
+          ->get();
+      $sub2catagories = DB::table('sub2catagories')
+          ->get();
+      $products = Product::all();
+      $offers = To::all();
+
+      return view('pages.OfferProducts')
+      ->with('catagories', $catagories)
+      ->with('subcatagories', $subcatagories)
+      ->with('sub2catagories', $sub2catagories)
+      ->with('products', $products)
+      ->with('offers', $offers);
+
+    }
+    public function SectionFour() {
+      $catagories = DB::table('catagories')
+        ->get();
+      $subcatagories = DB::table('subcatagories')
+          ->get();
+      $sub2catagories = DB::table('sub2catagories')
+          ->get();
+      $products = Product::all();
+      $offers = Fourthsec::all();
+
+      return view('pages.OfferProducts')
+      ->with('catagories', $catagories)
+      ->with('subcatagories', $subcatagories)
+      ->with('sub2catagories', $sub2catagories)
+      ->with('products', $products)
+      ->with('offers', $offers);
+
+    }
+    public function SectionFive() {
+      $catagories = DB::table('catagories')
+        ->get();
+      $subcatagories = DB::table('subcatagories')
+          ->get();
+      $sub2catagories = DB::table('sub2catagories')
+          ->get();
+      $products = Product::all();
+      $offers = Fifthsec::all();
+
+      return view('pages.OfferProducts')
+      ->with('catagories', $catagories)
+      ->with('subcatagories', $subcatagories)
+      ->with('sub2catagories', $sub2catagories)
+      ->with('products', $products)
+      ->with('offers', $offers);
+
+    }
+    public function SectionSix() {
+      $catagories = DB::table('catagories')
+        ->get();
+      $subcatagories = DB::table('subcatagories')
+          ->get();
+      $sub2catagories = DB::table('sub2catagories')
+          ->get();
+      $products = Product::all();
+      $offers = Sixthsec::all();
+
+      return view('pages.OfferProducts')
+      ->with('catagories', $catagories)
+      ->with('subcatagories', $subcatagories)
+      ->with('sub2catagories', $sub2catagories)
+      ->with('products', $products)
+      ->with('offers', $offers);
+
     }
 
 }

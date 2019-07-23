@@ -68,7 +68,7 @@
               <h2 class="prdcts__title">Top Offers</h2>
           </div>
           <div class="col-md-6 text-right">
-            <button type="button" class="prdcts__allbtn">View all</button>
+            <a href="{{ route('product.sectionthree') }}"> <button type="button" class="prdcts__allbtn">View all</button></a>
           </div>
       </div>
       <div class="row">
@@ -107,7 +107,7 @@
               <h2 class="prdcts__title">Mobile Accessories</h2>
           </div>
           <div class="col-md-6 text-right">
-            <button type="button" class="prdcts__allbtn">View all</button>
+              <a href="{{ route('product.sectionfour') }}"> <button type="button" class="prdcts__allbtn">View all</button></a>
           </div>
       </div>
       <div class="row">
@@ -146,7 +146,7 @@
               <h2 class="prdcts__title">Fashion Accessories</h2>
           </div>
           <div class="col-md-6 text-right">
-            <button type="button" class="prdcts__allbtn">View all</button>
+            <a href="{{ route('product.sectionfive') }}"> <button type="button" class="prdcts__allbtn">View all</button></a>
           </div>
       </div>
       <div class="row">
@@ -185,7 +185,7 @@
               <h2 class="prdcts__title"> Home Furnishing Offers </h2>
           </div>
           <div class="col-md-6 text-right">
-            <button type="button" class="prdcts__allbtn">View all</button>
+            <a href="{{ route('product.sectionsix') }}"> <button type="button" class="prdcts__allbtn">View all</button></a>
           </div>
       </div>
       <div class="row">
