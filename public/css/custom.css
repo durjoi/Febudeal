@@ -115,9 +115,13 @@ body {
 }
 .prdcts__item {
     height: 300px;
-    width: 170px;
+    width: 194px;
     margin: 5px;
     display: inline-block;
+}
+
+.slick-initialized .slick-slide {
+    text-align: center!important;
 }
 
 .img__container {

@@ -75,8 +75,13 @@
         <div class="col-md-12">
           <div class="prdcts__slider">
 
-
+            @php
+            $i = 1
+            @endphp
             @foreach ($products as $product)
+              @if ($i > 9)
+                @break
+              @endif
               @foreach ($tos as $to)
                 @if ($to->products_id == $product->id)
                   <a href="{{ route('product.details', $product->id) }}">
@@ -90,6 +95,9 @@
                   </div>
                 @endif
               @endforeach
+              @php
+              $i++
+              @endphp
             @endforeach
 
 
@@ -114,8 +122,13 @@
         <div class="col-md-12">
           <div class="prdcts__slider">
 
-
+            @php
+            $i = 1
+            @endphp
             @foreach ($products as $product)
+              @if ($i > 9)
+                @break
+              @endif
               @foreach ($fourthsecs as $fourthsec)
                 @if ($fourthsec->products_id == $product->id)
                   <a href="{{ route('product.details', $product->id) }}">
@@ -129,6 +142,9 @@
                   </div>
                 @endif
               @endforeach
+              @php
+              $i++
+              @endphp
             @endforeach
 
 
@@ -153,8 +169,13 @@
         <div class="col-md-12">
           <div class="prdcts__slider">
 
-
+            @php
+            $i = 1
+            @endphp
             @foreach ($products as $product)
+              @if ($i > 9)
+                @break
+              @endif
               @foreach ($fifthsecs as $fifthsec)
                 @if ($fifthsec->products_id == $product->id)
                   <a href="{{ route('product.details', $product->id) }}">
@@ -168,6 +189,9 @@
                   </div>
                 @endif
               @endforeach
+              @php
+              $i++
+              @endphp
             @endforeach
 
 
@@ -192,8 +216,14 @@
         <div class="col-md-12">
           <div class="prdcts__slider">
 
-
+            @php
+            $i = 1
+            @endphp
             @foreach ($products as $product)
+              @if ($i > 9)
+                @break
+              @endif
+
               @foreach ($sixthsecs as $sixthsec)
                 @if ($sixthsec->products_id == $product->id)
                   <a href="{{ route('product.details', $product->id) }}">
@@ -207,6 +237,9 @@
                   </div>
                 @endif
               @endforeach
+              @php
+              $i++
+              @endphp
             @endforeach
 
 
