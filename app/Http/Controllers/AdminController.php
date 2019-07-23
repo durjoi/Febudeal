@@ -13,6 +13,7 @@ use App\Dotd;
 use App\Yml;
 use App\To;
 use App\Fourthsec;
+use App\Fifthsec;
 
 class AdminController extends Controller
 {
@@ -386,6 +387,50 @@ class AdminController extends Controller
         ->with('fourthsecs', $fourthsecs);
     }
 
+
+    //Fifthsection
+    public function FifthsecShow() {
+      $fifthsecs = Fifthsec::all();
+      $products = Product::all();
+      return view('admin.adminFifthsec')
+        ->with('products', $products)
+        ->with('fifthsecs', $fifthsecs);
+    }
+
+    public function FifthsecAdd($id) {
+      $fifthsec = new Fifthsec;
+      $fifthsec->products_id = $id;
+      $fifthsec->save();
+
+      return redirect()->back();
+    }
+
+    public function FifthsecDelete($id) {
+      $fifthsec = DB::table('fifthsecs')
+        ->where('products_id', $id)
+        ->delete();
+
+      return redirect()->route('admin.fifthsec');
+    }
+
+    public function FifthsecShowCatagory() {
+      $catagories = Catagory::all();
+
+      return view('admin.adminFifthsecCatagory')
+       ->with('catagories', $catagories);
+    }
+
+    public function FifthsecShowProduct($id) {
+      $products = DB::table('products')
+        ->where('catagories_id', $id)
+        ->where('action', 'live')
+        ->get();
+      $fifthsecs = Fifthsec::all();
+
+      return view('admin.adminFifthsecAdd')
+        ->with('products', $products)
+        ->with('fifthsecs', $fifthsecs);
+    }
 
 
 

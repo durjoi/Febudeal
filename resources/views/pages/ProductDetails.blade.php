@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-  <div class="container-Fluid">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-6 d-flex">
+      <div class="col-md-5 d-flex">
         <div class="nav-container">
           <div class="slider-nav">
             <div>
@@ -36,12 +36,8 @@
               </div>
             </div>
           </div>
-
-
-
-
       </div>
-      <div class="col-md-4">
+      <div class="col-md-5">
         <div class="product__information">
           <p>
           @if($catagory != null)
@@ -60,10 +56,10 @@
           <p>Quantity: {{ $product->quantity }}</p>
           <h2>Description:</h2>
           <p>{{ $product->description }}</p>
-          <p><form class="" action="{{ route('product.delete', $product->id) }}" method="post">
+          {{-- <p><form class="" action="{{ route('product.delete', $product->id) }}" method="post">
             @csrf
             <i class="fas fa-trash-alt"></i><input type="submit" name="submit" value="Delete">
-            </form></p>
+            </form></p> --}}
         </div>
       </div>
     </div>

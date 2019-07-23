@@ -106,6 +106,12 @@ Route::prefix('admin')->group(function() {
   Route::get('/fourthsec/catagory/{id}', 'AdminController@FourthsecShowProduct')->name('admin.fourthsec.catagory.product');
 
 
+  Route::get('/fifthsec', 'AdminController@FifthsecShow')->name('admin.fifthsec');
+  Route::post('/fifthsec/add/{id}', 'AdminController@FifthsecAdd')->name('admin.fifthsec.add');
+  Route::post('/fifthsec/delete/{id}', 'AdminController@FifthsecDelete')->name('admin.fifthsec.delete');
+  Route::get('/fifthsec/catagory', 'AdminController@FifthsecShowCatagory')->name('admin.fifthsec.add.catagory');
+  Route::get('/fifthsec/catagory/{id}', 'AdminController@FifthsecShowProduct')->name('admin.fifthsec.catagory.product');
+
   Route::get('/product/{id}', 'AdminController@IndividualProductShow')->name('admin.product');
 
 });

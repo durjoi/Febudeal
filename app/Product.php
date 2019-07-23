@@ -24,4 +24,7 @@ class Product extends Model
     public function fourthsecs() {
       return $this->hasOne('App\Fourthsec');
     }
+    public function fifthsecs() {
+      return $this->hasOne('App\Fifthsec');
+    }
 }
