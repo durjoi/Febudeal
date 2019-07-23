@@ -12,6 +12,7 @@ use App\Saler;
 use App\Dotd;
 use App\Yml;
 use App\To;
+use App\Fourthsec;
 
 class AdminController extends Controller
 {
@@ -339,6 +340,50 @@ class AdminController extends Controller
       return view('admin.adminToAdd')
         ->with('products', $products)
         ->with('tos', $tos);
+    }
+
+    //Fouthsection
+    public function FourthsecShow() {
+      $fourthsecs = Fourthsec::all();
+      $products = Product::all();
+      return view('admin.adminFourthsec')
+        ->with('products', $products)
+        ->with('fourthsecs', $fourthsecs);
+    }
+
+    public function FourthsecAdd($id) {
+      $fourthsec = new Fourthsec;
+      $fourthsec->products_id = $id;
+      $fourthsec->save();
+
+      return redirect()->back();
+    }
+
+    public function FourthsecDelete($id) {
+      $fourthsec = DB::table('fourthsecs')
+        ->where('products_id', $id)
+        ->delete();
+
+      return redirect()->route('admin.fourthsec');
+    }
+
+    public function FourthsecShowCatagory() {
+      $catagories = Catagory::all();
+
+      return view('admin.adminFourthsecCatagory')
+       ->with('catagories', $catagories);
+    }
+
+    public function FourthsecShowProduct($id) {
+      $products = DB::table('products')
+        ->where('catagories_id', $id)
+        ->where('action', 'live')
+        ->get();
+      $fourthsecs = Fourthsec::all();
+
+      return view('admin.adminFourthsecAdd')
+        ->with('products', $products)
+        ->with('fourthsecs', $fourthsecs);
     }
 
 

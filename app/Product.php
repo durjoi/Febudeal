@@ -21,4 +21,7 @@ class Product extends Model
     public function tos() {
       return $this->hasOne('App\To');
     }
+    public function fourthsecs() {
+      return $this->hasOne('App\Fourthsec');
+    }
 }

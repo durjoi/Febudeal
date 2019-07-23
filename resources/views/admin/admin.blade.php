@@ -23,6 +23,7 @@
               <li><a href="{{ route('admin.dotd') }}">Deals of the Day</a> </li>
               <li><a href="{{ route('admin.yml') }}">You May Like</a> </li>
               <li><a href="{{ route('admin.to') }}">Top Offers </a> </li>
+              <li><a href="{{ route('admin.fourthsec') }}">Section Four Products </a> </li>
             </ul>
           </div>
           @yield('content')

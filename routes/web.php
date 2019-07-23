@@ -99,6 +99,13 @@ Route::prefix('admin')->group(function() {
   Route::get('/to/catagory', 'AdminController@ToShowCatagory')->name('admin.to.add.catagory');
   Route::get('/to/catagory/{id}', 'AdminController@ToShowProduct')->name('admin.to.catagory.product');
 
+  Route::get('/fourthsec', 'AdminController@FourthsecShow')->name('admin.fourthsec');
+  Route::post('/fourthsec/add/{id}', 'AdminController@FourthsecAdd')->name('admin.fourthsec.add');
+  Route::post('/fourthsec/delete/{id}', 'AdminController@FourthsecDelete')->name('admin.fourthsec.delete');
+  Route::get('/fourthsec/catagory', 'AdminController@FourthsecShowCatagory')->name('admin.fourthsec.add.catagory');
+  Route::get('/fourthsec/catagory/{id}', 'AdminController@FourthsecShowProduct')->name('admin.fourthsec.catagory.product');
+
+
   Route::get('/product/{id}', 'AdminController@IndividualProductShow')->name('admin.product');
 
 });

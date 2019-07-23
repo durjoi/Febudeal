@@ -12,11 +12,13 @@ use App\Sub2catagory;
 use App\Dotd;
 use App\Yml;
 use App\To;
+use App\Fourthsec;
 
 class PagesController extends Controller
 {
     public function home()
     {
+      $fourthsecs = Fourthsec::all();
       $tos = To::all();
       $dotds = Dotd::all();
       $ymls = Yml::all();
@@ -37,6 +39,7 @@ class PagesController extends Controller
         ->with('sub2catagories', $sub2catagories)
         ->with('dotds', $dotds)
         ->with('ymls', $ymls)
+        ->with('fourthsecs', $fourthsecs)
         ->with('tos', $tos);
     }
 
