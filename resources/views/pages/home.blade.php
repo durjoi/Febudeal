@@ -79,7 +79,7 @@
             $i = 1
             @endphp
             @foreach ($products as $product)
-              @if ($i > 9)
+              @if ($i > 7)
                 @break
               @endif
               @foreach ($tos as $to)
@@ -126,7 +126,7 @@
             $i = 1
             @endphp
             @foreach ($products as $product)
-              @if ($i > 9)
+              @if ($i > 7)
                 @break
               @endif
               @foreach ($fourthsecs as $fourthsec)
@@ -173,7 +173,7 @@
             $i = 1
             @endphp
             @foreach ($products as $product)
-              @if ($i > 9)
+              @if ($i > 7)
                 @break
               @endif
               @foreach ($fifthsecs as $fifthsec)
@@ -220,7 +220,7 @@
             $i = 1
             @endphp
             @foreach ($products as $product)
-              @if ($i > 9)
+              @if ($i > 7)
                 @break
               @endif
 
