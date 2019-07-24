@@ -28,6 +28,7 @@
               <li><a href="{{ route('admin.sixthsec') }}">Section Six Products </a> </li>
               <li><a href="{{ route('admin.seventhsec') }}">Section Seven Products </a> </li>
               <li><a href="{{ route('admin.eightsec') }}">Section Eight Products </a> </li>
+              <li><a href="{{ route('admin.ninthsec') }}">Section Ninth Products </a> </li>
             </ul>
           </div>
           @yield('content')
