@@ -29,6 +29,7 @@ Route::get('/sectionthree', 'PagesController@SectionThree')->name('product.secti
 Route::get('/sectionfour', 'PagesController@SectionFour')->name('product.sectionfour');
 Route::get('/sectionfive', 'PagesController@SectionFive')->name('product.sectionfive');
 Route::get('/sectionsix', 'PagesController@SectionSix')->name('product.sectionsix');
+Route::get('/sectionseven', 'PagesController@SectionSeven')->name('product.sectionseven');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -117,6 +118,12 @@ Route::prefix('admin')->group(function() {
   Route::get('/fourthsec/catagory/{id}', 'AdminController@FourthsecShowProduct')->name('admin.fourthsec.catagory.product');
 
 
+  Route::get('/fifthsec', 'AdminController@FifthsecShow')->name('admin.fifthsec');
+  Route::post('/fifthsec/add/{id}', 'AdminController@FifthsecAdd')->name('admin.fifthsec.add');
+  Route::post('/fifthsec/delete/{id}', 'AdminController@FifthsecDelete')->name('admin.fifthsec.delete');
+  Route::get('/fifthsec/catagory', 'AdminController@FifthsecShowCatagory')->name('admin.fifthsec.add.catagory');
+  Route::get('/fifthsec/catagory/{id}', 'AdminController@FifthsecShowProduct')->name('admin.fifthsec.catagory.product');
+
   Route::get('/sixthsec', 'AdminController@SixthsecShow')->name('admin.sixthsec');
   Route::post('/sixthsec/add/{id}', 'AdminController@SixthsecAdd')->name('admin.sixthsec.add');
   Route::post('/sixthsec/delete/{id}', 'AdminController@SixthsecDelete')->name('admin.sixthsec.delete');
@@ -124,11 +131,14 @@ Route::prefix('admin')->group(function() {
   Route::get('/sixthsec/catagory/{id}', 'AdminController@SixthsecShowProduct')->name('admin.sixthsec.catagory.product');
 
 
-  Route::get('/fifthsec', 'AdminController@FifthsecShow')->name('admin.fifthsec');
-  Route::post('/fifthsec/add/{id}', 'AdminController@FifthsecAdd')->name('admin.fifthsec.add');
-  Route::post('/fifthsec/delete/{id}', 'AdminController@FifthsecDelete')->name('admin.fifthsec.delete');
-  Route::get('/fifthsec/catagory', 'AdminController@FifthsecShowCatagory')->name('admin.fifthsec.add.catagory');
-  Route::get('/fifthsec/catagory/{id}', 'AdminController@FifthsecShowProduct')->name('admin.fifthsec.catagory.product');
+  Route::get('/seventhsec', 'AdminController@SeventhsecShow')->name('admin.seventhsec');
+  Route::post('/seventhsec/add/{id}', 'AdminController@SeventhsecAdd')->name('admin.seventhsec.add');
+  Route::post('/seventhsec/delete/{id}', 'AdminController@SeventhsecDelete')->name('admin.seventhsec.delete');
+  Route::get('/seventhsec/catagory', 'AdminController@SeventhsecShowCatagory')->name('admin.seventhsec.add.catagory');
+  Route::get('/seventhsec/catagory/{id}', 'AdminController@SeventhsecShowProduct')->name('admin.seventhsec.catagory.product');
+
+
+
 
   Route::get('/product/{id}', 'AdminController@IndividualProductShow')->name('admin.product');
 

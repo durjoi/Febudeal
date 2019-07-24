@@ -249,6 +249,45 @@
     </div>
   </div>
   <!-- Product Section Six End -->
+
+
+  <!-- Product Section Seven Start -->
+  <div class="prdcts">
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-6">
+              <h2 class="prdcts__title"> Home Furnishing Offers </h2>
+          </div>
+          <div class="col-md-6 text-right">
+            <a href="{{ route('product.sectionseven') }}"> <button type="button" class="prdcts__allbtn">View all</button></a>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="prdcts__slider">
+
+            @foreach ($products as $product)
+              @foreach ($seventhsecs as $seventhsec)
+                @if ($seventhsec->products_id == $product->id)
+                  <a href="{{ route('product.details', $product->id) }}">
+                  <div class="prdcts__item text-center">
+                    <div class="img__container">
+                      <img src={{ url('storage/products/'.$product->image1) }} alt="#">
+                    </div>
+                    <h4>{{ $product->title }}</h4>
+                    <p class="item__price">{{ $product->price }} BDT</p>
+                  </a>
+                  </div>
+                @endif
+              @endforeach
+            @endforeach
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Product Section Seven End -->
   <!-- Two Banner Start -->
   <div class="bnnrfour">
     <div class="container-fluid">

@@ -15,6 +15,7 @@ use App\To;
 use App\Fourthsec;
 use App\Fifthsec;
 use App\Sixthsec;
+use App\Seventhsec;
 
 class AdminController extends Controller
 {
@@ -476,6 +477,50 @@ class AdminController extends Controller
       return view('admin.adminSixthsecAdd')
         ->with('products', $products)
         ->with('sixthsecs', $sixthsecs);
+    }
+
+    //Seventh section
+    public function SeventhsecShow() {
+      $seventhsecs = Seventhsec::all();
+      $products = Product::all();
+      return view('admin.adminSeventhsec')
+        ->with('products', $products)
+        ->with('seventhsecs', $seventhsecs);
+    }
+
+    public function SeventhsecAdd($id) {
+      $seventhsec = new Seventhsec;
+      $seventhsec->products_id = $id;
+      $seventhsec->save();
+
+      return redirect()->back();
+    }
+
+    public function SeventhsecDelete($id) {
+      $seventhsec = DB::table('seventhsecs')
+        ->where('products_id', $id)
+        ->delete();
+
+      return redirect()->route('admin.seventhsec');
+    }
+
+    public function SeventhsecShowCatagory() {
+      $catagories = Catagory::all();
+
+      return view('admin.adminSeventhsecCatagory')
+       ->with('catagories', $catagories);
+    }
+
+    public function SeventhsecShowProduct($id) {
+      $products = DB::table('products')
+        ->where('catagories_id', $id)
+        ->where('action', 'live')
+        ->get();
+      $seventhsecs = Seventhsec::all();
+
+      return view('admin.adminSeventhsecAdd')
+        ->with('products', $products)
+        ->with('seventhsecs', $seventhsecs);
     }
 
 

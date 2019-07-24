@@ -15,6 +15,7 @@ use App\To;
 use App\Fourthsec;
 use App\Fifthsec;
 use App\Sixthsec;
+use App\Seventhsec;
 
 
 class PagesController extends Controller
@@ -24,6 +25,7 @@ class PagesController extends Controller
       $fourthsecs = Fourthsec::all();
       $fifthsecs = Fifthsec::all();
       $sixthsecs = Sixthsec::all();
+      $seventhsecs = Seventhsec::all();
       $tos = To::all();
       $dotds = Dotd::all();
       $ymls = Yml::all();
@@ -47,6 +49,7 @@ class PagesController extends Controller
         ->with('fourthsecs', $fourthsecs)
         ->with('fifthsecs', $fifthsecs)
         ->with('sixthsecs', $sixthsecs)
+        ->with('seventhsecs', $seventhsecs)
         ->with('tos', $tos);
     }
 
@@ -177,6 +180,24 @@ class PagesController extends Controller
           ->get();
       $products = Product::all();
       $offers = Sixthsec::all();
+
+      return view('pages.OfferProducts')
+      ->with('catagories', $catagories)
+      ->with('subcatagories', $subcatagories)
+      ->with('sub2catagories', $sub2catagories)
+      ->with('products', $products)
+      ->with('offers', $offers);
+
+    }
+    public function SectionSeven() {
+      $catagories = DB::table('catagories')
+        ->get();
+      $subcatagories = DB::table('subcatagories')
+          ->get();
+      $sub2catagories = DB::table('sub2catagories')
+          ->get();
+      $products = Product::all();
+      $offers = Seventhsec::all();
 
       return view('pages.OfferProducts')
       ->with('catagories', $catagories)
