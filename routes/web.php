@@ -32,6 +32,7 @@ Route::get('/sectionsix', 'PagesController@SectionSix')->name('product.sectionsi
 Route::get('/sectionseven', 'PagesController@SectionSeven')->name('product.sectionseven');
 Route::get('/sectioneight', 'PagesController@SectionEight')->name('product.sectioneight');
 Route::get('/sectionnine', 'PagesController@SectionNine')->name('product.sectionnine');
+Route::get('/sectionten', 'PagesController@SectionTen')->name('product.sectionten');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -150,6 +151,13 @@ Route::prefix('admin')->group(function() {
   Route::post('/ninthsec/delete/{id}', 'AdminController@NinthsecDelete')->name('admin.ninthsec.delete');
   Route::get('/ninthsec/catagory', 'AdminController@NinthsecShowCatagory')->name('admin.ninthsec.add.catagory');
   Route::get('/ninthsec/catagory/{id}', 'AdminController@NinthsecShowProduct')->name('admin.ninthsec.catagory.product');
+
+
+  Route::get('/tenthsec', 'AdminController@TenthsecShow')->name('admin.tenthsec');
+  Route::post('/tenthsec/add/{id}', 'AdminController@TenthsecAdd')->name('admin.tenthsec.add');
+  Route::post('/tenthsec/delete/{id}', 'AdminController@TenthsecDelete')->name('admin.tenthsec.delete');
+  Route::get('/tenthsec/catagory', 'AdminController@TenthsecShowCatagory')->name('admin.tenthsec.add.catagory');
+  Route::get('/tenthsec/catagory/{id}', 'AdminController@TenthsecShowProduct')->name('admin.tenthsec.catagory.product');
 
 
 

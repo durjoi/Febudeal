@@ -37,6 +37,9 @@ class Product extends Model
       return $this->hasOne('App\Eightsec');
     }
     public function ninthsecs() {
-      return $this->hasOne('App\Eightsec');
+      return $this->hasOne('App\Ninthsec');
+    }
+    public function tenthsecs() {
+      return $this->hasOne('App\Tenthsec');
     }
 }

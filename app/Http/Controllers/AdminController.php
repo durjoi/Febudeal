@@ -18,6 +18,7 @@ use App\Sixthsec;
 use App\Seventhsec;
 use App\Eightsec;
 use App\Ninthsec;
+use App\Tenthsec;
 
 class AdminController extends Controller
 {
@@ -611,6 +612,50 @@ class AdminController extends Controller
       return view('admin.adminNinthsecAdd')
         ->with('products', $products)
         ->with('ninthsecs', $ninthsecs);
+    }
+
+    //Tenth section
+    public function TenthsecShow() {
+      $tenthsecs = Tenthsec::all();
+      $products = Product::all();
+      return view('admin.adminTenthsec')
+        ->with('products', $products)
+        ->with('tenthsecs', $tenthsecs);
+    }
+
+    public function TenthsecAdd($id) {
+      $tenthsec = new Tenthsec;
+      $tenthsec->products_id = $id;
+      $tenthsec->save();
+
+      return redirect()->back();
+    }
+
+    public function TenthsecDelete($id) {
+      $tenthsec = DB::table('tenthsecs')
+        ->where('products_id', $id)
+        ->delete();
+
+      return redirect()->route('admin.tenthsec');
+    }
+
+    public function TenthsecShowCatagory() {
+      $catagories = Catagory::all();
+
+      return view('admin.adminTenthsecCatagory')
+       ->with('catagories', $catagories);
+    }
+
+    public function TenthsecShowProduct($id) {
+      $products = DB::table('products')
+        ->where('catagories_id', $id)
+        ->where('action', 'live')
+        ->get();
+      $tenthsecs = Tenthsec::all();
+
+      return view('admin.adminTenthsecAdd')
+        ->with('products', $products)
+        ->with('tenthsecs', $tenthsecs);
     }
 
 
