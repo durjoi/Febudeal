@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
-            <h2 class="prdcts__title">Deals of the Day</h2>
+            <h2 class="prdcts__title">{{ $sections[0]->section_one }}</h2>
         </div>
         <div class="col-md-6 text-right">
           <a href="{{ route('product.firstsection') }}"> <button type="button" class="prdcts__allbtn">View all</button></a>

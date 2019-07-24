@@ -19,6 +19,7 @@ use App\Seventhsec;
 use App\Eightsec;
 use App\Ninthsec;
 use App\Tenthsec;
+use App\HomepageSectionName;
 
 class AdminController extends Controller
 {
@@ -27,7 +28,9 @@ class AdminController extends Controller
         $this->middleware('auth:admin');
     }
     public function showDashboard() {
-      return view('admin.admin');
+      $sections = HomepageSectionName::all();
+      return view('admin.admin')
+        ->with('sections', $sections);
     }
 
 
@@ -35,8 +38,10 @@ class AdminController extends Controller
       $catagories = Catagory::all();
       $subcatagories = Subcatagory::all();
       $sub2catagories = Sub2catagory::all();
+      $sections = HomepageSectionName::all();
 
       return view('admin.adminCatagory')
+      ->with('sections', $sections)
         ->with('catagories', $catagories)
         ->with('subcatagories', $subcatagories)
         ->with('sub2catagories', $sub2catagories);
@@ -45,7 +50,9 @@ class AdminController extends Controller
     // Catagory =========================================================
 
     public function addCatagory() {
-      return view('admin.adminAddCatagory');
+      $sections = HomepageSectionName::all();
+      return view('admin.adminAddCatagory')
+      ->with('sections', $sections);
     }
 
     public function storeCatagory(Request $request) {
@@ -70,11 +77,17 @@ class AdminController extends Controller
     // Sub Catagory =======================================================
 
     public function showCatagoryForSubcatagory() {
+      $sections = HomepageSectionName::all();
       $catagories = Catagory::all();
-      return view('admin.adminAddSubcatagoryCatagory')->with('catagories', $catagories);
+      return view('admin.adminAddSubcatagoryCatagory')
+        ->with('sections', $sections)
+        ->with('catagories', $catagories);
     }
     public function addSubcatagory($id) {
-      return view('admin.adminAddSubcatagory')->with('id', $id);
+      $sections = HomepageSectionName::all();
+      return view('admin.adminAddSubcatagory')
+        ->with('sections', $sections)
+        ->with('id', $id);
     }
     public function storeSubcatagory(Request $request, $id) {
       // $request->validate([
@@ -103,20 +116,28 @@ class AdminController extends Controller
 
     public function showCatagoryForSub2catagory() {
       $catagories = Catagory::all();
-      return view('admin.adminAddSub2catagoryCatagory')->with('catagories', $catagories);
+      $sections = HomepageSectionName::all();
+      return view('admin.adminAddSub2catagoryCatagory')
+        ->with('sections', $sections)
+        ->with('catagories', $catagories);
     }
     public function showSubcatagoryForSub2catagory($id) {
       // return $subcatagories = Subcatagory::all()->where('catagoies_id', $id)->get();
-
+      $sections = HomepageSectionName::all();
       $subcatagories = DB::table('subcatagories')
         ->where('catagories_id', $id)
         //->join('salers', 'products.saler_id', '=', 'salers.id')
         ->get();
-      return view('admin.adminAddSub2catagorySubcatagory')->with('subcatagories', $subcatagories);
+      return view('admin.adminAddSub2catagorySubcatagory')
+        ->with('sections', $sections)
+        ->with('subcatagories', $subcatagories);
     }
 
     public function addSub2catagory($id) {
-      return view('admin.adminAddSub2catagory')->with('id', $id);
+      $sections = HomepageSectionName::all();
+      return view('admin.adminAddSub2catagory')
+        ->with('sections', $sections)
+        ->with('id', $id);
     }
     public function storeSub2catagory(Request $request, $id) {
       // $request->validate([
@@ -141,6 +162,7 @@ class AdminController extends Controller
 
 
     public function editCatagory($id) {
+
       $catagory = Catagory::find($id);
       return view('admin.adminCatagoryEdit')->with('catagory', $catagory);
     }
@@ -187,10 +209,12 @@ class AdminController extends Controller
 
 
     public function ProductShow() {
+      $sections = HomepageSectionName::all();
       $products = Product::all();
       $salers = Saler::all();
       return view('admin.adminShowProducts')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('salers', $salers);
     }
 
@@ -204,6 +228,7 @@ class AdminController extends Controller
 
     public function IndividualProductShow($id)
     {
+      $sections = HomepageSectionName::all();
       $product = Product::find($id);
       $catagory = Catagory::find($product->catagories_id);
       $subcatagory = Subcatagory::find($product->subcatagories_id);
@@ -212,15 +237,18 @@ class AdminController extends Controller
         ->with('product', $product)
         ->with('catagory', $catagory)
         ->with('subcatagory', $subcatagory)
-        ->with('sub2catagory', $sub2catagory);
+        ->with('sub2catagory', $sub2catagory)
+        ->with('sections', $sections);
 
     }
 
     public function DotdShow() {
+      $sections = HomepageSectionName::all();
       $dotds = Dotd::all();
       $products = Product::all();
       return view('admin.adminDotd')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('dotds', $dotds);
     }
 
@@ -241,13 +269,16 @@ class AdminController extends Controller
     }
 
     public function DotdShowCatagory() {
+      $sections = HomepageSectionName::all();
       $catagories = Catagory::all();
 
       return view('admin.adminDotdCatagory')
+      ->with('sections', $sections)
        ->with('catagories', $catagories);
     }
 
     public function DotdShowProduct($id) {
+      $sections = HomepageSectionName::all();
       $products = DB::table('products')
         ->where('catagories_id', $id)
         ->where('action', 'live')
@@ -256,16 +287,19 @@ class AdminController extends Controller
 
       return view('admin.adminDotdAdd')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('dotds', $dotds);
     }
 
 
     //You May Like Section
     public function YmlShow() {
+      $sections = HomepageSectionName::all();
       $ymls = Yml::all();
       $products = Product::all();
       return view('admin.adminYml')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('ymls', $ymls);
     }
 
@@ -287,12 +321,15 @@ class AdminController extends Controller
 
     public function YmlShowCatagory() {
       $catagories = Catagory::all();
+      $sections = HomepageSectionName::all();
 
       return view('admin.adminYmlCatagory')
-       ->with('catagories', $catagories);
+       ->with('catagories', $catagories)
+       ->with('sections', $sections);
     }
 
     public function YmlShowProduct($id) {
+      $sections = HomepageSectionName::all();
       $products = DB::table('products')
         ->where('catagories_id', $id)
         ->where('action', 'live')
@@ -301,15 +338,18 @@ class AdminController extends Controller
 
       return view('admin.adminYmlAdd')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('ymls', $ymls);
     }
 
     //Top Offers
     public function ToShow() {
+      $sections = HomepageSectionName::all();
       $tos = To::all();
       $products = Product::all();
       return view('admin.adminTo')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('tos', $tos);
     }
 
@@ -331,12 +371,14 @@ class AdminController extends Controller
 
     public function ToShowCatagory() {
       $catagories = Catagory::all();
-
+      $sections = HomepageSectionName::all();
       return view('admin.adminToCatagory')
-       ->with('catagories', $catagories);
+       ->with('catagories', $catagories)
+       ->with('sections', $sections);
     }
 
     public function ToShowProduct($id) {
+      $sections = HomepageSectionName::all();
       $products = DB::table('products')
         ->where('catagories_id', $id)
         ->where('action', 'live')
@@ -345,15 +387,18 @@ class AdminController extends Controller
 
       return view('admin.adminToAdd')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('tos', $tos);
     }
 
     //Fouthsection
     public function FourthsecShow() {
+      $sections = HomepageSectionName::all();
       $fourthsecs = Fourthsec::all();
       $products = Product::all();
       return view('admin.adminFourthsec')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('fourthsecs', $fourthsecs);
     }
 
@@ -375,12 +420,14 @@ class AdminController extends Controller
 
     public function FourthsecShowCatagory() {
       $catagories = Catagory::all();
-
+      $sections = HomepageSectionName::all();
       return view('admin.adminFourthsecCatagory')
+      ->with('sections', $sections)
        ->with('catagories', $catagories);
     }
 
     public function FourthsecShowProduct($id) {
+      $sections = HomepageSectionName::all();
       $products = DB::table('products')
         ->where('catagories_id', $id)
         ->where('action', 'live')
@@ -389,16 +436,19 @@ class AdminController extends Controller
 
       return view('admin.adminFourthsecAdd')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('fourthsecs', $fourthsecs);
     }
 
 
     //Fifthsection
     public function FifthsecShow() {
+      $sections = HomepageSectionName::all();
       $fifthsecs = Fifthsec::all();
       $products = Product::all();
       return view('admin.adminFifthsec')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('fifthsecs', $fifthsecs);
     }
 
@@ -420,12 +470,14 @@ class AdminController extends Controller
 
     public function FifthsecShowCatagory() {
       $catagories = Catagory::all();
-
+      $sections = HomepageSectionName::all();
       return view('admin.adminFifthsecCatagory')
-       ->with('catagories', $catagories);
+       ->with('catagories', $catagories)
+       ->with('sections', $sections);
     }
 
     public function FifthsecShowProduct($id) {
+      $sections = HomepageSectionName::all();
       $products = DB::table('products')
         ->where('catagories_id', $id)
         ->where('action', 'live')
@@ -434,16 +486,19 @@ class AdminController extends Controller
 
       return view('admin.adminFifthsecAdd')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('fifthsecs', $fifthsecs);
     }
 
 
     //Sixthsection
     public function SixthsecShow() {
+      $sections = HomepageSectionName::all();
       $sixthsecs = Sixthsec::all();
       $products = Product::all();
       return view('admin.adminSixthsec')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('sixthsecs', $sixthsecs);
     }
 
@@ -464,13 +519,16 @@ class AdminController extends Controller
     }
 
     public function SixthsecShowCatagory() {
+      $sections = HomepageSectionName::all();
       $catagories = Catagory::all();
 
       return view('admin.adminSixthsecCatagory')
-       ->with('catagories', $catagories);
+       ->with('catagories', $catagories)
+       ->with('sections', $sections);
     }
 
     public function SixthsecShowProduct($id) {
+      $sections = HomepageSectionName::all();
       $products = DB::table('products')
         ->where('catagories_id', $id)
         ->where('action', 'live')
@@ -479,15 +537,18 @@ class AdminController extends Controller
 
       return view('admin.adminSixthsecAdd')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('sixthsecs', $sixthsecs);
     }
 
     //Seventh section
     public function SeventhsecShow() {
+      $sections = HomepageSectionName::all();
       $seventhsecs = Seventhsec::all();
       $products = Product::all();
       return view('admin.adminSeventhsec')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('seventhsecs', $seventhsecs);
     }
 
@@ -508,13 +569,16 @@ class AdminController extends Controller
     }
 
     public function SeventhsecShowCatagory() {
+      $sections = HomepageSectionName::all();
       $catagories = Catagory::all();
 
       return view('admin.adminSeventhsecCatagory')
+      ->with('sections', $sections)
        ->with('catagories', $catagories);
     }
 
     public function SeventhsecShowProduct($id) {
+      $sections = HomepageSectionName::all();
       $products = DB::table('products')
         ->where('catagories_id', $id)
         ->where('action', 'live')
@@ -523,15 +587,18 @@ class AdminController extends Controller
 
       return view('admin.adminSeventhsecAdd')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('seventhsecs', $seventhsecs);
     }
 
     //Eight section
     public function EightsecShow() {
+      $sections = HomepageSectionName::all();
       $eightsecs = Eightsec::all();
       $products = Product::all();
       return view('admin.adminEightsec')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('eightsecs', $eightsecs);
     }
 
@@ -552,13 +619,16 @@ class AdminController extends Controller
     }
 
     public function EightsecShowCatagory() {
+      $sections = HomepageSectionName::all();
       $catagories = Catagory::all();
 
       return view('admin.adminEightsecCatagory')
-       ->with('catagories', $catagories);
+       ->with('catagories', $catagories)
+       ->with('sections', $sections);
     }
 
     public function EightsecShowProduct($id) {
+      $sections = HomepageSectionName::all();
       $products = DB::table('products')
         ->where('catagories_id', $id)
         ->where('action', 'live')
@@ -567,15 +637,18 @@ class AdminController extends Controller
 
       return view('admin.adminEightsecAdd')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('eightsecs', $eightsecs);
     }
 
     //Ninth section
     public function NinthsecShow() {
+      $sections = HomepageSectionName::all();
       $ninthsecs = Ninthsec::all();
       $products = Product::all();
       return view('admin.adminNinthsec')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('ninthsecs', $ninthsecs);
     }
 
@@ -596,13 +669,16 @@ class AdminController extends Controller
     }
 
     public function NinthsecShowCatagory() {
+      $sections = HomepageSectionName::all();
       $catagories = Catagory::all();
 
       return view('admin.adminNinthsecCatagory')
-       ->with('catagories', $catagories);
+       ->with('catagories', $catagories)
+       ->with('sections', $sections);
     }
 
     public function NinthsecShowProduct($id) {
+      $sections = HomepageSectionName::all();
       $products = DB::table('products')
         ->where('catagories_id', $id)
         ->where('action', 'live')
@@ -611,15 +687,18 @@ class AdminController extends Controller
 
       return view('admin.adminNinthsecAdd')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('ninthsecs', $ninthsecs);
     }
 
     //Tenth section
     public function TenthsecShow() {
+      $sections = HomepageSectionName::all();
       $tenthsecs = Tenthsec::all();
       $products = Product::all();
       return view('admin.adminTenthsec')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('tenthsecs', $tenthsecs);
     }
 
@@ -641,12 +720,15 @@ class AdminController extends Controller
 
     public function TenthsecShowCatagory() {
       $catagories = Catagory::all();
+      $sections = HomepageSectionName::all();
 
       return view('admin.adminTenthsecCatagory')
-       ->with('catagories', $catagories);
+       ->with('catagories', $catagories)
+       ->with('sections', $sections);
     }
 
     public function TenthsecShowProduct($id) {
+      $sections = HomepageSectionName::all();
       $products = DB::table('products')
         ->where('catagories_id', $id)
         ->where('action', 'live')
@@ -655,6 +737,7 @@ class AdminController extends Controller
 
       return view('admin.adminTenthsecAdd')
         ->with('products', $products)
+        ->with('sections', $sections)
         ->with('tenthsecs', $tenthsecs);
     }
 

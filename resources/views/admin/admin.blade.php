@@ -20,16 +20,17 @@
             <ul>
               <li><a href="{{ route('admin.catagory') }}">Catagory</a> </li>
               <li><a href="{{ route('admin.product.show') }}">Product</a> </li>
-              <li><a href="{{ route('admin.dotd') }}">Deals of the Day</a> </li>
-              <li><a href="{{ route('admin.yml') }}">You May Like</a> </li>
-              <li><a href="{{ route('admin.to') }}">Top Offers </a> </li>
-              <li><a href="{{ route('admin.fourthsec') }}">Section Four Products </a> </li>
-              <li><a href="{{ route('admin.fifthsec') }}">Section Five Products </a> </li>
-              <li><a href="{{ route('admin.sixthsec') }}">Section Six Products </a> </li>
-              <li><a href="{{ route('admin.seventhsec') }}">Section Seven Products </a> </li>
-              <li><a href="{{ route('admin.eightsec') }}">Section Eight Products </a> </li>
-              <li><a href="{{ route('admin.ninthsec') }}">Section Ninth Products </a> </li>
-              <li><a href="{{ route('admin.tenthsec') }}">Section Tenth Products </a> </li>
+              <li><a href="{{ route('admin.dotd') }}">{{ $sections[0]->section_one }}</a> </li>
+              <li><a href="{{ route('admin.yml') }}">{{ $sections[0]->section_two }}</a> </li>
+              <li><a href="{{ route('admin.to') }}">{{ $sections[0]->section_three }}</a> </li>
+              <li><a href="{{ route('admin.fourthsec') }}">{{ $sections[0]->section_four }}</a> </li>
+              <li><a href="{{ route('admin.fifthsec') }}">{{ $sections[0]->section_five }}</a> </li>
+              <li><a href="{{ route('admin.sixthsec') }}">{{ $sections[0]->section_six }}</a> </li>
+              <li><a href="{{ route('admin.seventhsec') }}">{{ $sections[0]->section_seven }}</a> </li>
+              <li><a href="{{ route('admin.eightsec') }}">{{ $sections[0]->section_eight }}</a> </li>
+              <li><a href="{{ route('admin.ninthsec') }}">{{ $sections[0]->section_nine }}</a> </li>
+              <li><a href="{{ route('admin.tenthsec') }}">{{ $sections[0]->section_ten }}</a> </li>
+              <li><a href="{{ route('admin.section.name.edit') }}">Edit Home Page Section Name</a> </li>
             </ul>
           </div>
           @yield('content')

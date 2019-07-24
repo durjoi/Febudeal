@@ -19,12 +19,14 @@ use App\Seventhsec;
 use App\Eightsec;
 use App\Ninthsec;
 use App\Tenthsec;
+use App\HomepageSectionName;
 
 
 class PagesController extends Controller
 {
     public function home()
     {
+      $sections = HomepageSectionName::all();
       $fourthsecs = Fourthsec::all();
       $fifthsecs = Fifthsec::all();
       $sixthsecs = Sixthsec::all();
@@ -59,6 +61,7 @@ class PagesController extends Controller
         ->with('eightsecs', $eightsecs)
         ->with('ninthsecs', $ninthsecs)
         ->with('tenthsecs', $tenthsecs)
+        ->with('sections', $sections)
         ->with('tos', $tos);
     }
 

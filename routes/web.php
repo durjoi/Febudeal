@@ -160,6 +160,10 @@ Route::prefix('admin')->group(function() {
   Route::get('/tenthsec/catagory/{id}', 'AdminController@TenthsecShowProduct')->name('admin.tenthsec.catagory.product');
 
 
+  Route::get('/HomepageSectionName/Edit', 'HomepageSectionNameController@EditFormShow')->name('admin.section.name.edit');
+  Route::post('/HomepageSectionName/update/{id}', 'HomepageSectionNameController@UpdateName')->name('section.name.update');
+
+
 
   Route::get('/product/{id}', 'AdminController@IndividualProductShow')->name('admin.product');
 

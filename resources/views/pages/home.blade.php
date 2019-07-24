@@ -65,7 +65,7 @@
     <div class="container-fluid">
       <div class="row">
           <div class="col-md-6">
-              <h2 class="prdcts__title">Top Offers</h2>
+              <h2 class="prdcts__title">{{ $sections[0]->section_three }}</h2>
           </div>
           <div class="col-md-6 text-right">
             <a href="{{ route('product.sectionthree') }}"> <button type="button" class="prdcts__allbtn">View all</button></a>
@@ -112,7 +112,7 @@
     <div class="container-fluid">
       <div class="row">
           <div class="col-md-6">
-              <h2 class="prdcts__title">Mobile Accessories</h2>
+              <h2 class="prdcts__title">{{ $sections[0]->section_four }}</h2>
           </div>
           <div class="col-md-6 text-right">
               <a href="{{ route('product.sectionfour') }}"> <button type="button" class="prdcts__allbtn">View all</button></a>
@@ -190,7 +190,7 @@
     <div class="container-fluid">
       <div class="row">
           <div class="col-md-6">
-              <h2 class="prdcts__title">Fashion Accessories</h2>
+              <h2 class="prdcts__title">{{ $sections[0]->section_five }}</h2>
           </div>
           <div class="col-md-6 text-right">
             <a href="{{ route('product.sectionfive') }}"> <button type="button" class="prdcts__allbtn">View all</button></a>
@@ -237,7 +237,7 @@
     <div class="container-fluid">
       <div class="row">
           <div class="col-md-6">
-              <h2 class="prdcts__title"> Home Furnishing Offers </h2>
+              <h2 class="prdcts__title"> {{ $sections[0]->section_six }} </h2>
           </div>
           <div class="col-md-6 text-right">
             <a href="{{ route('product.sectionsix') }}"> <button type="button" class="prdcts__allbtn">View all</button></a>
@@ -310,7 +310,7 @@
     <div class="container-fluid">
       <div class="row">
           <div class="col-md-6">
-              <h2 class="prdcts__title"> Home Furnishing Offers </h2>
+              <h2 class="prdcts__title"> {{ $sections[0]->section_seven }} </h2>
           </div>
           <div class="col-md-6 text-right">
             <a href="{{ route('product.sectionseven') }}"> <button type="button" class="prdcts__allbtn">View all</button></a>
@@ -350,7 +350,7 @@
     <div class="container-fluid">
       <div class="row">
           <div class="col-md-6">
-              <h2 class="prdcts__title"> Home Furnishing Offers </h2>
+              <h2 class="prdcts__title"> {{ $sections[0]->section_eight }} </h2>
           </div>
           <div class="col-md-6 text-right">
             <a href="{{ route('product.sectioneight') }}"> <button type="button" class="prdcts__allbtn">View all</button></a>
@@ -388,7 +388,7 @@
     <div class="container-fluid">
       <div class="row">
           <div class="col-md-6">
-              <h2 class="prdcts__title"> Home Furnishing Offers </h2>
+              <h2 class="prdcts__title"> {{ $sections[0]->section_nine }} </h2>
           </div>
           <div class="col-md-6 text-right">
             <a href="{{ route('product.sectionnine') }}"> <button type="button" class="prdcts__allbtn">View all</button></a>
@@ -420,12 +420,12 @@
     </div>
   </div>
   <!-- Product Section Nine End -->
-  <!-- Product Section Nine Start -->
+  <!-- Product Section Ten Start -->
   <div class="prdcts">
     <div class="container-fluid">
       <div class="row">
           <div class="col-md-6">
-              <h2 class="prdcts__title"> Home Furnishing Offers </h2>
+              <h2 class="prdcts__title"> {{ $sections[0]->section_ten }} </h2>
           </div>
           <div class="col-md-6 text-right">
             <a href="{{ route('product.sectionten') }}"> <button type="button" class="prdcts__allbtn">View all</button></a>
@@ -456,7 +456,7 @@
       </div>
     </div>
   </div>
-  <!-- Product Section Nine End -->
+  <!-- Product Section Ten End -->
   <!-- Two Banner Start -->
   <div class="bnnrfour">
     <div class="container-fluid">
