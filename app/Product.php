@@ -33,4 +33,7 @@ class Product extends Model
     public function seventhsecs() {
       return $this->hasOne('App\Seventhsec');
     }
+    public function eightsecs() {
+      return $this->hasOne('App\Eightsec');
+    }
 }

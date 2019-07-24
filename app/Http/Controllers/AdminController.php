@@ -16,6 +16,7 @@ use App\Fourthsec;
 use App\Fifthsec;
 use App\Sixthsec;
 use App\Seventhsec;
+use App\Eightsec;
 
 class AdminController extends Controller
 {
@@ -521,6 +522,50 @@ class AdminController extends Controller
       return view('admin.adminSeventhsecAdd')
         ->with('products', $products)
         ->with('seventhsecs', $seventhsecs);
+    }
+
+    //Eight section
+    public function EightsecShow() {
+      $eightsecs = Eightsec::all();
+      $products = Product::all();
+      return view('admin.adminEightsec')
+        ->with('products', $products)
+        ->with('eightsecs', $eightsecs);
+    }
+
+    public function EightsecAdd($id) {
+      $eightsec = new Eightsec;
+      $eightsec->products_id = $id;
+      $eightsec->save();
+
+      return redirect()->back();
+    }
+
+    public function EightsecDelete($id) {
+      $eightsec = DB::table('eightsecs')
+        ->where('products_id', $id)
+        ->delete();
+
+      return redirect()->route('admin.eightsec');
+    }
+
+    public function EightsecShowCatagory() {
+      $catagories = Catagory::all();
+
+      return view('admin.adminEightsecCatagory')
+       ->with('catagories', $catagories);
+    }
+
+    public function EightsecShowProduct($id) {
+      $products = DB::table('products')
+        ->where('catagories_id', $id)
+        ->where('action', 'live')
+        ->get();
+      $eightsecs = Eightsec::all();
+
+      return view('admin.adminEightsecAdd')
+        ->with('products', $products)
+        ->with('eightsecs', $eightsecs);
     }
 
 
