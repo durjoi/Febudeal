@@ -776,8 +776,8 @@ li.sublist__sublist__item a {
   display: flex;
 }
 .slider-main {
-  height: 100%;
-  width: 100%;
+    /* height: 100%; */
+    /* width: 100%; */
 }
 .slider-main img {
   height:600px;
@@ -795,12 +795,12 @@ li.sublist__sublist__item a {
 
 
 .product__information {
-  background: #fff;
-  margin-top:10px;
-  padding: 15px;
-  /* margin-left: 20px; */
-  /* width: 400px; */
-  height:600px;
+    background: #fff;
+    margin-top: 10px;
+    padding: 15px;
+    /* margin-left: 20px; */
+    /* width: 400px; */
+    /* height: 600px; */
 }
 
 /*==============================Admin Nav========================*/
@@ -852,4 +852,126 @@ li.sublist__sublist__item a {
 .admin__catagory ul li {
   padding: 10px;
   border: 1px solid #000;
+}
+
+/*====================Product Details Css==================*/
+.product__details {
+    padding: 20px 36px;
+}
+.product__details .slider-nav img {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.product__details .slider-main img {
+    height: 480px;
+    width: 100%;
+}
+.cart__button {
+  display: block!important;
+}
+.product__details .nav-container {
+    height: 481px;
+}
+.product__details .main-container {
+
+    height: 482px;
+
+}
+
+.btn_product {
+    height: 46px;
+    width: 172px;
+    padding: 8px;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-right: 1px;
+    margin-left: 2px;
+    border: none;
+    color: #fff;
+}
+.btn__cart {
+  background: #f69e27;
+}
+.btn__buy {
+  background: #f16230;
+}
+.catagory_name {
+    color: #7d7b7b;
+    font-size: 14px;
+}
+.product__title {
+    font-size: 23px;
+    font-weight: bold;
+}
+.product__id {
+    color: #1989f0;
+    font-size: 14px;
+    margin-bottom: 1px;
+    margin-top: 9px;
+}
+.product__price {
+    font-size: 15px;
+    margin-top: 17px;
+}
+.product__price span {
+    color: #0372dc;
+    font-weight: bold;
+    font-size: 20px;
+}
+.product__description {
+    padding-left: 20px;
+    right: 20px;
+    margin-top: 30px;
+}
+h2.product__destitle {
+  font-size: 22px;
+  font-weight: bold;
+
+}
+.des__header {
+    border-bottom: 1px solid #b3b3b3;
+    padding-left: 10px;
+}
+p.description {
+  padding-left:10px;
+  margin-top:10px;
+  text-align: justify;
+}
+.available {
+    color: #358e35;
+    font-weight: bold;
+    font-size: 18px;
+}
+.saler_information {
+    border: 1px solid #bfbfbf;
+    height: 185px;
+    padding: 20px;
+}
+.saler__info {
+  margin-top: 20px;
+}
+.saler__info img {
+  height: 80px;
+  width: 80px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+.saler_information h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #777;
+}
+.saler__info p.saler_name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 12px;
+}
+.saler__info p.saler_name span {
+    font-size: 14px;
+    color: #8e8e8e;
+    font-weight: 400;
+    margin-top: 0px;
 }
