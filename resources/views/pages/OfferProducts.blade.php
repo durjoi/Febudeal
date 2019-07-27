@@ -10,13 +10,13 @@
               @foreach ($offers as $offer)
                 @if ($offer->products_id == $product->id)
                   <div class="col-md-2">
-                    <a href="{{ route('product.details', $product->id) }}">
+                    <a href="{{ url($product->link) }}">
                     <div class="prdcts__item text-center">
                       <div class="img__container">
                         <img src={{ url('storage/products/'.$product->image1) }} alt="#">
                       </div>
                       <h4>{{ $product->title }}</h4>
-                      <p class="item__price">{{ $product->price }} BDT</p>
+                      <p class="item__price">{{ $product->original_price }} BDT</p>
                     </a>
                     </div>
                   </div>

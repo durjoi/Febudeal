@@ -84,13 +84,13 @@
               @endif
               @foreach ($tos as $to)
                 @if ($to->products_id == $product->id)
-                  <a href="{{ route('product.details', $product->id) }}">
+                  <a href="{{ url($product->link) }}">
                   <div class="prdcts__item text-center">
                     <div class="img__container">
                       <img src={{ url('storage/products/'.$product->image1) }} alt="#">
                     </div>
                     <h4>{{ $product->title }}</h4>
-                    <p class="item__price">{{ $product->price }} BDT</p>
+                    <p class="item__price">{{ $product->original_price }} BDT</p>
                   </a>
                   </div>
                 @endif
@@ -131,13 +131,13 @@
               @endif
               @foreach ($fourthsecs as $fourthsec)
                 @if ($fourthsec->products_id == $product->id)
-                  <a href="{{ route('product.details', $product->id) }}">
+                  <a href="{{ url($product->link) }}">
                   <div class="prdcts__item text-center">
                     <div class="img__container">
                       <img src={{ url('storage/products/'.$product->image1) }} alt="#">
                     </div>
                     <h4>{{ $product->title }}</h4>
-                    <p class="item__price">{{ $product->price }} BDT</p>
+                    <p class="item__price">{{ $product->original_price }} BDT</p>
                   </a>
                   </div>
                 @endif
@@ -209,13 +209,13 @@
               @endif
               @foreach ($fifthsecs as $fifthsec)
                 @if ($fifthsec->products_id == $product->id)
-                  <a href="{{ route('product.details', $product->id) }}">
+                  <a href="{{ url($product->link) }}">
                   <div class="prdcts__item text-center">
                     <div class="img__container">
                       <img src={{ url('storage/products/'.$product->image1) }} alt="#">
                     </div>
                     <h4>{{ $product->title }}</h4>
-                    <p class="item__price">{{ $product->price }} BDT</p>
+                    <p class="item__price">{{ $product->original_price }} BDT</p>
                   </a>
                   </div>
                 @endif
@@ -257,13 +257,13 @@
 
               @foreach ($sixthsecs as $sixthsec)
                 @if ($sixthsec->products_id == $product->id)
-                  <a href="{{ route('product.details', $product->id) }}">
+                  <a href="{{ url($product->link) }}">
                   <div class="prdcts__item text-center">
                     <div class="img__container">
                       <img src={{ url('storage/products/'.$product->image1) }} alt="#">
                     </div>
                     <h4>{{ $product->title }}</h4>
-                    <p class="item__price">{{ $product->price }} BDT</p>
+                    <p class="item__price">{{ $product->original_price }} BDT</p>
                   </a>
                   </div>
                 @endif
@@ -323,13 +323,13 @@
             @foreach ($products as $product)
               @foreach ($seventhsecs as $seventhsec)
                 @if ($seventhsec->products_id == $product->id)
-                  <a href="{{ route('product.details', $product->id) }}">
+                  <a href="{{ url($product->link) }}">
                   <div class="prdcts__item text-center">
                     <div class="img__container">
                       <img src={{ url('storage/products/'.$product->image1) }} alt="#">
                     </div>
                     <h4>{{ $product->title }}</h4>
-                    <p class="item__price">{{ $product->price }} BDT</p>
+                    <p class="item__price">{{ $product->original_price }} BDT</p>
                   </a>
                   </div>
                 @endif
@@ -363,13 +363,13 @@
             @foreach ($products as $product)
               @foreach ($eightsecs as $eightsec)
                 @if ($eightsec->products_id == $product->id)
-                  <a href="{{ route('product.details', $product->id) }}">
+                  <a href="{{ url($product->link) }}">
                   <div class="prdcts__item text-center">
                     <div class="img__container">
                       <img src={{ url('storage/products/'.$product->image1) }} alt="#">
                     </div>
                     <h4>{{ $product->title }}</h4>
-                    <p class="item__price">{{ $product->price }} BDT</p>
+                    <p class="item__price">{{ $product->original_price }} BDT</p>
                   </a>
                   </div>
                 @endif
@@ -401,13 +401,13 @@
             @foreach ($products as $product)
               @foreach ($ninthsecs as $ninthsec)
                 @if ($ninthsec->products_id == $product->id)
-                  <a href="{{ route('product.details', $product->id) }}">
+                  <a href="{{ url($product->link) }}">
                   <div class="prdcts__item text-center">
                     <div class="img__container">
                       <img src={{ url('storage/products/'.$product->image1) }} alt="#">
                     </div>
                     <h4>{{ $product->title }}</h4>
-                    <p class="item__price">{{ $product->price }} BDT</p>
+                    <p class="item__price">{{ $product->original_price }} BDT</p>
                   </a>
                   </div>
                 @endif
@@ -438,13 +438,13 @@
             @foreach ($products as $product)
               @foreach ($tenthsecs as $tenthsec)
                 @if ($tenthsec->products_id == $product->id)
-                  <a href="{{ route('product.details', $product->id) }}">
+                  <a href="{{ url($product->link) }}">
                   <div class="prdcts__item text-center">
                     <div class="img__container">
                       <img src={{ url('storage/products/'.$product->image1) }} alt="#">
                     </div>
                     <h4>{{ $product->title }}</h4>
-                    <p class="item__price">{{ $product->price }} BDT</p>
+                    <p class="item__price">{{ $product->original_price }} BDT</p>
                   </a>
                   </div>
                 @endif

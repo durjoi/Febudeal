@@ -48,15 +48,27 @@
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
 
-          <label for="price">Price</label><br>
-          <input type="text" name="price" value="" id="price" required><br>
-          @error('price')
+          <label for="brand_url">Brand URL</label><br>
+          <input type="text" name="brand_url" value="" id="brand_url" required><br>
+          @error('brand_url')
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
 
-          <label for="quantity">Quantity</label><br>
-          <input type="text" name="quantity" value="" id="quantity" required><br>
-          @error('quantity')
+          <label for="original_price">Original Price</label><br>
+          <input type="text" name="original_price" value="" id="original_price" required><br>
+          @error('original_price')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
+
+          <label for="present_price">Your Price</label><br>
+          <input type="text" name="present_price" value="" id="present_price" required><br>
+          @error('present_price')
+            <div class="alert alert-danger">{{ $message }}</div>
+          @enderror
+
+          <label for="link">Product Link</label><br>
+          <input type="text" name="link" value="" id="link" required><br>
+          @error('link')
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
 
@@ -80,7 +92,7 @@
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
 
-          <input type="file" name="image2" required>
+          {{-- <input type="file" name="image2" required>
           @error('image2')
             <div class="alert alert-danger">{{ $message }}</div>
           @enderror
@@ -93,7 +105,7 @@
           <input type="file" name="image4" required><br>
           @error('image4')
             <div class="alert alert-danger">{{ $message }}</div>
-          @enderror
+          @enderror --}}
 
 
           <input type="submit" name="submit" value="Post Now">

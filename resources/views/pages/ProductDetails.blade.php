@@ -64,8 +64,10 @@
           @endif
           </p>
           {{-- <p>{{ $catagory->catagory }}>{{ $subcatagory->subcatagories }}>{{ $sub2catagory->subcatagories2 }}</p> --}}
-          <p class="product__id">Product ID: #{{ $product->id }}</p>
+          <p class="product__id">Product ID: #{{ $product->id }} </p>
+
           <h2 class="product__title">{{ $product->title }}</h2>
+          <p class="product__id">Brand: {{ $product->brand }} </p>
 
           <p class="product__price">Price: <span>{{ $product->price }} BDT</span> </p>
           {{-- @if ($product->quantity>0)
@@ -79,8 +81,7 @@
           <h3>Saler Information</h3>
           <div class="saler__info d-flex">
             <img src="{{ url('storage/products/'.$product->image1) }}" alt="">
-            <p class="saler_name">Mehedi Hassan Durjoi <br> <span>Member since Jul 2017</span> </p> 
-            <p class="saler_joining"></p>
+            <p class="saler_name">Mehedi Hassan Durjoi <br> <span>Member since Jul 2017</span> </p>
           </div>
         </div>
       </div>

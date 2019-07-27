@@ -139,15 +139,21 @@ body {
 
 }
 .prdcts__item h4 {
-    font-size: 17px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 200;
+    height: 21px;
+    overflow: hidden;
     margin-top: 8px;
     color: #545454;
+    text-align: left;
+    margin-bottom: 18px;
+    text-align: center;
 }
 
 .item__price {
-    font-size: 16px;
+    font-size: 14px;
     color: #1989f0;
+    text-align:left;
     margin-top: -6px;
 }
 
@@ -558,10 +564,24 @@ p.sidebar__slremail {
   margin-bottom: 10px;
 }
 .productprice {
-    font-size: 16px;
+    font-size: 23px;
+    /* color: #006f00; */
+    margin-bottom: 5px;
 }
 .productprice span{
   color: #6c757d;
+  font-size: 18px;
+}
+.ori_price {
+  text-decoration: line-through;
+  font-size: 14px!important;
+}
+.brand {
+  margin: 0px;
+}
+.price_off {
+    /* font-size: 12px; */
+    color: #1e7e34!important;
 }
 .productqty, .productcatagory {
     color: #6c757d;
@@ -974,4 +994,30 @@ p.description {
     color: #8e8e8e;
     font-weight: 400;
     margin-top: 0px;
+}
+
+
+.original_price {
+    text-decoration: line-through;
+    font-size: 11px;
+    color: #717171;
+    margin-left: 5px;
+}
+.price_offer {
+    font-size: 18px;
+    color: #1e7e34 !important;
+}
+
+
+.item-price {
+    height: 20px;
+    padding: 5px;
+    width: 100%;
+    position: relative;
+}
+.item__brand {
+    float: right;
+    position: absolute;
+    right: 6px;
+    top: 6px;
 }

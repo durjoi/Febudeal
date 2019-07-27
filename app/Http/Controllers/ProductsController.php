@@ -58,32 +58,40 @@ class ProductsController extends Controller
       $image1name=$image1->getClientOriginalName();
       $image1->storeAs('public/products', $image1name);
 
-      $image2 = $request->file('image2');
-      $image2name=$image2->getClientOriginalName();
-      $image2->storeAs('public/products', $image2name);
+      // $image2 = $request->file('image2');
+      // $image2name=$image2->getClientOriginalName();
+      // $image2->storeAs('public/products', $image2name);
+      //
+      // $image3 = $request->file('image3');
+      // $image3name=$image3->getClientOriginalName();
+      // $image3->storeAs('public/products', $image3name);
+      //
+      // $image4 = $request->file('image4');
+      // $image4name=$image4->getClientOriginalName();
+      // $image4->storeAs('public/products', $image4name);
 
-      $image3 = $request->file('image3');
-      $image3name=$image3->getClientOriginalName();
-      $image3->storeAs('public/products', $image3name);
-
-      $image4 = $request->file('image4');
-      $image4name=$image4->getClientOriginalName();
-      $image4->storeAs('public/products', $image4name);
+      $x = $request->original_price;
+      $y = $request->present_price;
+      $offer = (($x-$y)*100)/$x;
 
       $product = new Product;
       $product->saler_id = $saler->id;
       $product->title = $request->title;
       $product->description = $request->description;
-      $product->quantity = $request->quantity;
-      $product->price = $request->price;
+      $product->brand = $request->brand;
+      $product->link = $request->link;
+      $product->original_price = $request->original_price;
+      $product->present_price = $request->present_price;
       $product->sub2catagories_id = $id;
       $product->subcatagories_id = $subcatagory->id;
       $product->catagories_id = $catagory->id;
+      $product ->off_price = $offer;
+      $product ->brand_url = $request->brand_url;
       // $product->sizesymbol=implode(",",$request->size);
       $product->image1 = $image1name;
-      $product->image2 = $image2name;
-      $product->image3 = $image3name;
-      $product->image4 = $image4name;
+      // $product->image2 = $image2name;
+      // $product->image3 = $image3name;
+      // $product->image4 = $image4name;
       $product->action = "pending";
       $product->save();
 
@@ -99,31 +107,39 @@ class ProductsController extends Controller
       $image1name=$image1->getClientOriginalName();
       $image1->storeAs('public/products', $image1name);
 
-      $image2 = $request->file('image2');
-      $image2name=$image2->getClientOriginalName();
-      $image2->storeAs('public/products', $image2name);
+      // $image2 = $request->file('image2');
+      // $image2name=$image2->getClientOriginalName();
+      // $image2->storeAs('public/products', $image2name);
+      //
+      // $image3 = $request->file('image3');
+      // $image3name=$image3->getClientOriginalName();
+      // $image3->storeAs('public/products', $image3name);
+      //
+      // $image4 = $request->file('image4');
+      // $image4name=$image4->getClientOriginalName();
+      // $image4->storeAs('public/products', $image4name);
 
-      $image3 = $request->file('image3');
-      $image3name=$image3->getClientOriginalName();
-      $image3->storeAs('public/products', $image3name);
+      $x = $request->original_price;
+      $y = $request->present_price;
+      $offer = (($x-$y)*100)/$x;
 
-      $image4 = $request->file('image4');
-      $image4name=$image4->getClientOriginalName();
-      $image4->storeAs('public/products', $image4name);
 
       $product = new Product;
       $product->saler_id = $saler->id;
       $product->title = $request->title;
       $product->description = $request->description;
-      $product->quantity = $request->quantity;
-      $product->price = $request->price;
-
+      $product->original_price = $request->original_price;
+      $product->present_price = $request->present_price;
+      $product->brand = $request->brand;
+      $product->link = $request->link;
+      $product ->off_price = $offer;
       $product->catagories_id = $catagory->id;
       // $product->sizesymbol=implode(",",$request->size);
       $product->image1 = $image1name;
-      $product->image2 = $image2name;
-      $product->image3 = $image3name;
-      $product->image4 = $image4name;
+      $product ->brand_url = $request->brand_url;
+      // $product->image2 = $image2name;
+      // $product->image3 = $image3name;
+      // $product->image4 = $image4name;
       $product->action = "pending";
       $product->save();
 
@@ -141,31 +157,39 @@ class ProductsController extends Controller
       $image1name=$image1->getClientOriginalName();
       $image1->storeAs('public/products', $image1name);
 
-      $image2 = $request->file('image2');
-      $image2name=$image2->getClientOriginalName();
-      $image2->storeAs('public/products', $image2name);
+      // $image2 = $request->file('image2');
+      // $image2name=$image2->getClientOriginalName();
+      // $image2->storeAs('public/products', $image2name);
+      //
+      // $image3 = $request->file('image3');
+      // $image3name=$image3->getClientOriginalName();
+      // $image3->storeAs('public/products', $image3name);
+      //
+      // $image4 = $request->file('image4');
+      // $image4name=$image4->getClientOriginalName();
+      // $image4->storeAs('public/products', $image4name);
 
-      $image3 = $request->file('image3');
-      $image3name=$image3->getClientOriginalName();
-      $image3->storeAs('public/products', $image3name);
-
-      $image4 = $request->file('image4');
-      $image4name=$image4->getClientOriginalName();
-      $image4->storeAs('public/products', $image4name);
+      $x = $request->original_price;
+      $y = $request->present_price;
+      $offer = (($x-$y)*100)/$x;
 
       $product = new Product;
       $product->saler_id = $saler->id;
       $product->title = $request->title;
       $product->description = $request->description;
-      $product->quantity = $request->quantity;
-      $product->price = $request->price;
+      $product->original_price = $request->original_price;
+      $product->present_price = $request->present_price;
       $product->subcatagories_id = $id;
       $product->catagories_id = $catagory->id;
+      $product->brand = $request->brand;
+      $product ->off_price = $offer;
+      $product->link = $request->link;
       // $product->sizesymbol=implode(",",$request->size);
       $product->image1 = $image1name;
-      $product->image2 = $image2name;
-      $product->image3 = $image3name;
-      $product->image4 = $image4name;
+      $product ->brand_url = $request->brand_url;
+      // $product->image2 = $image2name;
+      // $product->image3 = $image3name;
+      // $product->image4 = $image4name;
       $product->action = "pending";
       $product->save();
 

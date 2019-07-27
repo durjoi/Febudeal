@@ -22,16 +22,19 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('catagories_id');
             $table->string('title');
             $table->longText('description');
-            $table->integer('quantity');
-            $table->integer('price');
-            $table->string('image1');
-            $table->string('image2');
-            $table->string('image3');
-            $table->string('image4');
-            $table->integer('sizenumber')->nullable();
-            $table->string('sizesymbol')->nullable();
-            $table->string('color')->nullable();
+            // $table->integer('quantity');
+            $table->string('link')->nullable();
+            $table->integer('original_price');
+            $table->integer('present_price');
+            $table->integer('off_price');
+            $table->string('brand');
+            $table->string('brand_url');
             $table->string('action');
+            $table->string('image1');
+            // $table->string('image2');
+            // $table->string('image3');
+            // $table->string('image4');
+
             $table->timestamps();
 
             $table->foreign('saler_id')->references('id')->on('salers')->onDelete('cascade');
