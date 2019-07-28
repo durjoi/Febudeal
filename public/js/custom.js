@@ -67,7 +67,7 @@ $(document).ready(function(){
     dots: false,
     infinite: false,
     speed: 300,
-    slidesToShow: 8,
+    slidesToShow: 7,
     slidesToScroll: 1,
     arrows: false,
     responsive: [
@@ -183,5 +183,4 @@ $(window).on('resize orientationchange', function() {
     $(".subcatagory_list_item").click(function(){
           $(this).find(".sub2catagory_list").addClass("admin__catagory__active");
       });
-
 });
