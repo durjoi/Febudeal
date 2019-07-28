@@ -169,5 +169,19 @@ $(window).on('resize orientationchange', function() {
             $(this).find('#delete_catagory').submit(); // Submit the form
         });
 
+    $(".catagory_list_item").click(function(){
+          $(this).siblings().find(".subcatagory_list").removeClass("admin__catagory__active");
+      });
+    $(".catagory_list_item").click(function(){
+          $(this).find(".subcatagory_list").addClass("admin__catagory__active");
+      });
+
+
+    $(".subcatagory_list_item").click(function(){
+          $(this).siblings().find(".sub2catagory_list").removeClass("admin__catagory__active");
+      });
+    $(".subcatagory_list_item").click(function(){
+          $(this).find(".sub2catagory_list").addClass("admin__catagory__active");
+      });
 
 });

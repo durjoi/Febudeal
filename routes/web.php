@@ -22,6 +22,7 @@ Auth::routes();
 Route::get('/catagory/{id}', 'PagesController@CatagoryProducts')->name('catagory.products');
 Route::get('/subcatagory/{id}', 'PagesController@SubcatagoryProducts')->name('subcatagory.products');
 Route::get('/sub2catagory/{id}', 'PagesController@Sub2catagoryProducts')->name('sub2catagory.products');
+Route::get('/allcatagory', 'PagesController@CatagoryAllProducts')->name('catagory.all.products');
 
 Route::get('/sectionone', 'PagesController@SectionOne')->name('product.firstsection');
 Route::get('/sectiontwo', 'PagesController@SectionTwo')->name('product.sectiontwo');

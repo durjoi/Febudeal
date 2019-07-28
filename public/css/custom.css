@@ -1069,3 +1069,14 @@ p.description {
 .catagory_sidebar_catagory ul li a i {
   font-size: 14px;
 }
+.catagory_filter {
+  margin-bottom: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.subcatagory_list {
+  display: none;
+}
+.sub2catagory_list {
+  display: none;
+}

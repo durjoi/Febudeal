@@ -284,6 +284,7 @@ class PagesController extends Controller
       $sub2catagories = DB::table('sub2catagories')
           ->get();
       $catagory = Catagory::find($id);
+
       $side_catagory = 1;
       $side_subcatagory = 0;
       $side_sub2catagory = 0;
@@ -365,6 +366,33 @@ class PagesController extends Controller
         ->with('side_sub2catagory', $side_sub2catagory)
         ->with('subcatagory', $subcatagory)
         ->with('sub2catagory', $sub2catagory);
+    }
+
+    public function CatagoryAllProducts() {
+      $catagories = DB::table('catagories')
+        ->get();
+      $subcatagories = DB::table('subcatagories')
+          ->get();
+      $sub2catagories = DB::table('sub2catagories')
+          ->get();
+
+      $side_catagory = 2;
+      $side_subcatagory = 0;
+      $side_sub2catagory = 0;
+
+      $products = Product::all();
+      return view('pages.CatagoryProducts')
+        ->with('products', $products)
+        // ->with('catagory', $catagory)
+        ->with('catagories', $catagories)
+        ->with('subcatagories', $subcatagories)
+        ->with('sub2catagories', $sub2catagories)
+        ->with('side_catagory', $side_catagory)
+        ->with('side_subcatagory', $side_subcatagory)
+        ->with('side_sub2catagory', $side_sub2catagory);
+        // ->with('subcatagory', $subcatagory)
+        // ->with('sub2catagory', $sub2catagory);
+
     }
 
 }
