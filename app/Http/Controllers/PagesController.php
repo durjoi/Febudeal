@@ -284,6 +284,9 @@ class PagesController extends Controller
       $sub2catagories = DB::table('sub2catagories')
           ->get();
       $catagory = Catagory::find($id);
+      $side_catagory = 1;
+      $side_subcatagory = 0;
+      $side_sub2catagory = 0;
       $products = DB::table('products')
         ->where('catagories_id', $catagory->id)
         ->get();
@@ -293,6 +296,9 @@ class PagesController extends Controller
         ->with('catagories', $catagories)
         ->with('subcatagories', $subcatagories)
         ->with('sub2catagories', $sub2catagories)
+        ->with('side_catagory', $side_catagory)
+        ->with('side_subcatagory', $side_subcatagory)
+        ->with('side_sub2catagory', $side_sub2catagory)
         ->with('catagory', $catagory);
     }
     public function SubcatagoryProducts($id) {
@@ -310,12 +316,19 @@ class PagesController extends Controller
         ->where('subcatagories_id', $subcatagory->id)
         ->get();
 
+        $side_catagory = 0;
+        $side_subcatagory = 1;
+        $side_sub2catagory = 0;
+
       return view('pages.CatagoryProducts')
         ->with('products', $products)
         ->with('catagory', $catagory)
         ->with('catagories', $catagories)
         ->with('subcatagories', $subcatagories)
         ->with('sub2catagories', $sub2catagories)
+        ->with('side_catagory', $side_catagory)
+        ->with('side_subcatagory', $side_subcatagory)
+        ->with('side_sub2catagory', $side_sub2catagory)
         ->with('subcatagory', $subcatagory);
     }
 
@@ -337,12 +350,19 @@ class PagesController extends Controller
         ->where('sub2catagories_id', $sub2catagory->id)
         ->get();
 
+        $side_catagory = 0;
+        $side_subcatagory = 0;
+        $side_sub2catagory = 1;
+
       return view('pages.CatagoryProducts')
         ->with('products', $products)
         ->with('catagory', $catagory)
         ->with('catagories', $catagories)
         ->with('subcatagories', $subcatagories)
         ->with('sub2catagories', $sub2catagories)
+        ->with('side_catagory', $side_catagory)
+        ->with('side_subcatagory', $side_subcatagory)
+        ->with('side_sub2catagory', $side_sub2catagory)
         ->with('subcatagory', $subcatagory)
         ->with('sub2catagory', $sub2catagory);
     }
