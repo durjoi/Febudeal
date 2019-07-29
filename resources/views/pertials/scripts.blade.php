@@ -4,5 +4,5 @@
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script src="https://kit.fontawesome.com/6102fe17e4.js"></script>
 
-<script type="text/javascript" src="{{ asset('exzoom/jquery.exzoom.js') }}"></script>
+<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="{{ asset('js/custom.js') }}"></script>

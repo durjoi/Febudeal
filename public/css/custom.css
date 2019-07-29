@@ -196,10 +196,11 @@ body {
 }
 /*================Footer Css==================*/
 .footertop {
-  height: 250px;
-  margin-top: 20px;
-  padding-top: 40px;
-  background-color: #172337;
+    height: 250px;
+    margin-top: 20px;
+    clear: both;
+    padding-top: 40px;
+    background-color: #172337;
 }
 .footertop__item {
   padding-left:40px;
@@ -1027,7 +1028,7 @@ p.description {
     padding-right: 10px;
     /* background: #f00; */
     width: 250px;
-    height: calc(100vh - 100px);
+    height: 100%;
     display: inline-block;
     border-right: 1px solid #e2e2e2;
 }
@@ -1079,4 +1080,66 @@ p.description {
 }
 .sub2catagory_list {
   display: none;
+}
+.filter_header {
+  font-size: 20px;
+  font-weight: 600;
+}
+.price_range {
+    margin-top: 20px;
+    height: 85px;
+}
+.price_range h4 {
+    font-size: 20px;
+    color: #636363;
+    font-weight: 600;
+    margin-bottom: 13px;
+}
+#slider-range {
+  margin-bottom: 10px;
+}
+/* .price_range p {
+  display: flex;
+} */
+.min_amount, .max_amount {
+    width: 80px;
+    display: inline-block;
+    border: none;
+    font-size: 14px;
+    font-weight: 900;
+    color: #5f5f5f;
+}
+.min_amount {
+  float: left;
+  text-align: left;
+}
+.max_amount {
+  float: right;
+  text-align: right;
+}
+.ui-slider-horizontal {
+    height: 8px;
+}
+/* span.ui-slider-handle.ui-corner-all.ui-state-default.ui-state-hover {
+    margin-top: -2px;
+} */
+span.ui-slider-handle.ui-corner-all.ui-state-default {
+    margin-top: -2px;
+}
+.discount h4 {
+  font-size: 20px;
+  color: #636363;
+  font-weight: 600;
+  margin-bottom: 13px;
+}
+.discount {
+  margin-top:20px;
+  padding-left: 10px;
+}
+.discount p {
+  display: inline-block;
+  margin-bottom: 0px;
+}
+.discount input {
+  margin-left: 10px;
 }

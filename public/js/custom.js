@@ -183,4 +183,72 @@ $(window).on('resize orientationchange', function() {
     $(".subcatagory_list_item").click(function(){
           $(this).find(".sub2catagory_list").addClass("admin__catagory__active");
       });
+
+
+$( function() {
+
+  $( "#slider-range" ).slider({
+    range: true,
+    min: 0,
+    max: 100000,
+    values: [ 500, 70000 ],
+    slide: function( event, ui ) {
+      $( "#min_amount" ).val( ui.values[ 0 ] );
+      $( "#max_amount" ).val( ui.values[ 1 ] );
+
+      var min = $('#min_amount').val();
+      var max = $('#max_amount').val();
+
+      $.ajax({
+        type: 'get', url:'', data: "min="+min + "& max=" +max,
+        // beforeSend: function() {
+        //   $('#showPrice').show("fast");
+        // },
+        // complete: function() {
+        //   $('#showPrice').hide("fast");
+        // },
+        success: function(response) {
+          // $('#showDiv').show("slow");
+          // $('#showDiv').html(html);
+          console.log(response);
+          $('#updateDiv').html(response);
+        },
+      });
+
+    }
+  });
+
+  $('.discount').click(function(){
+    var dis = [];
+    $('.discount').each(function(){
+      if($(this).is(":checked")){
+        dis.push($(this).val());
+      }
+    });
+    // finalDis = dis.toString();
+    // alert(finalDis);
+    // $.ajax({
+    //   type: 'get',dataType:'html', url:' ', data: "discnt="+finalDis,
+    //   success: function(response) {
+    //     // $('#showDiv').show("slow");
+    //     // $('#showDiv').html(html);
+    //     console.log(response);
+    //     $('#updateDiv').html(response);
+    //   },
+    // });
+    $.ajax({
+      type: 'get',dataType:'html', url:' ', data: "discount="+dis,
+      success: function(response) {
+        // $('#showDiv').show("slow");
+        // $('#showDiv').html(html);
+        console.log(response);
+        $('#updateDiv').html(response);
+      },
+    });
+
+    // alert(dis);
+  });
+  // $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
+  //   " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+} );
 });

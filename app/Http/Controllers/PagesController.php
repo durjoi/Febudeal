@@ -276,7 +276,7 @@ class PagesController extends Controller
 
     }
 
-    public function CatagoryProducts($id) {
+    public function CatagoryProducts(Request $request, $id) {
       $catagories = DB::table('catagories')
         ->get();
       $subcatagories = DB::table('subcatagories')
@@ -288,21 +288,50 @@ class PagesController extends Controller
       $side_catagory = 1;
       $side_subcatagory = 0;
       $side_sub2catagory = 0;
-      $products = DB::table('products')
-        ->where('catagories_id', $catagory->id)
-        ->get();
 
-      return view('pages.CatagoryProducts')
-        ->with('products', $products)
-        ->with('catagories', $catagories)
-        ->with('subcatagories', $subcatagories)
-        ->with('sub2catagories', $sub2catagories)
-        ->with('side_catagory', $side_catagory)
-        ->with('side_subcatagory', $side_subcatagory)
-        ->with('side_sub2catagory', $side_sub2catagory)
-        ->with('catagory', $catagory);
+      if($request->ajax()) {
+        $min = $request->min;
+        $max = $request->max;
+        $products = DB::table('products')
+          ->where('catagories_id', $catagory->id)
+          ->where('present_price', '>=', $min)
+          ->where('present_price', '<=', $max)
+          ->get();
+
+        //dd($products);
+        response()->json($products);
+        return view('pages.CatagoryProductsUpdated', compact('products'));
+          // ->with('products', $products);
+          // return view('pages.CatagoryProducts')
+          //   ->with('products', $products)
+          //   // ->with('catagory', $catagory)
+          //   ->with('catagories', $catagories)
+          //   ->with('subcatagories', $subcatagories)
+          //   ->with('sub2catagories', $sub2catagories)
+          //   ->with('side_catagory', $side_catagory)
+          //   ->with('side_subcatagory', $side_subcatagory)
+          //   ->with('side_sub2catagory', $side_sub2catagory);
+
+      }
+
+      else {
+        $products = DB::table('products')
+          ->where('catagories_id', $catagory->id)
+          ->get();
+
+        return view('pages.CatagoryProducts')
+          ->with('products', $products)
+          ->with('catagories', $catagories)
+          ->with('subcatagories', $subcatagories)
+          ->with('sub2catagories', $sub2catagories)
+          ->with('side_catagory', $side_catagory)
+          ->with('side_subcatagory', $side_subcatagory)
+          ->with('side_sub2catagory', $side_sub2catagory)
+          ->with('catagory', $catagory);
+      }
+
     }
-    public function SubcatagoryProducts($id) {
+    public function SubcatagoryProducts(Request $request, $id) {
       $catagories = DB::table('catagories')
         ->get();
       $subcatagories = DB::table('subcatagories')
@@ -313,27 +342,57 @@ class PagesController extends Controller
       $catagory = DB::table('catagories')
         ->where('id', $subcatagory->catagories_id)
         ->get();
-      $products = DB::table('products')
-        ->where('subcatagories_id', $subcatagory->id)
-        ->get();
+
 
         $side_catagory = 0;
         $side_subcatagory = 1;
         $side_sub2catagory = 0;
 
-      return view('pages.CatagoryProducts')
-        ->with('products', $products)
-        ->with('catagory', $catagory)
-        ->with('catagories', $catagories)
-        ->with('subcatagories', $subcatagories)
-        ->with('sub2catagories', $sub2catagories)
-        ->with('side_catagory', $side_catagory)
-        ->with('side_subcatagory', $side_subcatagory)
-        ->with('side_sub2catagory', $side_sub2catagory)
-        ->with('subcatagory', $subcatagory);
+        if($request->ajax()) {
+          $min = $request->min;
+          $max = $request->max;
+          $products = DB::table('products')
+              ->where('subcatagories_id', $subcatagory->id)
+            ->where('present_price', '>=', $min)
+            ->where('present_price', '<=', $max)
+            ->get();
+
+          //dd($products);
+          response()->json($products);
+          return view('pages.CatagoryProductsUpdated', compact('products'));
+            // ->with('products', $products);
+            // return view('pages.CatagoryProducts')
+            //   ->with('products', $products)
+            //   // ->with('catagory', $catagory)
+            //   ->with('catagories', $catagories)
+            //   ->with('subcatagories', $subcatagories)
+            //   ->with('sub2catagories', $sub2catagories)
+            //   ->with('side_catagory', $side_catagory)
+            //   ->with('side_subcatagory', $side_subcatagory)
+            //   ->with('side_sub2catagory', $side_sub2catagory);
+
+        }
+        else {
+          $products = DB::table('products')
+            ->where('subcatagories_id', $subcatagory->id)
+            ->get();
+
+            return view('pages.CatagoryProducts')
+              ->with('products', $products)
+              ->with('catagory', $catagory)
+              ->with('catagories', $catagories)
+              ->with('subcatagories', $subcatagories)
+              ->with('sub2catagories', $sub2catagories)
+              ->with('side_catagory', $side_catagory)
+              ->with('side_subcatagory', $side_subcatagory)
+              ->with('side_sub2catagory', $side_sub2catagory)
+              ->with('subcatagory', $subcatagory);
+        }
+
+
     }
 
-    public function Sub2catagoryProducts($id) {
+    public function Sub2catagoryProducts(Request $request, $id ) {
       $catagories = DB::table('catagories')
         ->get();
       $subcatagories = DB::table('subcatagories')
@@ -347,28 +406,60 @@ class PagesController extends Controller
       $catagory = DB::table('catagories')
           ->where('id', $subcatagory[0]->catagories_id)
           ->get();
-      $products = DB::table('products')
-        ->where('sub2catagories_id', $sub2catagory->id)
-        ->get();
+
 
         $side_catagory = 0;
         $side_subcatagory = 0;
         $side_sub2catagory = 1;
 
-      return view('pages.CatagoryProducts')
-        ->with('products', $products)
-        ->with('catagory', $catagory)
-        ->with('catagories', $catagories)
-        ->with('subcatagories', $subcatagories)
-        ->with('sub2catagories', $sub2catagories)
-        ->with('side_catagory', $side_catagory)
-        ->with('side_subcatagory', $side_subcatagory)
-        ->with('side_sub2catagory', $side_sub2catagory)
-        ->with('subcatagory', $subcatagory)
-        ->with('sub2catagory', $sub2catagory);
+        if($request->ajax()) {
+          $min = $request->min;
+          $max = $request->max;
+          $products = DB::table('products')
+            ->where('sub2catagories_id', $sub2catagory->id)
+            ->where('present_price', '>=', $min)
+            ->where('present_price', '<=', $max)
+            ->get();
+
+          //dd($products);
+          response()->json($products);
+          return view('pages.CatagoryProductsUpdated', compact('products'));
+            // ->with('products', $products);
+            // return view('pages.CatagoryProducts')
+            //   ->with('products', $products)
+            //   // ->with('catagory', $catagory)
+            //   ->with('catagories', $catagories)
+            //   ->with('subcatagories', $subcatagories)
+            //   ->with('sub2catagories', $sub2catagories)
+            //   ->with('side_catagory', $side_catagory)
+            //   ->with('side_subcatagory', $side_subcatagory)
+            //   ->with('side_sub2catagory', $side_sub2catagory);
+
+        }
+
+        else {
+
+          $products = DB::table('products')
+            ->where('sub2catagories_id', $sub2catagory->id)
+            ->get();
+          return view('pages.CatagoryProducts')
+            ->with('products', $products)
+            ->with('catagory', $catagory)
+            ->with('catagories', $catagories)
+            ->with('subcatagories', $subcatagories)
+            ->with('sub2catagories', $sub2catagories)
+            ->with('side_catagory', $side_catagory)
+            ->with('side_subcatagory', $side_subcatagory)
+            ->with('side_sub2catagory', $side_sub2catagory)
+            ->with('subcatagory', $subcatagory)
+            ->with('sub2catagory', $sub2catagory);
+        }
+
+
     }
 
-    public function CatagoryAllProducts() {
+    public function CatagoryAllProducts(Request $request) {
+
       $catagories = DB::table('catagories')
         ->get();
       $subcatagories = DB::table('subcatagories')
@@ -380,19 +471,57 @@ class PagesController extends Controller
       $side_subcatagory = 0;
       $side_sub2catagory = 0;
 
-      $products = Product::all();
-      return view('pages.CatagoryProducts')
-        ->with('products', $products)
-        // ->with('catagory', $catagory)
-        ->with('catagories', $catagories)
-        ->with('subcatagories', $subcatagories)
-        ->with('sub2catagories', $sub2catagories)
-        ->with('side_catagory', $side_catagory)
-        ->with('side_subcatagory', $side_subcatagory)
-        ->with('side_sub2catagory', $side_sub2catagory);
-        // ->with('subcatagory', $subcatagory)
-        // ->with('sub2catagory', $sub2catagory);
+      if($request->ajax()) {
+        $min = $request->min;
+        $max = $request->max;
+        $products = DB::table('products')
+          ->where('present_price', '>=', $min)
+          ->where('present_price', '<=', $max)
+          ->get();
 
-    }
+        //dd($products);
+        response()->json($products);
+        return view('pages.CatagoryProductsUpdated', compact('products'));
+          // ->with('products', $products);
+          // return view('pages.CatagoryProducts')
+          //   ->with('products', $products)
+          //   // ->with('catagory', $catagory)
+          //   ->with('catagories', $catagories)
+          //   ->with('subcatagories', $subcatagories)
+          //   ->with('sub2catagories', $sub2catagories)
+          //   ->with('side_catagory', $side_catagory)
+          //   ->with('side_subcatagory', $side_subcatagory)
+          //   ->with('side_sub2catagory', $side_sub2catagory);
+
+      }
+      elseif(isset($request->discount)) {
+        // $products = DB::table('products')
+        //   ->where('present_price', '>=', $min)
+        //   ->where('present_price', '<=', $max)
+        //   ->get();
+        //
+        // //dd($products);
+        // response()->json($products);
+        // return view('pages.CatagoryProductsUpdated', compact('products'));
+      }
+      else {
+
+
+        $products = Product::all();
+        return view('pages.CatagoryProducts')
+          ->with('products', $products)
+          // ->with('catagory', $catagory)
+          ->with('catagories', $catagories)
+          ->with('subcatagories', $subcatagories)
+          ->with('sub2catagories', $sub2catagories)
+          ->with('side_catagory', $side_catagory)
+          ->with('side_subcatagory', $side_subcatagory)
+          ->with('side_sub2catagory', $side_sub2catagory);
+          // ->with('subcatagory', $subcatagory)
+          // ->with('sub2catagory', $sub2catagory);
+
+      }
+      }
+
 
 }

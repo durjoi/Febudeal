@@ -7,6 +7,7 @@
       <img src="{{ asset('images/banner2.jpg') }}" alt="">
     </div>
     <div class="catagory_filter">
+      <h3 class="filter_header">Filter</h3>
       @if ($side_catagory == 1)
         <a href="{{ route('catagory.all.products') }}"> <button type="button" name="button"><i class="fas fa-times"></i> {{ $catagory->catagory }}</button></a>
       @elseif ($side_subcatagory == 1)
@@ -15,6 +16,9 @@
         <a href="{{ route('catagory.all.products') }}"><button type="button" name="button"><i class="fas fa-times"></i> {{ $sub2catagory->subcatagories2 }}</button></a>
       @endif
     </div>
+
+
+
 
     <div class="catagory_sidebar_catagory">
       <h4>Catagory</h4>
@@ -69,12 +73,32 @@
 
       </ul>
     </div>
+
+    <div class="price_range">
+      <h4>Price Range</h4>
+      <div id="slider-range"></div>
+        <p>
+          <input type="text" id="min_amount" name="min_price" value="500" class="min_amount">
+          <input type="text" id="max_amount" name="max_price" value="70000" class="max_amount">
+        </p>
+    </div>
+    <div class="discount">
+      <h4>Discount</h4>
+        <input type="checkbox" name="discount_checkbox" value="1" class="discount"> <p>Up to 20%</p><br>
+        <input type="checkbox" name="discount_checkbox" value="2" class="discount"> <p>21 to 40%</p><br>
+        <input type="checkbox" name="discount_checkbox" value="3" class="discount"> <p>41 to 60%</p><br>
+        <input type="checkbox" name="discount_checkbox" value="4" class="discount"> <p>61 to 80%</p><br>
+        <input type="checkbox" name="discount_checkbox" value="5" class="discount"> <p>More than 80%</p><br>
+    </div>
   </div>
 
 
 
 
-  <div class="catagory_products">
+
+
+
+  <div class="catagory_products" id="updateDiv">
     <div class="container-fluid">
       <div class="row">
         @foreach ($products as $product)
