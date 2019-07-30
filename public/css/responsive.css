@@ -1,0 +1,58 @@
+/*laptop View*/
+@media screen and (max-width: 1200px) {
+  .search__wrapper {
+    width: 550px;
+}
+.menubar__menu ul li {
+  margin-right: 7px;
+}
+  li.catagorynav__mainlist__item {
+    display: inline-block;
+    margin-right: 22px;
+  }
+}
+
+/*large Tab View*/
+@media screen and (max-width: 991px)  {
+  .search__wrapper {
+    display:none;
+  }
+  input.srcbox__input {
+    width: 87%;
+  }
+  .menubar__menu ul li {
+    display: inline-block;
+    margin-right: 16px;
+
+  }
+  .menubar__menu ul li a {
+    font-size: 18px;
+  }
+  .menubar__menu ul li a span {
+    display: none;
+  }
+  .catagorynav {
+    display: none;
+  }
+  .mobile_searchbox  {
+    display: block;
+    background: #fff;
+  }
+  .mobile_section {
+    display: block;
+  }
+  .mobile_section {
+    background: #da2234;
+    height: 40px;
+  }
+}
+
+/*Small Tab View*/
+@media screen and (max-width: 768px) {
+
+}
+
+/*Phone View*/
+@media screen (max-width: 576px) {
+
+}

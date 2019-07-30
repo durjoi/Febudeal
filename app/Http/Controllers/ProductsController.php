@@ -9,6 +9,7 @@ use App\Saler;
 use App\Catagory;
 use App\Subcatagory;
 use App\Sub2catagory;
+use App\Offer;
 use DB;
 
 class ProductsController extends Controller
@@ -72,7 +73,9 @@ class ProductsController extends Controller
 
       $x = $request->original_price;
       $y = $request->present_price;
-      $offer = (($x-$y)*100)/$x;
+      $offer_price = (($x-$y)*100)/$x;
+
+
 
       $product = new Product;
       $product->saler_id = $saler->id;
@@ -85,7 +88,7 @@ class ProductsController extends Controller
       $product->sub2catagories_id = $id;
       $product->subcatagories_id = $subcatagory->id;
       $product->catagories_id = $catagory->id;
-      $product ->off_price = $offer;
+      $product ->off_price = $offer_price;
       $product ->brand_url = $request->brand_url;
       // $product->sizesymbol=implode(",",$request->size);
       $product->image1 = $image1name;
@@ -94,6 +97,38 @@ class ProductsController extends Controller
       // $product->image4 = $image4name;
       $product->action = "pending";
       $product->save();
+
+      $offer_products = DB::table('products')->orderBy('updated_at', 'desc')->first();
+      if($offer_price >= 0 && $offer_price <= 20) {
+        $offer = new Offer;
+        $offer->products_id = $offer_products->id;
+        $offer->off_1 = 1;
+        $offer->save();
+      }
+      elseif($offer_price >= 21 && $offer_price <= 40) {
+        $offer = new Offer;
+        $offer->products_id = $offer_products->id;
+        $offer->off_2 = 1;
+        $offer->save();
+      }
+      elseif($offer_price >= 41 && $offer_price <= 60) {
+        $offer = new Offer;
+        $offer->products_id = $offer_products->id;
+        $offer->off_3 = 1;
+        $offer->save();
+      }
+      elseif($offer_price >= 61 && $offer_price <= 80) {
+        $offer = new Offer;
+        $offer->products_id = $offer_products->id;
+        $offer->off_4 = 1;
+        $offer->save();
+      }
+      else {
+        $offer = new Offer;
+        $offer->products_id = $offer_products->id;
+        $offer->off_5 = 1;
+        $offer->save();
+      }
 
       return redirect()->route('saler.dashboard');
     }
@@ -121,7 +156,7 @@ class ProductsController extends Controller
 
       $x = $request->original_price;
       $y = $request->present_price;
-      $offer = (($x-$y)*100)/$x;
+      $offer_price = (($x-$y)*100)/$x;
 
 
       $product = new Product;
@@ -132,7 +167,7 @@ class ProductsController extends Controller
       $product->present_price = $request->present_price;
       $product->brand = $request->brand;
       $product->link = $request->link;
-      $product ->off_price = $offer;
+      $product ->off_price = $offer_price;
       $product->catagories_id = $catagory->id;
       // $product->sizesymbol=implode(",",$request->size);
       $product->image1 = $image1name;
@@ -142,6 +177,38 @@ class ProductsController extends Controller
       // $product->image4 = $image4name;
       $product->action = "pending";
       $product->save();
+
+      $offer_products = DB::table('products')->orderBy('updated_at', 'desc')->first();
+      if($offer_price >= 0 && $offer_price <= 20) {
+        $offer = new Offer;
+        $offer->products_id = $offer_products->id;
+        $offer->off_1 = 1;
+        $offer->save();
+      }
+      elseif($offer_price >= 21 && $offer_price <= 40) {
+        $offer = new Offer;
+        $offer->products_id = $offer_products->id;
+        $offer->off_2 = 1;
+        $offer->save();
+      }
+      elseif($offer_price >= 41 && $offer_price <= 60) {
+        $offer = new Offer;
+        $offer->products_id = $offer_products->id;
+        $offer->off_3 = 1;
+        $offer->save();
+      }
+      elseif($offer_price >= 61 && $offer_price <= 80) {
+        $offer = new Offer;
+        $offer->products_id = $offer_products->id;
+        $offer->off_4 = 1;
+        $offer->save();
+      }
+      else {
+        $offer = new Offer;
+        $offer->products_id = $offer_products->id;
+        $offer->off_5 = 1;
+        $offer->save();
+      }
 
       return redirect()->route('saler.dashboard');
     }
@@ -171,7 +238,7 @@ class ProductsController extends Controller
 
       $x = $request->original_price;
       $y = $request->present_price;
-      $offer = (($x-$y)*100)/$x;
+      $offer_price = (($x-$y)*100)/$x;
 
       $product = new Product;
       $product->saler_id = $saler->id;
@@ -182,7 +249,7 @@ class ProductsController extends Controller
       $product->subcatagories_id = $id;
       $product->catagories_id = $catagory->id;
       $product->brand = $request->brand;
-      $product ->off_price = $offer;
+      $product ->off_price = $offer_price;
       $product->link = $request->link;
       // $product->sizesymbol=implode(",",$request->size);
       $product->image1 = $image1name;
@@ -192,6 +259,38 @@ class ProductsController extends Controller
       // $product->image4 = $image4name;
       $product->action = "pending";
       $product->save();
+
+      $offer_products = DB::table('products')->orderBy('updated_at', 'desc')->first();
+      if($offer_price >= 0 && $offer_price <= 20) {
+        $offer = new Offer;
+        $offer->products_id = $offer_products->id;
+        $offer->off_1 = 1;
+        $offer->save();
+      }
+      elseif($offer_price >= 21 && $offer_price <= 40) {
+        $offer = new Offer;
+        $offer->products_id = $offer_products->id;
+        $offer->off_2 = 1;
+        $offer->save();
+      }
+      elseif($offer_price >= 41 && $offer_price <= 60) {
+        $offer = new Offer;
+        $offer->products_id = $offer_products->id;
+        $offer->off_3 = 1;
+        $offer->save();
+      }
+      elseif($offer_price >= 61 && $offer_price <= 80) {
+        $offer = new Offer;
+        $offer->products_id = $offer_products->id;
+        $offer->off_4 = 1;
+        $offer->save();
+      }
+      else {
+        $offer = new Offer;
+        $offer->products_id = $offer_products->id;
+        $offer->off_5 = 1;
+        $offer->save();
+      }
 
       return redirect()->route('saler.dashboard');
     }

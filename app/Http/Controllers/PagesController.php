@@ -301,16 +301,6 @@ class PagesController extends Controller
         //dd($products);
         response()->json($products);
         return view('pages.CatagoryProductsUpdated', compact('products'));
-          // ->with('products', $products);
-          // return view('pages.CatagoryProducts')
-          //   ->with('products', $products)
-          //   // ->with('catagory', $catagory)
-          //   ->with('catagories', $catagories)
-          //   ->with('subcatagories', $subcatagories)
-          //   ->with('sub2catagories', $sub2catagories)
-          //   ->with('side_catagory', $side_catagory)
-          //   ->with('side_subcatagory', $side_subcatagory)
-          //   ->with('side_sub2catagory', $side_sub2catagory);
 
       }
 
@@ -360,17 +350,6 @@ class PagesController extends Controller
           //dd($products);
           response()->json($products);
           return view('pages.CatagoryProductsUpdated', compact('products'));
-            // ->with('products', $products);
-            // return view('pages.CatagoryProducts')
-            //   ->with('products', $products)
-            //   // ->with('catagory', $catagory)
-            //   ->with('catagories', $catagories)
-            //   ->with('subcatagories', $subcatagories)
-            //   ->with('sub2catagories', $sub2catagories)
-            //   ->with('side_catagory', $side_catagory)
-            //   ->with('side_subcatagory', $side_subcatagory)
-            //   ->with('side_sub2catagory', $side_sub2catagory);
-
         }
         else {
           $products = DB::table('products')
@@ -424,16 +403,6 @@ class PagesController extends Controller
           //dd($products);
           response()->json($products);
           return view('pages.CatagoryProductsUpdated', compact('products'));
-            // ->with('products', $products);
-            // return view('pages.CatagoryProducts')
-            //   ->with('products', $products)
-            //   // ->with('catagory', $catagory)
-            //   ->with('catagories', $catagories)
-            //   ->with('subcatagories', $subcatagories)
-            //   ->with('sub2catagories', $sub2catagories)
-            //   ->with('side_catagory', $side_catagory)
-            //   ->with('side_subcatagory', $side_subcatagory)
-            //   ->with('side_sub2catagory', $side_sub2catagory);
 
         }
 
@@ -471,7 +440,9 @@ class PagesController extends Controller
       $side_subcatagory = 0;
       $side_sub2catagory = 0;
 
-      if($request->ajax()) {
+      if($request->ajax() && isset($request->min)) {
+        // $discount = $request->discount;
+        // dd($discount);
         $min = $request->min;
         $max = $request->max;
         $products = DB::table('products')
@@ -479,30 +450,21 @@ class PagesController extends Controller
           ->where('present_price', '<=', $max)
           ->get();
 
-        //dd($products);
         response()->json($products);
         return view('pages.CatagoryProductsUpdated', compact('products'));
-          // ->with('products', $products);
-          // return view('pages.CatagoryProducts')
-          //   ->with('products', $products)
-          //   // ->with('catagory', $catagory)
-          //   ->with('catagories', $catagories)
-          //   ->with('subcatagories', $subcatagories)
-          //   ->with('sub2catagories', $sub2catagories)
-          //   ->with('side_catagory', $side_catagory)
-          //   ->with('side_subcatagory', $side_subcatagory)
-          //   ->with('side_sub2catagory', $side_sub2catagory);
 
       }
       elseif(isset($request->discount)) {
-        // $products = DB::table('products')
-        //   ->where('present_price', '>=', $min)
-        //   ->where('present_price', '<=', $max)
-        //   ->get();
-        //
-        // //dd($products);
-        // response()->json($products);
-        // return view('pages.CatagoryProductsUpdated', compact('products'));
+        $discount = $request->discount;
+        //dd(explode(',',$discount));
+        $discount = explode(',',$discount);
+        dd($discount);
+          $products = DB::table('products')
+            ->whereBetween('off_price', [0, 20])
+            ->get();
+              dd($products);
+        response()->json($products);
+        return view('pages.CatagoryProductsUpdated', compact('products'));
       }
       else {
 
@@ -517,11 +479,9 @@ class PagesController extends Controller
           ->with('side_catagory', $side_catagory)
           ->with('side_subcatagory', $side_subcatagory)
           ->with('side_sub2catagory', $side_sub2catagory);
-          // ->with('subcatagory', $subcatagory)
-          // ->with('sub2catagory', $sub2catagory);
 
       }
-      }
+    }
 
 
 }

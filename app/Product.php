@@ -42,4 +42,7 @@ class Product extends Model
     public function tenthsecs() {
       return $this->hasOne('App\Tenthsec');
     }
+    public function offers() {
+      return $this->hasOne('App\Offer');
+    }
 }

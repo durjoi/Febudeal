@@ -1,27 +1,29 @@
 <div class="menubar">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-sm-3 col-md-2 col-lg-2 col-xl-2">
         <div class="menubar__logo">
-          <h2><a href="{{ route('index') }}">Febudeal</a></h2>
+          <h2><a href="{{ route('index') }}">jossofer</a></h2>
         </div>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-7 col-lg-7 col-xl-7">
           <form class="menubar__srcbox" action="#" method="#">
-            <input type="text" name="search" class="srcbox__input">
-            <button type="submit" name="submit-btn" class="srcbox__btn"><i class="fas fa-search"></i></button>
+            <div class="search__wrapper">
+              <input type="text" name="search" class="srcbox__input">
+              <button type="submit" name="submit-btn" class="srcbox__btn"><i class="fas fa-search"></i></button>
+            </div>
           </form>
       </div>
-      <div class="col-md-4">
+      <div class="col-sm-9 col-md-3 col-lg-3 col-xl-3">
         <div class="menubar__menu">
           <ul>
             @guest
                 <li class="nav-item">
-                    <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
+                    <a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> <span>Login</span></a>
                 </li>
                 @if (Route::has('register'))
                     <li class="nav-item">
-                        <a href="{{ route('register') }}"><i class="fas fa-user"></i> Sign Up</a>
+                        <a href="{{ route('register') }}"><i class="fas fa-user"></i> <span>Sign Up</span></a>
                     </li>
                 @endif
             @else
@@ -46,9 +48,29 @@
             {{-- <li><a href="{{ route('register') }}"><i class="fas fa-user"></i> Sign Up</a></li>
             <li><a href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
             <li><a href="#"><i class="fas fa-shopping-cart"></i> Cart</a></li> --}}
-            <li><a href="#"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
           </ul>
         </div>
+      </div>
+    </div>
+
+
+
+
+
+
+  </div>
+</div>
+<div class="mobile_section">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <form class="menubar__srcbox" action="#" method="#">
+          <div class="mobile_searchbox">
+            <input type="text" name="search" class="srcbox__input">
+            <button type="submit" name="submit-btn" class="srcbox__btn"><i class="fas fa-search"></i></button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

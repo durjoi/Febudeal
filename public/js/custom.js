@@ -201,15 +201,8 @@ $( function() {
 
       $.ajax({
         type: 'get', url:'', data: "min="+min + "& max=" +max,
-        // beforeSend: function() {
-        //   $('#showPrice').show("fast");
-        // },
-        // complete: function() {
-        //   $('#showPrice').hide("fast");
-        // },
+
         success: function(response) {
-          // $('#showDiv').show("slow");
-          // $('#showDiv').html(html);
           console.log(response);
           $('#updateDiv').html(response);
         },
@@ -225,30 +218,19 @@ $( function() {
         dis.push($(this).val());
       }
     });
-    // finalDis = dis.toString();
-    // alert(finalDis);
-    // $.ajax({
-    //   type: 'get',dataType:'html', url:' ', data: "discnt="+finalDis,
-    //   success: function(response) {
-    //     // $('#showDiv').show("slow");
-    //     // $('#showDiv').html(html);
-    //     console.log(response);
-    //     $('#updateDiv').html(response);
-    //   },
-    // });
     $.ajax({
-      type: 'get',dataType:'html', url:' ', data: "discount="+dis,
+      type:'get',
+      dataType:'html',
+      url:'',
+      data: "discount="+dis,
+
       success: function(response) {
-        // $('#showDiv').show("slow");
-        // $('#showDiv').html(html);
         console.log(response);
         $('#updateDiv').html(response);
       },
     });
-
-    // alert(dis);
   });
-  // $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-  //   " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-} );
+});
+
+
 });
