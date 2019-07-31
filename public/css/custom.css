@@ -75,6 +75,7 @@ input.srcbox__input {
     background: transparent;
     display: inline-block;
     float: left;
+    padding-left: 10px;
 }
 button.srcbox__btn {
     background: #fff;
@@ -1200,4 +1201,10 @@ p.description {
 }
 .discount input {
   margin-left: 10px;
+}
+.desktop__hidden {
+  display: none;
+}
+.padding__zero {
+  padding: 0px!important;
 }

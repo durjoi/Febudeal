@@ -75,24 +75,24 @@
     </div>
 
     <div class="filter">
+      <div class="price_range">
+        <h4>Price Range</h4>
+        <div id="slider-range"></div>
+          <p>
+            <input type="text" id="min_amount" name="min_price" value="500" class="min_amount">
+            <input type="text" id="max_amount" name="max_price" value="70000" class="max_amount">
+          </p>
+      </div>
+      <div class="discount">
+        <h4>Discount</h4>
+          <input type="checkbox" name="discount_checkbox" value="1" class="discount"> <p>Up to 20%</p><br>
+          <input type="checkbox" name="discount_checkbox" value="2" class="discount"> <p>21 to 40%</p><br>
+          <input type="checkbox" name="discount_checkbox" value="3" class="discount"> <p>41 to 60%</p><br>
+          <input type="checkbox" name="discount_checkbox" value="4" class="discount"> <p>61 to 80%</p><br>
+          <input type="checkbox" name="discount_checkbox" value="5" class="discount"> <p>More than 80%</p><br>
+      </div>
+    </div>
 
-    </div>
-    <div class="price_range">
-      <h4>Price Range</h4>
-      <div id="slider-range"></div>
-        <p>
-          <input type="text" id="min_amount" name="min_price" value="500" class="min_amount">
-          <input type="text" id="max_amount" name="max_price" value="70000" class="max_amount">
-        </p>
-    </div>
-    <div class="discount">
-      <h4>Discount</h4>
-        <input type="checkbox" name="discount_checkbox" value="1" class="discount"> <p>Up to 20%</p><br>
-        <input type="checkbox" name="discount_checkbox" value="2" class="discount"> <p>21 to 40%</p><br>
-        <input type="checkbox" name="discount_checkbox" value="3" class="discount"> <p>41 to 60%</p><br>
-        <input type="checkbox" name="discount_checkbox" value="4" class="discount"> <p>61 to 80%</p><br>
-        <input type="checkbox" name="discount_checkbox" value="5" class="discount"> <p>More than 80%</p><br>
-    </div>
   </div>
 
 

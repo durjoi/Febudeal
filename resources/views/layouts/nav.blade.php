@@ -1,20 +1,28 @@
 <div class="menubar">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-3 col-md-2 col-lg-2 col-xl-2">
+      {{-- <div class="col-1 col-sm-1 col-md-1 desktop__hidden padding__zero">
+        <button type="button" name="button" class="toggle__button">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div> --}}
+      <div class="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 padding__zero d-flex">
+        <button type="button" name="button" class="toggle__button desktop__hidden">
+          <i class="fas fa-bars"></i>
+        </button>
         <div class="menubar__logo">
           <h2><a href="{{ route('index') }}">jossofer</a></h2>
         </div>
       </div>
-      <div class="col-md-7 col-lg-7 col-xl-7">
+      <div class=" col-lg-7 col-xl-7 search_hidden">
           <form class="menubar__srcbox" action="#" method="#">
             <div class="search__wrapper">
-              <input type="text" name="search" class="srcbox__input">
+              <input type="text" name="search" class="srcbox__input" placeholder="Search for products, brands and more">
               <button type="submit" name="submit-btn" class="srcbox__btn"><i class="fas fa-search"></i></button>
             </div>
           </form>
       </div>
-      <div class="col-sm-9 col-md-3 col-lg-3 col-xl-3">
+      <div class="col-8 col-sm-8 col-md-8 col-lg-3 col-xl-3">
         <div class="menubar__menu">
           <ul>
             @guest
@@ -67,7 +75,7 @@
       <div class="col-md-12 col-sm-12">
         <form class="menubar__srcbox" action="#" method="#">
           <div class="mobile_searchbox">
-            <input type="text" name="search" class="srcbox__input">
+            <input type="text" name="search" class="srcbox__input" placeholder="Search for products, brands and more">
             <button type="submit" name="submit-btn" class="srcbox__btn"><i class="fas fa-search"></i></button>
           </div>
         </form>

@@ -441,24 +441,7 @@ class PagesController extends Controller
       $side_sub2catagory = 0;
 
       if($request->ajax()) {
-        if(isset($request->min) && isset($request->discount)) {
-
-          $min = $request->min;
-          $max = $request->max;
-          $discount = $request->discount;
-          //dd(explode(',',$discount));
-          $discount = explode(',',$discount);
-          $products = DB::table('products')
-            ->where('present_price', '>=', $min)
-            ->where('present_price', '<=', $max)
-            ->whereIn('offer', $discount)
-            ->get();
-
-          response()->json($products);
-          return view('pages.CatagoryProductsUpdated', compact('products'));
-        }
-        elseif(isset($request->discount)) {
-          dd($request->min);
+        if(isset($request->discount)) {
           $discount = $request->discount;
           //dd(explode(',',$discount));
           $discount = explode(',',$discount);

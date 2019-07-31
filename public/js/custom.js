@@ -3,7 +3,7 @@
 $(document).ready(function(){
   $('.bnr-slider').slick({
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2000,
     arrows: false,
   });

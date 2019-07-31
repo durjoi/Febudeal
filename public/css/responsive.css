@@ -14,11 +14,35 @@
 
 /*large Tab View*/
 @media screen and (max-width: 991px)  {
+  .toggle__button {
+    background: transparent;
+    border: none;
+    font-size: 25px;
+    color: #fff;
+    margin-top: -15px;
+  }
+  .desktop__hidden {
+    display: block;
+  }
+  .menubar__logo {
+    margin-left: 7px;
+  }
+  .menubar__menu ul {
+    margin-right: -15px;
+  }
+  .menubar__menu ul li {
+    margin-left: 10px;
+  }
   .search__wrapper {
     display:none;
   }
+  .search_hidden {
+    display: none;
+  }
   input.srcbox__input {
-    width: 87%;
+    width: 94%;
+    height: 100%;
+    padding-left: 10px;
   }
   .menubar__menu ul li {
     display: inline-block;
@@ -37,6 +61,7 @@
   .mobile_searchbox  {
     display: block;
     background: #fff;
+    height: 34px;
   }
   .mobile_section {
     display: block;
@@ -49,10 +74,19 @@
 
 /*Small Tab View*/
 @media screen and (max-width: 768px) {
-
+  input.srcbox__input {
+    width: 92%;
+  }
 }
 
 /*Phone View*/
-@media screen (max-width: 576px) {
+@media screen and (max-width: 576px) {
+  input.srcbox__input {
+    width: 86%;
+  }
+  .menubar__menu ul li {
+    margin-left: 10px;
+    margin-right: 0px;
+  }
 
 }

@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 col-lg-12 col-sm-12 col-12">
       <div class="hero-bnr">
         <button class="btn-left slider-btn"><i class="fas fa-chevron-left"></i></button>
         <div class="bnr-slider">
