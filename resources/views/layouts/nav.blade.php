@@ -7,7 +7,7 @@
         </button>
       </div> --}}
       <div class="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 padding__zero d-flex">
-        <button type="button" name="button" class="toggle__button desktop__hidden">
+        <button type="button" name="button" class="toggle__menu desktop__hidden">
           <i class="fas fa-bars"></i>
         </button>
         <div class="menubar__logo">
@@ -79,6 +79,24 @@
             <button type="submit" name="submit-btn" class="srcbox__btn"><i class="fas fa-search"></i></button>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="catagory__toggle">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 col-12 col-sm-12">
+        @if (count($catagories)>0)
+          <ul class="catagory__list">
+            @foreach ($catagories as $catagory)
+              <li class="catagory__list__item">{{ $catagory->catagory }} <i class="fas fa-caret-down"></i></li>
+            @endforeach
+          </ul>
+
+
+        @endif
       </div>
     </div>
   </div>

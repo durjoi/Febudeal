@@ -185,6 +185,12 @@ $(window).on('resize orientationchange', function() {
       });
 
 
+      $(".toggle__menu").click(function(){
+            console.log("clicked");
+            $(".catagory__toggle").toggleClass("active__menu");
+        });
+
+
 $( function() {
 
   $( "#slider-range" ).slider({

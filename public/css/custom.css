@@ -1208,3 +1208,6 @@ p.description {
 .padding__zero {
   padding: 0px!important;
 }
+.catagory__toggle {
+display: none;
+}
