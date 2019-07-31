@@ -27,6 +27,7 @@ class CreateProductsTable extends Migration
             $table->integer('original_price');
             $table->integer('present_price');
             $table->integer('off_price');
+            $table->integer('offer')->nullable();
             $table->string('brand');
             $table->string('brand_url');
             $table->string('action');

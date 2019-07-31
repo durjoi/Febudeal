@@ -440,32 +440,49 @@ class PagesController extends Controller
       $side_subcatagory = 0;
       $side_sub2catagory = 0;
 
-      if($request->ajax() && isset($request->min)) {
-        // $discount = $request->discount;
-        // dd($discount);
-        $min = $request->min;
-        $max = $request->max;
-        $products = DB::table('products')
-          ->where('present_price', '>=', $min)
-          ->where('present_price', '<=', $max)
-          ->get();
+      if($request->ajax()) {
+        if(isset($request->min) && isset($request->discount)) {
 
-        response()->json($products);
-        return view('pages.CatagoryProductsUpdated', compact('products'));
-
-      }
-      elseif(isset($request->discount)) {
-        $discount = $request->discount;
-        //dd(explode(',',$discount));
-        $discount = explode(',',$discount);
-        dd($discount);
+          $min = $request->min;
+          $max = $request->max;
+          $discount = $request->discount;
+          //dd(explode(',',$discount));
+          $discount = explode(',',$discount);
           $products = DB::table('products')
-            ->whereBetween('off_price', [0, 20])
+            ->where('present_price', '>=', $min)
+            ->where('present_price', '<=', $max)
+            ->whereIn('offer', $discount)
             ->get();
-              dd($products);
-        response()->json($products);
-        return view('pages.CatagoryProductsUpdated', compact('products'));
+
+          response()->json($products);
+          return view('pages.CatagoryProductsUpdated', compact('products'));
+        }
+        elseif(isset($request->discount)) {
+          dd($request->min);
+          $discount = $request->discount;
+          //dd(explode(',',$discount));
+          $discount = explode(',',$discount);
+          // dd($discount);
+            $products = DB::table('products')
+              ->whereIn('offer', $discount)
+              ->get();
+          response()->json($products);
+          return view('pages.CatagoryProductsUpdated', compact('products'));
+        }
+        elseif(isset($request->min)) {
+          // dd($request->discount);
+          $min = $request->min;
+          $max = $request->max;
+          $products = DB::table('products')
+            ->where('present_price', '>=', $min)
+            ->where('present_price', '<=', $max)
+            ->get();
+          return view('pages.CatagoryProductsUpdated', compact('products'));
+        }
+
+
       }
+
       else {
 
 
