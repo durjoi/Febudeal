@@ -185,10 +185,26 @@ $(window).on('resize orientationchange', function() {
       });
 
 
+
+      // $(".toggle__sublist").click(function(){
+      //   console.log('clicked');
+      //       $(".catagory__list__item").siblings().find(".subcatagory__list").removeClass("subcatagory__active");
+      //   });
+      $(".toggle__sublist").click(function(){
+            console.log('clicked');
+            $(this).siblings().toggleClass("subcatagory__active ")
+        });
+        $(".toggle__sub2list").click(function(){
+              console.log('clicked');
+              $(this).siblings().toggleClass("sub2catagory__active ")
+          });
+
+
       $(".toggle__menu").click(function(){
-            console.log("clicked");
             $(".catagory__toggle").toggleClass("active__menu");
         });
+
+
 
 
 $( function() {

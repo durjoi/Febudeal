@@ -86,14 +86,43 @@
 
 <div class="catagory__toggle">
   <div class="container-fluid">
+    <div class="row menu__header">
+      <div class="col-3 col-sm-3 col-md-3 ">
+        <button type="button" name="button" class="toggle__menu desktop__hidden">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+        <div class="col-9 col-sm-9 col-md-9  text-right">
+        <div class="menubar__logo">
+          <h2><a href="{{ route('index') }}">jossofer</a></h2>
+        </div>
+      </div>
+    </div>
     <div class="row">
       <div class="col-md-12 col-12 col-sm-12">
         @if (count($catagories)>0)
           <ul class="catagory__list">
             @foreach ($catagories as $catagory)
-              <li class="catagory__list__item">{{ $catagory->catagory }} <i class="fas fa-caret-down"></i></li>
+              <li class="catagory__list__item"><i class="fas fa-caret-down toggle__sublist"></i> {{ $catagory->catagory }}
+                <ul class="subcatagory__list">
+                @foreach ($subcatagories as $subcatagory)
+                  @if ($subcatagory->catagories_id == $catagory->id)
+                    <li class="subcatagory__list__item">{{ $subcatagory->subcatagories }} <i class="fas fa-caret-down toggle__sub2list"></i>
+                      <ul class="sub2catagory__list">
+                      @foreach ($sub2catagories as $sub2catagory)
+                        @if ($sub2catagory->subcatagories_id == $subcatagory->id)
+                          <li class="sub2catagory__list__item">{{ $subcatagory->subcatagories }} </li>
+                        @endif
+                      @endforeach
+                    </ul>
+                    </li>
+                  @endif
+                @endforeach
+              </ul>
+              </li>
             @endforeach
           </ul>
+          <hr>
 
 
         @endif
