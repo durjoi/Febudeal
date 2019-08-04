@@ -170,15 +170,18 @@ button.srcbox__btn {
 	height: 374px;
 	margin-top: 5px;
 }
+.background_dark {
+  background: #e1e1e1;
+}
 .prdcts {
 	background-color: #fff;
-	padding-top: 12px;
+	/* padding-top: 12px; */
 	height: 348px;
 	margin-top: 5px;
 	overflow: hidden;
 	border-top: 9px solid #e1e1e1;
 	margin-top: 20px;
-	padding-top: 20px;
+	/* padding-top: 20px; */
 }
 .prdcts__item {
     height: 300px;
@@ -1230,4 +1233,8 @@ display: none;
 }
 .prdcts__slider {
 	margin-top: 17px;
+}
+.product__title__row {
+	background: #e1e1e1;
+	padding: 5px 0;
 }

@@ -6,7 +6,7 @@
           <i class="fas fa-bars"></i>
         </button>
       </div> --}}
-      <div class="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 padding__zero d-flex">
+      <div class="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 d-flex">
         <button type="button" name="button" class="toggle__menu desktop__hidden">
           <i class="fas fa-bars"></i>
         </button>

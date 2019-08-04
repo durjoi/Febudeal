@@ -63,8 +63,8 @@
   <!-- Catagory Panel One Start -->
   <div class="prdcts">
     <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-9 col-lg-9 col-sm-9 col-9">
+      <div class="row product__title__row">
+          <div class="col-md-9 col-lg-9 col-sm-9 col-9 ">
               <h2 class="prdcts__title">{{ $sections[0]->section_three }}</h2>
           </div>
           <div class="col-md-3 col-lg-3 col-sm-3 col-3 text-right">
@@ -119,7 +119,7 @@
   <!-- Product Section Four Start -->
   <div class="prdcts">
     <div class="container-fluid">
-      <div class="row">
+      <div class="row product__title__row">
           <div class="col-md-9 col-lg-9 col-sm-9 col-9">
               <h2 class="prdcts__title">{{ $sections[0]->section_four }}</h2>
           </div>
@@ -175,7 +175,7 @@
   <!-- Banner Three Start -->
   <div class="bnnrfour">
     <div class="container-fluid">
-      <div class="row">
+      <div class="row product__title__row">
           <div class="col-md-3">
             <div class="bnnrthree__item">
               <img src={{ asset('images/banner1.jpg') }} alt="">
@@ -206,7 +206,7 @@
   <!-- Product Section Five Start -->
   <div class="prdcts">
     <div class="container-fluid">
-      <div class="row">
+      <div class="row product__title__row">
           <div class="col-md-9 col-lg-9 col-sm-9 col-9">
               <h2 class="prdcts__title">{{ $sections[0]->section_five }}</h2>
           </div>
@@ -262,7 +262,7 @@
   <!-- Product Section Six Start -->
   <div class="prdcts">
     <div class="container-fluid">
-      <div class="row">
+      <div class="row product__title__row">
           <div class="col-md-9 col-lg-9 col-sm-9 col-9">
               <h2 class="prdcts__title"> {{ $sections[0]->section_six }} </h2>
           </div>
@@ -344,7 +344,7 @@
   <!-- Product Section Seven Start -->
   <div class="prdcts">
     <div class="container-fluid">
-      <div class="row">
+      <div class="row product__title__row">
           <div class="col-md-9 col-lg-9 col-sm-9 col-9">
               <h2 class="prdcts__title"> {{ $sections[0]->section_seven }} </h2>
           </div>
@@ -398,7 +398,7 @@
   <!-- Product Section Eight Start -->
   <div class="prdcts">
     <div class="container-fluid">
-      <div class="row">
+      <div class="row product__title__row">
           <div class="col-md-9 col-lg-9 col-sm-9 col-9">
               <h2 class="prdcts__title"> {{ $sections[0]->section_eight }} </h2>
           </div>
@@ -452,7 +452,7 @@
   <!-- Product Section Nine Start -->
   <div class="prdcts">
     <div class="container-fluid">
-      <div class="row">
+      <div class="row product__title__row">
           <div class="col-md-9 col-lg-9 col-sm-9 col-9">
               <h2 class="prdcts__title"> {{ $sections[0]->section_nine }} </h2>
           </div>
@@ -505,7 +505,7 @@
   <!-- Product Section Ten Start -->
   <div class="prdcts">
     <div class="container-fluid">
-      <div class="row">
+      <div class="row product__title__row">
           <div class="col-md-9 col-lg-9 col-sm-9 col-9">
               <h2 class="prdcts__title"> {{ $sections[0]->section_ten }} </h2>
           </div>
