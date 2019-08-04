@@ -1,4 +1,4 @@
-<div class="prdcts">
+<div class="slider__wrapper">
   <div class="container-fluid">
     <div class="row">
         <div class="col-md-6">

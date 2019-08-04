@@ -73,7 +73,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="prdcts__slider">
+          {{-- <div class="prdcts__slider"> --}}
 
             @php
             $i = 1
@@ -102,7 +102,7 @@
 
 
           </div>
-        </div>
+        {{-- </div> --}}
       </div>
     </div>
   </div>
@@ -120,7 +120,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="prdcts__slider">
+          {{-- <div class="prdcts__slider"> --}}
 
             @php
             $i = 1
@@ -149,7 +149,7 @@
 
 
           </div>
-        </div>
+        {{-- </div> --}}
       </div>
     </div>
   </div>
@@ -198,7 +198,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="prdcts__slider">
+          {{-- <div class="prdcts__slider"> --}}
 
             @php
             $i = 1
@@ -228,7 +228,7 @@
 
           </div>
         </div>
-      </div>
+      {{-- </div> --}}
     </div>
   </div>
   <!-- Product Section Five End -->
@@ -245,7 +245,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="prdcts__slider">
+          {{-- <div class="prdcts__slider"> --}}
 
             @php
             $i = 1
@@ -275,7 +275,7 @@
 
 
           </div>
-        </div>
+        {{-- </div> --}}
       </div>
     </div>
   </div>
@@ -318,7 +318,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="prdcts__slider">
+          {{-- <div class="prdcts__slider"> --}}
 
             @foreach ($products as $product)
               @foreach ($seventhsecs as $seventhsec)
@@ -337,7 +337,7 @@
             @endforeach
 
           </div>
-        </div>
+        {{-- </div> --}}
       </div>
     </div>
   </div>
@@ -358,7 +358,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="prdcts__slider">
+          {{-- <div class="prdcts__slider"> --}}
 
             @foreach ($products as $product)
               @foreach ($eightsecs as $eightsec)
@@ -377,7 +377,7 @@
             @endforeach
 
           </div>
-        </div>
+        {{-- </div> --}}
       </div>
     </div>
   </div>
@@ -396,7 +396,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="prdcts__slider">
+          {{-- <div class="prdcts__slider"> --}}
 
             @foreach ($products as $product)
               @foreach ($ninthsecs as $ninthsec)
@@ -415,7 +415,7 @@
             @endforeach
 
           </div>
-        </div>
+        {{-- </div> --}}
       </div>
     </div>
   </div>
@@ -433,7 +433,7 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <div class="prdcts__slider">
+          {{-- <div class="prdcts__slider"> --}}
 
             @foreach ($products as $product)
               @foreach ($tenthsecs as $tenthsec)
@@ -452,7 +452,7 @@
             @endforeach
 
           </div>
-        </div>
+        {{-- </div> --}}
       </div>
     </div>
   </div>

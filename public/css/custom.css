@@ -160,11 +160,18 @@ button.srcbox__btn {
     width: 89px;
 }
 
-.prdcts__slider {
+.slider__wrapper {
     background-color: #fff;
     padding-top: 12px;
     height: 330px;
     margin-top: 5px;
+}
+.prdcts {
+    background-color: #fff;
+    padding-top: 12px;
+    height: 330px;
+    margin-top: 5px;
+    overflow: hidden;
 }
 .prdcts__item {
     height: 300px;
