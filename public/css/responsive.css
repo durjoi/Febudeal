@@ -24,7 +24,7 @@
   .catagory__toggle {
   	display: block;
   	min-height: 100vh;
-  	width: 57%;
+  	width: 65%;
   	background: #F5F1F1;
   	position: absolute;
   	top: 0px;
@@ -148,6 +148,44 @@
   .catagory__toggle {
     left: -768px;
   }
+  .slider__wrapper {
+	  height: 385px;
+  }
+  .prdcts {
+  	height: 727px;
+  	margin-bottom: 20px;
+  }
+  .prdcts__item img {
+  	height: 100%;
+  	width: 100%;
+  }
+  .img__container {
+  	height: 186px;
+  	width: 149px;
+  	margin: auto;
+  }
+  .prdcts__title {
+  	font-size: 20px;
+  	margin-bottom: 31px;
+  }
+  .prdcts__allbtn {
+  	height: 30px;
+  	width: 74px;
+  	font-size: 13px;
+  }
+  .prdcts__item {
+  	height: 302px;
+  	width: 100%;
+  	margin: 5px;
+  	display: inline-block;
+  	padding-left: 30px;
+  	padding-right: 30px;
+  	border: 1px solid #cecece;
+  	padding-top: 16px;
+  }
+  .mobile__products {
+    padding: 10px!important;
+  }
 }
 
 /*Phone View*/
@@ -165,5 +203,42 @@
   .menubar__logo h2 a {
 	  font-size: 29px;
   }
+  .img__container {
+    height: 158px;
+    width: 122px;
+    margin: auto;
+  }
+  .prdcts__item {
+  	height: 243px;
+    width: 100%;
+  	margin: 5px;
+  	display: inline-block;
+    padding-left: 12px;
+  	padding-right: 12px;
+  	border: 1px solid #cecece;
+  	padding-top: 16px;
+  }
+  .prdcts__item img {
+  	height: 100%;
+  	width: 100%;
+  }
+  .prdcts__item h4 {
+  	font-size: 15px;
+    margin-bottom: 3px;
+  }
+  .prdcts {
+  	height: 616px;
+  	margin-bottom: 20px;
+  }
+  .prdcts__title {
+  	font-size: 16px;
+  	margin-bottom: 34px;
+  }
+  .prdcts__allbtn {
+  	height: 26px;
+  	width: 64px;
+  	font-size: 13px;
+  }
+
 
 }

@@ -1,10 +1,10 @@
 <div class="slider__wrapper">
   <div class="container-fluid">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 col-lg-6 col-sm-6 col-6">
             <h2 class="prdcts__title">{{ $sections[0]->section_two }}</h2>
         </div>
-        <div class="col-md-6 text-right">
+        <div class="col-md-6 col-lg-6 col-sm-6 col-6 text-right">
           <a href="{{ route('product.sectiontwo') }}"> <button type="button" class="prdcts__allbtn">View all</button></a>
         </div>
     </div>
