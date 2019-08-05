@@ -164,13 +164,19 @@ button.srcbox__btn {
 }
 .btn-left {
   position: absolute;
-  top: 125px;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
   left: 26px;
   z-index: 1000;
 }
 .btn-right {
   position: absolute;
-  top: 125px;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
   right: 26px;
   z-index: 1000;
 }
@@ -1313,4 +1319,7 @@ display: none;
 .bnnrtwo__item img {
   height: 100%;
   width: 100%;
+}
+.hero-banner-mobile {
+  display: none;
 }

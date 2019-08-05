@@ -1,5 +1,6 @@
 /*laptop View*/
 @media screen and (max-width: 1200px) {
+
   .search__wrapper {
     width: 550px;
 }
@@ -17,6 +18,19 @@
 
 /*large Tab View*/
 @media screen and (max-width: 991px)  {
+  .hero-banner {
+    display: none;
+  }
+  .mobile__hero__banner {
+    width: 100%;
+}
+  .mobile__hero__banner img {
+    width: 100%;
+}
+  .hero-banner-mobile {
+    display: block;
+    margin-top: 20px;
+  }
   .menu__header {
   	background: #da2234;
   	height: 58px;
@@ -142,6 +156,7 @@
 
 /*Small Tab View*/
 @media screen and (max-width: 768px) {
+
   .hide__item{
     display: none;
   }
