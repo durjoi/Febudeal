@@ -211,7 +211,23 @@
   </div>
   <!-- Product Section Four End -->
   <!-- Banner Three Start -->
-  <div class="bnnrfour">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 col-lg-12 col-sm-12 col-12">
+        <div class="bnr">
+          {{-- <button class="bnnr1-btn-left slider-btn"><i class="fas fa-chevron-left"></i></button> --}}
+          <div class="bnnr4-slider">
+            <img src={{ asset('images/bannerthree.jpg') }} alt="slider1">
+            <img src={{ asset('images/bannerthree.jpg') }} alt="slider2">
+            <img src={{ asset('images/bannerthree.jpg') }} alt="slider3">
+            <img src={{ asset('images/bannerthree.jpg') }} alt="slider4">
+          </div>
+          {{-- <button class="bnnr1-btn-right slider-btn"><i class="fas fa-chevron-right"></i></button> --}}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{-- <div class="bnnrfour">
     <div class="container-fluid">
       <div class="row">
           <div class="col-lg-3 col-md-6 padding__zero">
@@ -239,7 +255,7 @@
           </div>
       </div>
     </div>
-  </div>
+  </div> --}}
   <!-- Four Banner Three End -->
   <!-- Product Section Five Start -->
   <div class="prdcts">
@@ -356,7 +372,22 @@
   <!-- Product Section Six End -->
 
   <!-- Banner Two -->
-  <div class="bnnrthree">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 col-lg-12 col-sm-12 col-12">
+        <div class="bnr">
+          <button class="bnnr1-btn-left slider-btn"><i class="fas fa-chevron-left"></i></button>
+          <div class="bnnr1-slider">
+            <img src={{ asset('images/banner3.jpg') }} alt="slider1">
+            <img src={{ asset('images/banner3.jpg') }} alt="slider2">
+            <img src={{ asset('images/banner3.jpg') }} alt="slider3">
+          </div>
+          <button class="bnnr1-btn-right slider-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{-- <div class="bnnrthree">
   <div class="container-fluid">
     <div class="row">
         <div class="col-md-4 padding__zero">
@@ -378,7 +409,7 @@
         </div>
     </div>
   </div>
-</div>
+</div> --}}
   <!-- Banner Two End -->
 
   <!-- Product Section Seven Start -->
