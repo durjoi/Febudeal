@@ -3,59 +3,97 @@
 @section('content')
   @include('layouts.heroBanner')
   @include('layouts.productSliderOne')
-  <!-- Banner Two -->
+
+
   <div class="container-fluid">
     <div class="row">
-        <div class="col-md-4">
+      <div class="col-md-12 col-lg-12 col-sm-12 col-12">
+        <div class="bnr">
+          <button class="bnnr1-btn-left slider-btn"><i class="fas fa-chevron-left"></i></button>
+          <div class="bnnr1-slider">
+            <img src={{ asset('images/banner3.jpg') }} alt="slider1">
+            <img src={{ asset('images/banner3.jpg') }} alt="slider2">
+            <img src={{ asset('images/banner3.jpg') }} alt="slider3">
+          </div>
+          <button class="bnnr1-btn-right slider-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Banner Two -->
+  {{-- <div class="bnnrthree">
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 col-lg-4 padding__zero">
           <div class="bnnrthree__item">
-            <img src={{ asset('images/banner1.jpg') }} alt="">
+            <img src={{ asset('images/banner3.jpg') }} alt="">
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-6 col-lg-4 padding__zero">
           <div class="bnnrthree__item">
-            <img src={{ asset('images/banner1.jpg') }} alt="">
+            <img src={{ asset('images/banner3.jpg') }} alt="">
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 col-sm-6 col-lg-4 padding__zero">
           <div class="bnnrthree__item">
-            <img src={{ asset('images/banner1.jpg') }} alt="">
+            <img src={{ asset('images/banner3.jpg') }} alt="">
           </div>
         </div>
     </div>
   </div>
+  </div> --}}
   <!-- Banner Two End -->
 
   @include('layouts.productSliderTwo')
 
   <!-- Banner Three Start -->
-  <div class="bnnrfour">
+  {{-- <div class="bnnrfour">
     <div class="container-fluid">
       <div class="row">
-          <div class="col-md-3">
-            <div class="bnnrthree__item">
-              <img src={{ asset('images/banner1.jpg') }} alt="">
+          <div class="col-md-3 col-md-6 padding__zero">
+            <div class="bnnrfour__item">
+              <img src={{ asset('images/bannerthree.jpg') }} alt="">
             </div>
           </div>
 
-          <div class="col-md-3">
-            <div class="bnnrthree__item">
-              <img src={{ asset('images/banner1.jpg') }} alt="">
+          <div class="col-md-3 col-md-6 padding__zero">
+            <div class="bnnrfour__item">
+              <img src={{ asset('images/bannerthree.jpg') }} alt="">
             </div>
           </div>
 
-          <div class="col-md-3">
-            <div class="bnnrthree__item">
-              <img src={{ asset('images/banner1.jpg') }} alt="">
+          <div class="col-md-3 col-md-6 padding__zero">
+            <div class="bnnrfour__item">
+              <img src={{ asset('images/bannerthree.jpg') }} alt="">
             </div>
           </div>
 
-          <div class="col-md-3">
-            <div class="bnnrthree__item">
-              <img src={{ asset('images/banner1.jpg') }} alt="">
+          <div class="col-md-3 col-md-6 padding__zero">
+            <div class="bnnrfour__item">
+              <img src={{ asset('images/bannerthree.jpg') }} alt="">
             </div>
           </div>
+      </div>
+    </div>
+  </div> --}}
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 col-lg-12 col-sm-12 col-12">
+        <div class="bnr">
+          {{-- <button class="bnnr1-btn-left slider-btn"><i class="fas fa-chevron-left"></i></button> --}}
+          <div class="bnnr4-slider">
+            <img src={{ asset('images/bannerthree.jpg') }} alt="slider1">
+            <img src={{ asset('images/bannerthree.jpg') }} alt="slider2">
+            <img src={{ asset('images/bannerthree.jpg') }} alt="slider3">
+            <img src={{ asset('images/bannerthree.jpg') }} alt="slider4">
+          </div>
+          {{-- <button class="bnnr1-btn-right slider-btn"><i class="fas fa-chevron-right"></i></button> --}}
+        </div>
       </div>
     </div>
   </div>
@@ -175,28 +213,28 @@
   <!-- Banner Three Start -->
   <div class="bnnrfour">
     <div class="container-fluid">
-      <div class="row product__title__row">
-          <div class="col-md-3">
-            <div class="bnnrthree__item">
-              <img src={{ asset('images/banner1.jpg') }} alt="">
+      <div class="row">
+          <div class="col-lg-3 col-md-6 padding__zero">
+            <div class="bnnrfour__item">
+              <img src={{ asset('images/bannerthree.jpg') }} alt="">
             </div>
           </div>
 
-          <div class="col-md-3">
-            <div class="bnnrthree__item">
-              <img src={{ asset('images/banner1.jpg') }} alt="">
+          <div class="col-lg-3 col-md-6 padding__zero">
+            <div class="bnnrfour__item">
+              <img src={{ asset('images/bannerthree.jpg') }} alt="">
             </div>
           </div>
 
-          <div class="col-md-3">
-            <div class="bnnrthree__item">
-              <img src={{ asset('images/banner1.jpg') }} alt="">
+          <div class="col-lg-3 col-md-6 padding__zero">
+            <div class="bnnrfour__item">
+              <img src={{ asset('images/bannerthree.jpg') }} alt="">
             </div>
           </div>
 
-          <div class="col-md-3">
-            <div class="bnnrthree__item">
-              <img src={{ asset('images/banner1.jpg') }} alt="">
+          <div class="col-lg-3 col-md-6 padding__zero">
+            <div class="bnnrfour__item">
+              <img src={{ asset('images/bannerthree.jpg') }} alt="">
             </div>
           </div>
       </div>
@@ -318,27 +356,29 @@
   <!-- Product Section Six End -->
 
   <!-- Banner Two -->
+  <div class="bnnrthree">
   <div class="container-fluid">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 padding__zero">
           <div class="bnnrthree__item">
-            <img src={{ asset('images/banner1.jpg') }} alt="">
+            <img src={{ asset('images/banner3.jpg') }} alt="">
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 padding__zero">
           <div class="bnnrthree__item">
-            <img src={{ asset('images/banner1.jpg') }} alt="">
+            <img src={{ asset('images/banner3.jpg') }} alt="">
           </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-4 padding__zero">
           <div class="bnnrthree__item">
-            <img src={{ asset('images/banner1.jpg') }} alt="">
+            <img src={{ asset('images/banner3.jpg') }} alt="">
           </div>
         </div>
     </div>
   </div>
+</div>
   <!-- Banner Two End -->
 
   <!-- Product Section Seven Start -->
@@ -556,17 +596,17 @@
   </div>
   <!-- Product Section Ten End -->
   <!-- Two Banner Start -->
-  <div class="bnnrfour">
+  <div class="bnnrtwo">
     <div class="container-fluid">
       <div class="row">
-          <div class="col-md-6 col-lg-6 col-sm-6 col-6">
-            <div class="bnnrthree__item">
+          <div class="col-md-6 col-lg-6 col-sm-6 col-6 padding__zero">
+            <div class="bnnrtwo__item">
               <img src={{ asset('images/banner2.jpg') }} alt="">
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-6 col-sm-6 col-6">
-            <div class="bnnrthree__item">
+          <div class="col-md-6 col-lg-6 col-sm-6 col-6 padding__zero">
+            <div class="bnnrtwo__item">
               <img src={{ asset('images/banner2.jpg') }} alt="">
             </div>
           </div>

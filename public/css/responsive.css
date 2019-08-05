@@ -142,6 +142,13 @@
 
 /*Small Tab View*/
 @media screen and (max-width: 768px) {
+  .hide__item{
+    display: none;
+  }
+  .bnnrfour__item {
+  	padding-top: 5px;
+  	padding-bottom: 5px;
+  }
   input.srcbox__input {
     width: 92%;
   }
@@ -231,9 +238,10 @@
   	margin-bottom: 20px;
   }
   .prdcts__title {
-  	font-size: 16px;
-  	margin-bottom: 34px;
-  }
+	font-size: 16px;
+	margin-bottom: 34px;
+	line-height: 43px;
+}
   .prdcts__allbtn {
   	height: 26px;
   	width: 64px;

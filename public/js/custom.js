@@ -3,15 +3,15 @@
 $(document).ready(function(){
   $('.bnr-slider').slick({
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2000,
     arrows: false,
-    dots: true,
+    dots: false,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          dots: true
+          dots: false
         }
       },
       {
@@ -38,6 +38,88 @@ $(document).ready(function(){
   $('.btn-right').click(function(){
     $('.bnr-slider').slick('slickNext');
   });
+
+
+  $('.bnnr1-slider').slick({
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    slidesToShow: 3,
+    arrows: false,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          dots: false
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+  });
+  $('.bnnr1-btn-left').click(function(){
+    $('.bnnr1-slider').slick('slickPrev');
+  });
+
+  $('.bnnr1-btn-right').click(function(){
+    $('.bnnr1-slider').slick('slickNext');
+  });
+
+
+  $('.bnnr4-slider').slick({
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    slidesToShow: 4,
+    arrows: false,
+    dots: false,
+    infinite: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          dots: false,
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+  });
+  // $('.bnnr1-btn-left').click(function(){
+  //   $('.bnnr1-slider').slick('slickPrev');
+  // });
+  //
+  // $('.bnnr1-btn-right').click(function(){
+  //   $('.bnnr1-slider').slick('slickNext');
+  // });
 
 
 
@@ -119,7 +201,7 @@ $(document).ready(function(){
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: false,
-          dots: true
+          dots: false
         }
       },
       {
