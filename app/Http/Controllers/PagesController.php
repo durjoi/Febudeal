@@ -20,12 +20,14 @@ use App\Eightsec;
 use App\Ninthsec;
 use App\Tenthsec;
 use App\HomepageSectionName;
+use App\Herobanner;
 
 
 class PagesController extends Controller
 {
     public function home()
     {
+      $herobanners = Herobanner::all();
       $sections = HomepageSectionName::all();
       $fourthsecs = Fourthsec::all();
       $fifthsecs = Fifthsec::all();
@@ -62,6 +64,7 @@ class PagesController extends Controller
         ->with('ninthsecs', $ninthsecs)
         ->with('tenthsecs', $tenthsecs)
         ->with('sections', $sections)
+        ->with('herobanners', $herobanners)
         ->with('tos', $tos);
     }
 

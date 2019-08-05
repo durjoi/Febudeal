@@ -1333,3 +1333,26 @@ display: none;
 .hero-banner-mobile {
   display: none;
 }
+
+.navbar__banner {
+  height: 50px;
+  background: #da2234;
+}
+.navbar__banner a {
+  color: #fff;
+  text-decoration: none;
+  line-height: 50px;
+  font-size: 27px;
+}
+.biuf {
+	height: 223px;
+	width: 293px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	border: 1px solid #000;
+	padding: 20px;
+}

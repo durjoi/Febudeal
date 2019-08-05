@@ -164,6 +164,8 @@ Route::prefix('admin')->group(function() {
   Route::get('/HomepageSectionName/Edit', 'HomepageSectionNameController@EditFormShow')->name('admin.section.name.edit');
   Route::post('/HomepageSectionName/update/{id}', 'HomepageSectionNameController@UpdateName')->name('section.name.update');
 
+  Route::get('/herobannerForm', 'BannerController@showHerobannerUploadForm')->name('admin.herobannerUploadForm');
+  Route::post('/herobannerForm/upload', 'BannerController@HerobannerStore')->name('admin.herobanner.store');
 
 
   Route::get('/product/{id}', 'AdminController@IndividualProductShow')->name('admin.product');
