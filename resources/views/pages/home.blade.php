@@ -627,7 +627,7 @@
   </div>
   <!-- Product Section Ten End -->
   <!-- Two Banner Start -->
-  <div class="bnnrtwo">
+  {{-- <div class="bnnrtwo">
     <div class="container-fluid">
       <div class="row">
           <div class="col-md-6 col-lg-6 col-sm-6 col-6 padding__zero">
@@ -643,9 +643,22 @@
           </div>
       </div>
     </div>
-  </div>
+  </div> --}}
   <!-- Two Banner End -->
-
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 col-lg-12 col-sm-12 col-12">
+        <div class="bnr">
+          {{-- <button class="bnnr1-btn-left slider-btn"><i class="fas fa-chevron-left"></i></button> --}}
+          <div class="bnnr2-slider">
+            <img src={{ asset('images/bannerthree.jpg') }} alt="slider1">
+            <img src={{ asset('images/bannerthree.jpg') }} alt="slider2">
+          </div>
+          {{-- <button class="bnnr1-btn-right slider-btn"><i class="fas fa-chevron-right"></i></button> --}}
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 @endsection

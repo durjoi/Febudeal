@@ -120,7 +120,39 @@ $(document).ready(function(){
   // $('.bnnr1-btn-right').click(function(){
   //   $('.bnnr1-slider').slick('slickNext');
   // });
-
+  $('.bnnr2-slider').slick({
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    slidesToShow: 2,
+    arrows: false,
+    dots: false,
+    infinite: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          dots: false,
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+  });
 
 
 

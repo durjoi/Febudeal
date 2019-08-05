@@ -126,6 +126,16 @@ button.srcbox__btn {
   height: 100%;
   position: relative;
 }
+.bnnr2-slider {
+  margin-top: 5px;
+  height: 100%;
+  overflow: hidden;
+}
+.bnnr2-slider img {
+  height: 100%;
+  widows: 100%;
+  padding: 0px 5px;
+}
 .bnnr4-slider {
   margin-top: 5px;
   height: 100%;
