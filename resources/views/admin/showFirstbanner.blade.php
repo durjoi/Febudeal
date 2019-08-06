@@ -19,7 +19,7 @@
             <a href="{{ route('admin.dashboard') }}"><i class="fas fa-arrow-left"></i></a>
           </div>
           <div class="col-lg-6 col-md-6 text-right">
-            <a href="{{ route('admin.herobannerUploadForm') }}" class="navbar__banner_btn">Upload New</a>
+            <a href="{{ route('admin.firstbannerUploadForm') }}" class="navbar__banner_btn">Upload New</a>
           </div>
         </div>
       </div>
@@ -36,8 +36,8 @@
               <div class="col-md-12 col-lg-12 text-center">
                 <div class="bannr__position text-center">
                   <p>Banner: {{ $i }}</p>
-                  <a href="{{ route('admin.herobanner.edit',$banner->id)  }}">Edit</a>
-                  <a href="#"><form class="" action="{{ route('admin.herobanner.delete', $banner->id) }}" method="post">
+                  <a href="{{ route('admin.firstbanner.edit',$banner->id)  }}">Edit</a>
+                  <a href="#"><form class="" action="{{ route('admin.firstbanner.delete', $banner->id) }}" method="post">
                     @csrf
                     <input type="submit" name="submit" value="Delete">
                     </form></a>

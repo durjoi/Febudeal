@@ -163,13 +163,20 @@ Route::prefix('admin')->group(function() {
 
   Route::get('/HomepageSectionName/Edit', 'HomepageSectionNameController@EditFormShow')->name('admin.section.name.edit');
   Route::post('/HomepageSectionName/update/{id}', 'HomepageSectionNameController@UpdateName')->name('section.name.update');
-
+  //Hero banner
   Route::get('/herobanner', 'BannerController@showHerobanner')->name('admin.herobanner');
   Route::get('/herobannerForm', 'BannerController@showHerobannerUploadForm')->name('admin.herobannerUploadForm');
   Route::post('/herobanner/upload', 'BannerController@HerobannerStore')->name('admin.herobanner.store');
   Route::get('/herobanner/edit/{id}', 'BannerController@HerobannerEdit')->name('admin.herobanner.edit');
   Route::post('/herobanner/update/{id}', 'BannerController@HerobannerUpdate')->name('admin.herobanner.update');
   Route::post('/herobanner/delete/{id}', 'BannerController@HerobannerDelete')->name('admin.herobanner.delete');
+  //First Banner
+  Route::get('/firstbanner', 'BannerController@showFirstbanner')->name('admin.firstbanner');
+  Route::get('/firstbannerForm', 'BannerController@showFirstbannerUploadForm')->name('admin.firstbannerUploadForm');
+  Route::post('/firstbanner/upload', 'BannerController@FirstbannerStore')->name('admin.firstbanner.store');
+  Route::get('/firstbanner/edit/{id}', 'BannerController@FirstbannerEdit')->name('admin.firstbanner.edit');
+  Route::post('/firstbanner/update/{id}', 'BannerController@FirstbannerUpdate')->name('admin.firstbanner.update');
+  Route::post('/firstbanner/delete/{id}', 'BannerController@FirstbannerDelete')->name('admin.firstbanner.delete');
 
 
   Route::get('/product/{id}', 'AdminController@IndividualProductShow')->name('admin.product');

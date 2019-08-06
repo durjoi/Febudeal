@@ -19,6 +19,7 @@
           <div class="col-md-2">
             <ul>
               <li><a href="{{ route('admin.herobanner') }}">Hero Banner</a> </li>
+              <li><a href="{{ route('admin.firstbanner') }}">First Banner</a> </li>
               <li><a href="{{ route('admin.catagory') }}">Catagory</a> </li>
               <li><a href="{{ route('admin.product.show') }}">Product</a> </li>
               <li><a href="{{ route('admin.dotd') }}">{{ $sections[0]->section_one }}</a> </li>

@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Herobanner;
+use App\Firstbanner;
+use App\Secondbanner;
+use App\Thirdbanner;
+use App\Fourthbanner;
+use App\Fifthbanner;
 
 class BannerController extends Controller
 {
-
+    //Hero Banner
     public function showHerobannerUploadForm() {
       return view('admin.herobannerForm');
     }
@@ -34,8 +39,6 @@ class BannerController extends Controller
       $img->save();
 
       return redirect()->route('admin.herobanner');
-
-
     }
     public function HerobannerUpdate(Request $request, $id) {
       $image = $request->file('image');
@@ -47,7 +50,45 @@ class BannerController extends Controller
       $img->save();
 
       return redirect()->route('admin.herobanner');
+    }
 
+    //First Banner
+    public function showFirstbannerUploadForm() {
+      return view('admin.firstbannerForm');
+    }
+    public function FirstbannerEdit($id) {
+      $firstbanner = Firstbanner::find($id);
+      return view('admin.firstbannerEdit')->with('firstbanner', $firstbanner);
+    }
+    public function FirstbannerDelete($id) {
+      $firstbanner = Firstbanner::find($id)->delete();
+      return redirect()->back();
+    }
+    public function showFirstbanner() {
+      $banners = Firstbanner::alL();
 
+      return view('admin.showFirstbanner')->with('banners', $banners);
+    }
+    public function FirstbannerStore(Request $request) {
+      $image = $request->file('image');
+      $imagename=$image->getClientOriginalName();
+      $image->storeAs('public/banners', $imagename);
+
+      $img = new Firstbanner;
+      $img->images = $imagename;
+      $img->save();
+
+      return redirect()->route('admin.firstbanner');
+    }
+    public function FirstbannerUpdate(Request $request, $id) {
+      $image = $request->file('image');
+      $imagename=$image->getClientOriginalName();
+      $image->storeAs('public/banners', $imagename);
+
+      $img = Firstbanner::find($id);
+      $img->images = $imagename;
+      $img->save();
+
+      return redirect()->route('admin.firstbanner');
     }
 }
