@@ -1356,3 +1356,6 @@ display: none;
 	border: 1px solid #000;
 	padding: 20px;
 }
+.navbar__banner_btn {
+	font-size: 18px !important;
+}

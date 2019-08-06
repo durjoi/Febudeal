@@ -23,10 +23,10 @@
     </div>
 
     <div class="biuf">
-      <form class="biuf__form" action="{{ route('admin.herobanner.store') }}" method="post" enctype="multipart/form-data">
+      <form class="biuf__form" action="{{ route('admin.herobanner.update', $herobanner->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         <label for="image">Image: </label><br>
-        <input type="file" name="image" required>
+        <input type="file" name="image"  required>
         @error('image')
           <div class="alert alert-danger">{{ $message }}</div>
         @enderror

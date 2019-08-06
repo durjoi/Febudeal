@@ -16,6 +16,7 @@ class CreateHerobannersTable extends Migration
         Schema::create('herobanners', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('images')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }
