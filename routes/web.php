@@ -191,6 +191,13 @@ Route::prefix('admin')->group(function() {
   Route::get('/thirdbanner/edit/{id}', 'BannerController@ThirdbannerEdit')->name('admin.thirdbanner.edit');
   Route::post('/thirdbanner/update/{id}', 'BannerController@ThirdbannerUpdate')->name('admin.thirdbanner.update');
   Route::post('/thirdbanner/delete/{id}', 'BannerController@ThirdbannerDelete')->name('admin.thirdbanner.delete');
+  //Third Banner
+  Route::get('/fourthbanner', 'BannerController@showFourthbanner')->name('admin.fourthbanner');
+  Route::get('/fourthbannerForm', 'BannerController@showFourthbannerUploadForm')->name('admin.fourthbannerUploadForm');
+  Route::post('/fourthbanner/upload', 'BannerController@FourthbannerStore')->name('admin.fourthbanner.store');
+  Route::get('/fourthbanner/edit/{id}', 'BannerController@FourthbannerEdit')->name('admin.fourthbanner.edit');
+  Route::post('/fourthbanner/update/{id}', 'BannerController@FourthbannerUpdate')->name('admin.fourthbanner.update');
+  Route::post('/fourthbanner/delete/{id}', 'BannerController@FourthbannerDelete')->name('admin.fourthbanner.delete');
 
 
   Route::get('/product/{id}', 'AdminController@IndividualProductShow')->name('admin.product');

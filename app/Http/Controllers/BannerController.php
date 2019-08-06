@@ -96,11 +96,11 @@ class BannerController extends Controller
       return view('admin.secondbannerForm');
     }
     public function SecondbannerEdit($id) {
-      $firstbanner = Secondbanner::find($id);
+      $secondbanner = Secondbanner::find($id);
       return view('admin.secondbannerEdit')->with('secondbanner', $secondbanner);
     }
     public function SecondbannerDelete($id) {
-      $firstbanner = Secondbanner::find($id)->delete();
+      $secondbanner = Secondbanner::find($id)->delete();
       return redirect()->back();
     }
     public function showSecondbanner() {
@@ -135,11 +135,11 @@ class BannerController extends Controller
       return view('admin.thirdbannerForm');
     }
     public function ThirdbannerEdit($id) {
-      $firstbanner = Thirdbanner::find($id);
+      $thirdbanner = Thirdbanner::find($id);
       return view('admin.thirdbannerEdit')->with('thirdbanner', $thirdbanner);
     }
     public function ThirdbannerDelete($id) {
-      $firstbanner = Thirdbanner::find($id)->delete();
+      $thirdbanner = Thirdbanner::find($id)->delete();
       return redirect()->back();
     }
     public function showThirdbanner() {
@@ -168,5 +168,44 @@ class BannerController extends Controller
       $img->save();
 
       return redirect()->route('admin.thirdbanner');
+    }
+    //Fourth Banner
+    public function showFourthbannerUploadForm() {
+      return view('admin.fourthbannerForm');
+    }
+    public function FourthbannerEdit($id) {
+      $fourthbanner = Fourthbanner::find($id);
+      return view('admin.fourthbannerEdit')->with('fourthbanner', $fourthbanner);
+    }
+    public function FourthbannerDelete($id) {
+      $fourthbanner = Fourthbanner::find($id)->delete();
+      return redirect()->back();
+    }
+    public function showFourthbanner() {
+      $banners = Fourthbanner::alL();
+
+      return view('admin.showFourthbanner')->with('banners', $banners);
+    }
+    public function FourthbannerStore(Request $request) {
+      $image = $request->file('image');
+      $imagename=$image->getClientOriginalName();
+      $image->storeAs('public/banners', $imagename);
+
+      $img = new Fourthbanner;
+      $img->images = $imagename;
+      $img->save();
+
+      return redirect()->route('admin.fourthbanner');
+    }
+    public function FourthbannerUpdate(Request $request, $id) {
+      $image = $request->file('image');
+      $imagename=$image->getClientOriginalName();
+      $image->storeAs('public/banners', $imagename);
+
+      $img = Fourthbanner::find($id);
+      $img->images = $imagename;
+      $img->save();
+
+      return redirect()->route('admin.fourthbanner');
     }
 }

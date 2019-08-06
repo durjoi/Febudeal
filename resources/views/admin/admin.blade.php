@@ -22,6 +22,7 @@
               <li><a href="{{ route('admin.firstbanner') }}">First Banner</a> </li>
               <li><a href="{{ route('admin.secondbanner') }}">Second Banner</a> </li>
               <li><a href="{{ route('admin.thirdbanner') }}">Third Banner</a> </li>
+              <li><a href="{{ route('admin.fourthbanner') }}">Fourth Banner</a> </li>
               <li><a href="{{ route('admin.catagory') }}">Catagory</a> </li>
               <li><a href="{{ route('admin.product.show') }}">Product</a> </li>
               <li><a href="{{ route('admin.dotd') }}">{{ $sections[0]->section_one }}</a> </li>
