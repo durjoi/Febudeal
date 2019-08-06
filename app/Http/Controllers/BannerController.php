@@ -91,4 +91,43 @@ class BannerController extends Controller
 
       return redirect()->route('admin.firstbanner');
     }
+    //Second Banner
+    public function showSecondbannerUploadForm() {
+      return view('admin.secondbannerForm');
+    }
+    public function SecondbannerEdit($id) {
+      $firstbanner = Secondbanner::find($id);
+      return view('admin.secondbannerEdit')->with('secondbanner', $secondbanner);
+    }
+    public function SecondbannerDelete($id) {
+      $firstbanner = Secondbanner::find($id)->delete();
+      return redirect()->back();
+    }
+    public function showSecondbanner() {
+      $banners = Secondbanner::alL();
+
+      return view('admin.showSecondbanner')->with('banners', $banners);
+    }
+    public function SecondbannerStore(Request $request) {
+      $image = $request->file('image');
+      $imagename=$image->getClientOriginalName();
+      $image->storeAs('public/banners', $imagename);
+
+      $img = new Secondbanner;
+      $img->images = $imagename;
+      $img->save();
+
+      return redirect()->route('admin.secondbanner');
+    }
+    public function SecondbannerUpdate(Request $request, $id) {
+      $image = $request->file('image');
+      $imagename=$image->getClientOriginalName();
+      $image->storeAs('public/banners', $imagename);
+
+      $img = Secondbanner::find($id);
+      $img->images = $imagename;
+      $img->save();
+
+      return redirect()->route('admin.secondbanner');
+    }
 }

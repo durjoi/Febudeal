@@ -177,6 +177,13 @@ Route::prefix('admin')->group(function() {
   Route::get('/firstbanner/edit/{id}', 'BannerController@FirstbannerEdit')->name('admin.firstbanner.edit');
   Route::post('/firstbanner/update/{id}', 'BannerController@FirstbannerUpdate')->name('admin.firstbanner.update');
   Route::post('/firstbanner/delete/{id}', 'BannerController@FirstbannerDelete')->name('admin.firstbanner.delete');
+  //Second Banner
+  Route::get('/secondbanner', 'BannerController@showSecondbanner')->name('admin.secondbanner');
+  Route::get('/secondbannerForm', 'BannerController@showSecondbannerUploadForm')->name('admin.secondbannerUploadForm');
+  Route::post('/secondbanner/upload', 'BannerController@SecondbannerStore')->name('admin.secondbanner.store');
+  Route::get('/secondbanner/edit/{id}', 'BannerController@SecondbannerEdit')->name('admin.secondbanner.edit');
+  Route::post('/secondbanner/update/{id}', 'BannerController@SecondbannerUpdate')->name('admin.secondbanner.update');
+  Route::post('/secondbanner/delete/{id}', 'BannerController@SecondbannerDelete')->name('admin.secondbanner.delete');
 
 
   Route::get('/product/{id}', 'AdminController@IndividualProductShow')->name('admin.product');

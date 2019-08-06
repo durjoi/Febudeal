@@ -22,12 +22,17 @@ use App\Tenthsec;
 use App\HomepageSectionName;
 use App\Herobanner;
 use App\Firstbanner;
+use App\Secondbanner;
+use App\Thirdbanner;
+use App\Fourthbanner;
+use App\Fifthbanner;
 
 
 class PagesController extends Controller
 {
     public function home()
     {
+      $secondbanners = Secondbanner::all();
       $firstbanners = Firstbanner::all();
       $herobanners = Herobanner::all();
       $sections = HomepageSectionName::all();
@@ -68,6 +73,7 @@ class PagesController extends Controller
         ->with('sections', $sections)
         ->with('herobanners', $herobanners)
         ->with('firstbanners', $firstbanners)
+        ->with('secondbanners', $secondbanners)
         ->with('tos', $tos);
     }
 
