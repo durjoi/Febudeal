@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class thirdbanner extends Model
+class Thirdbanner extends Model
 {
     //
 }
