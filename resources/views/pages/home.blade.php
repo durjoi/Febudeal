@@ -649,8 +649,9 @@
         <div class="bnr">
           {{-- <button class="bnnr1-btn-left slider-btn"><i class="fas fa-chevron-left"></i></button> --}}
           <div class="bnnr2-slider">
-            <img src={{ asset('images/bannerthree.jpg') }} alt="slider1">
-            <img src={{ asset('images/bannerthree.jpg') }} alt="slider2">
+            @foreach ($fifthbanners as $fifthbanner)
+              <img src={{ url('storage/banners/'.$fifthbanner->images) }} alt="slider">
+            @endforeach
           </div>
           {{-- <button class="bnnr1-btn-right slider-btn"><i class="fas fa-chevron-right"></i></button> --}}
         </div>

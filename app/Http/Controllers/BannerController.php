@@ -208,4 +208,43 @@ class BannerController extends Controller
 
       return redirect()->route('admin.fourthbanner');
     }
+    //Fifth Banner
+    public function showFifthbannerUploadForm() {
+      return view('admin.fifthbannerForm');
+    }
+    public function FifthbannerEdit($id) {
+      $fifthbanner = Fifthbanner::find($id);
+      return view('admin.fifthbannerEdit')->with('fifthbanner', $fifthbanner);
+    }
+    public function FifthbannerDelete($id) {
+      $fifthbanner = Fifthbanner::find($id)->delete();
+      return redirect()->back();
+    }
+    public function showFifthbanner() {
+      $banners = Fifthbanner::alL();
+
+      return view('admin.showFifthbanner')->with('banners', $banners);
+    }
+    public function FifthbannerStore(Request $request) {
+      $image = $request->file('image');
+      $imagename=$image->getClientOriginalName();
+      $image->storeAs('public/banners', $imagename);
+
+      $img = new Fifthbanner;
+      $img->images = $imagename;
+      $img->save();
+
+      return redirect()->route('admin.fifthbanner');
+    }
+    public function FifthbannerUpdate(Request $request, $id) {
+      $image = $request->file('image');
+      $imagename=$image->getClientOriginalName();
+      $image->storeAs('public/banners', $imagename);
+
+      $img = Fifthbanner::find($id);
+      $img->images = $imagename;
+      $img->save();
+
+      return redirect()->route('admin.fifthbanner');
+    }
 }

@@ -32,6 +32,7 @@ class PagesController extends Controller
 {
     public function home()
     {
+      $fifthbanners = Fifthbanner::all();
       $fourthbanners = Fourthbanner::all();
       $thirdbanners = Thirdbanner::all();
       $secondbanners = Secondbanner::all();
@@ -78,6 +79,7 @@ class PagesController extends Controller
         ->with('secondbanners', $secondbanners)
         ->with('thirdbanners', $thirdbanners)
         ->with('fourthbanners', $fourthbanners)
+        ->with('fifthbanners', $fifthbanners)
         ->with('tos', $tos);
     }
 
